@@ -117,6 +117,13 @@ namespace EcsGenerator
             codeGenerator.Generate();
             Debug.Log("leoliteecs generation complete reload editor");
         }
+        
+        public void GenerateEntitas()
+        {
+            var codeGenerator = new EntitasGenerator(Application.dataPath + "/" + workPath + "/entitas/", preset);
+            codeGenerator.Generate();
+            Debug.Log("Entitas generation complete reload editor");
+        }
 
         List<DslComponent> GetSubsetComponents(Random random, IReadOnlyList<DslComponent> allComponents, int count)
         {

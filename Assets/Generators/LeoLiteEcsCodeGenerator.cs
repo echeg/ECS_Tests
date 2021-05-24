@@ -60,14 +60,17 @@ namespace EcsGenerator
         string GenerateComponent(DslComponent c)
         {
             var output = "";
+            output += $"public struct Component{c.Id}\n";
+            /*
             if (c.Fields.Count > 0)
             {
                 output += $"public struct Component{c.Id}\n";
             }
             else
             {
-                output += $"public struct Component{c.Id}\n";
+                output += $"public struct Component{c.Id} : IEcsIgnoreInFilter\n";
             }
+            */
 
             output += "{\n";
             for (var index = 0; index < c.Fields.Count; index++)

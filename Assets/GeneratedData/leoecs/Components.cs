@@ -12,7 +12,7 @@ public int Field0;
 public int Field1;
 }
 
-public struct Component1
+public struct Component1 : IEcsIgnoreInFilter
 {
 }
 
@@ -33,7 +33,7 @@ public int Field0;
 public short Field1;
 }
 
-public struct Component5
+public struct Component5 : IEcsIgnoreInFilter
 {
 }
 
@@ -73,11 +73,11 @@ public short Field1;
 public long Field2;
 }
 
-public struct Component12
+public struct Component12 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component13
+public struct Component13 : IEcsIgnoreInFilter
 {
 }
 
@@ -106,11 +106,11 @@ public byte Field1;
 public short Field2;
 }
 
-public struct Component18
+public struct Component18 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component19
+public struct Component19 : IEcsIgnoreInFilter
 {
 }
 
@@ -125,7 +125,7 @@ public int Field0;
 public float Field1;
 }
 
-public struct Component22
+public struct Component22 : IEcsIgnoreInFilter
 {
 }
 
@@ -141,15 +141,15 @@ public int Field0;
 public long Field1;
 }
 
-public struct Component25
+public struct Component25 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component26
+public struct Component26 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component27
+public struct Component27 : IEcsIgnoreInFilter
 {
 }
 
@@ -160,7 +160,7 @@ public byte Field1;
 public int Field2;
 }
 
-public struct Component29
+public struct Component29 : IEcsIgnoreInFilter
 {
 }
 
@@ -171,11 +171,11 @@ public long Field1;
 public byte Field2;
 }
 
-public struct Component31
+public struct Component31 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component32
+public struct Component32 : IEcsIgnoreInFilter
 {
 }
 
@@ -185,7 +185,7 @@ public int Field0;
 public short Field1;
 }
 
-public struct Component34
+public struct Component34 : IEcsIgnoreInFilter
 {
 }
 
@@ -200,11 +200,11 @@ public int Field0;
 public byte Field1;
 }
 
-public struct Component37
+public struct Component37 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component38
+public struct Component38 : IEcsIgnoreInFilter
 {
 }
 
@@ -218,7 +218,7 @@ public struct Component40
 public int Field0;
 }
 
-public struct Component41
+public struct Component41 : IEcsIgnoreInFilter
 {
 }
 
@@ -233,7 +233,7 @@ public struct Component43
 public int Field0;
 }
 
-public struct Component44
+public struct Component44 : IEcsIgnoreInFilter
 {
 }
 
@@ -249,7 +249,7 @@ public struct Component46
 public int Field0;
 }
 
-public struct Component47
+public struct Component47 : IEcsIgnoreInFilter
 {
 }
 
@@ -260,7 +260,7 @@ public int Field1;
 public int Field2;
 }
 
-public struct Component49
+public struct Component49 : IEcsIgnoreInFilter
 {
 }
 
@@ -293,7 +293,7 @@ public struct Component54
 public int Field0;
 }
 
-public struct Component55
+public struct Component55 : IEcsIgnoreInFilter
 {
 }
 
@@ -321,7 +321,7 @@ public short Field1;
 public byte Field2;
 }
 
-public struct Component60
+public struct Component60 : IEcsIgnoreInFilter
 {
 }
 
@@ -338,7 +338,7 @@ public int Field0;
 public int Field1;
 }
 
-public struct Component63
+public struct Component63 : IEcsIgnoreInFilter
 {
 }
 
@@ -359,7 +359,7 @@ public int Field1;
 public int Field2;
 }
 
-public struct Component67
+public struct Component67 : IEcsIgnoreInFilter
 {
 }
 
@@ -411,11 +411,11 @@ public struct Component75
 public int Field0;
 }
 
-public struct Component76
+public struct Component76 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component77
+public struct Component77 : IEcsIgnoreInFilter
 {
 }
 
@@ -425,7 +425,7 @@ public int Field0;
 public short Field1;
 }
 
-public struct Component79
+public struct Component79 : IEcsIgnoreInFilter
 {
 }
 
@@ -453,7 +453,7 @@ public float Field1;
 public int Field2;
 }
 
-public struct Component84
+public struct Component84 : IEcsIgnoreInFilter
 {
 }
 
@@ -488,15 +488,15 @@ public struct Component89
 public int Field0;
 }
 
-public struct Component90
+public struct Component90 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component91
+public struct Component91 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component92
+public struct Component92 : IEcsIgnoreInFilter
 {
 }
 
@@ -507,7 +507,7 @@ public float Field1;
 public byte Field2;
 }
 
-public struct Component94
+public struct Component94 : IEcsIgnoreInFilter
 {
 }
 
@@ -557,15 +557,15 @@ public float Field1;
 public int Field2;
 }
 
-public struct Component102
+public struct Component102 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component103
+public struct Component103 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component104
+public struct Component104 : IEcsIgnoreInFilter
 {
 }
 
@@ -582,7 +582,7 @@ public int Field0;
 public short Field1;
 }
 
-public struct Component107
+public struct Component107 : IEcsIgnoreInFilter
 {
 }
 
@@ -593,7 +593,7 @@ public float Field1;
 public float Field2;
 }
 
-public struct Component109
+public struct Component109 : IEcsIgnoreInFilter
 {
 }
 
@@ -631,7 +631,7 @@ public int Field0;
 public float Field1;
 }
 
-public struct Component116
+public struct Component116 : IEcsIgnoreInFilter
 {
 }
 
@@ -647,7 +647,7 @@ public struct Component118
 public int Field0;
 }
 
-public struct Component119
+public struct Component119 : IEcsIgnoreInFilter
 {
 }
 
@@ -734,7 +734,7 @@ public int Field1;
 public int Field2;
 }
 
-public struct Component133
+public struct Component133 : IEcsIgnoreInFilter
 {
 }
 
@@ -743,7 +743,7 @@ public struct Component134
 public int Field0;
 }
 
-public struct Component135
+public struct Component135 : IEcsIgnoreInFilter
 {
 }
 
@@ -884,7 +884,7 @@ public struct Component158
 public int Field0;
 }
 
-public struct Component159
+public struct Component159 : IEcsIgnoreInFilter
 {
 }
 
@@ -906,7 +906,7 @@ public int Field0;
 public int Field1;
 }
 
-public struct Component163
+public struct Component163 : IEcsIgnoreInFilter
 {
 }
 
@@ -922,7 +922,7 @@ public struct Component165
 public int Field0;
 }
 
-public struct Component166
+public struct Component166 : IEcsIgnoreInFilter
 {
 }
 
@@ -932,11 +932,11 @@ public int Field0;
 public long Field1;
 }
 
-public struct Component168
+public struct Component168 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component169
+public struct Component169 : IEcsIgnoreInFilter
 {
 }
 
@@ -953,7 +953,7 @@ public int Field1;
 public byte Field2;
 }
 
-public struct Component172
+public struct Component172 : IEcsIgnoreInFilter
 {
 }
 
@@ -980,7 +980,7 @@ public struct Component176
 public int Field0;
 }
 
-public struct Component177
+public struct Component177 : IEcsIgnoreInFilter
 {
 }
 
@@ -1044,7 +1044,7 @@ public short Field1;
 public float Field2;
 }
 
-public struct Component188
+public struct Component188 : IEcsIgnoreInFilter
 {
 }
 
@@ -1058,7 +1058,7 @@ public struct Component190
 public int Field0;
 }
 
-public struct Component191
+public struct Component191 : IEcsIgnoreInFilter
 {
 }
 
@@ -1068,7 +1068,7 @@ public int Field0;
 public short Field1;
 }
 
-public struct Component193
+public struct Component193 : IEcsIgnoreInFilter
 {
 }
 
@@ -1090,11 +1090,11 @@ public int Field0;
 public short Field1;
 }
 
-public struct Component197
+public struct Component197 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component198
+public struct Component198 : IEcsIgnoreInFilter
 {
 }
 
@@ -1131,11 +1131,11 @@ public int Field0;
 public long Field1;
 }
 
-public struct Component204
+public struct Component204 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component205
+public struct Component205 : IEcsIgnoreInFilter
 {
 }
 
@@ -1157,7 +1157,7 @@ public struct Component208
 public int Field0;
 }
 
-public struct Component209
+public struct Component209 : IEcsIgnoreInFilter
 {
 }
 
@@ -1166,11 +1166,11 @@ public struct Component210
 public int Field0;
 }
 
-public struct Component211
+public struct Component211 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component212
+public struct Component212 : IEcsIgnoreInFilter
 {
 }
 
@@ -1180,7 +1180,7 @@ public int Field0;
 public int Field1;
 }
 
-public struct Component214
+public struct Component214 : IEcsIgnoreInFilter
 {
 }
 
@@ -1209,11 +1209,11 @@ public long Field1;
 public short Field2;
 }
 
-public struct Component219
+public struct Component219 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component220
+public struct Component220 : IEcsIgnoreInFilter
 {
 }
 
@@ -1266,7 +1266,7 @@ public float Field1;
 public byte Field2;
 }
 
-public struct Component229
+public struct Component229 : IEcsIgnoreInFilter
 {
 }
 
@@ -1277,7 +1277,7 @@ public float Field1;
 public float Field2;
 }
 
-public struct Component231
+public struct Component231 : IEcsIgnoreInFilter
 {
 }
 
@@ -1327,7 +1327,7 @@ public struct Component238
 public int Field0;
 }
 
-public struct Component239
+public struct Component239 : IEcsIgnoreInFilter
 {
 }
 
@@ -1344,7 +1344,7 @@ public int Field0;
 public float Field1;
 }
 
-public struct Component242
+public struct Component242 : IEcsIgnoreInFilter
 {
 }
 
@@ -1359,11 +1359,11 @@ public struct Component244
 public int Field0;
 }
 
-public struct Component245
+public struct Component245 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component246
+public struct Component246 : IEcsIgnoreInFilter
 {
 }
 
@@ -1373,7 +1373,7 @@ public int Field0;
 public int Field1;
 }
 
-public struct Component248
+public struct Component248 : IEcsIgnoreInFilter
 {
 }
 
@@ -1487,15 +1487,15 @@ public struct Component266
 public int Field0;
 }
 
-public struct Component267
+public struct Component267 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component268
+public struct Component268 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component269
+public struct Component269 : IEcsIgnoreInFilter
 {
 }
 
@@ -1560,7 +1560,7 @@ public int Field0;
 public int Field1;
 }
 
-public struct Component281
+public struct Component281 : IEcsIgnoreInFilter
 {
 }
 
@@ -1584,7 +1584,7 @@ public short Field1;
 public float Field2;
 }
 
-public struct Component285
+public struct Component285 : IEcsIgnoreInFilter
 {
 }
 
@@ -1593,7 +1593,7 @@ public struct Component286
 public int Field0;
 }
 
-public struct Component287
+public struct Component287 : IEcsIgnoreInFilter
 {
 }
 
@@ -1603,7 +1603,7 @@ public int Field0;
 public float Field1;
 }
 
-public struct Component289
+public struct Component289 : IEcsIgnoreInFilter
 {
 }
 
@@ -1653,7 +1653,7 @@ public int Field0;
 public long Field1;
 }
 
-public struct Component298
+public struct Component298 : IEcsIgnoreInFilter
 {
 }
 
@@ -1662,23 +1662,23 @@ public struct Component299
 public int Field0;
 }
 
-public struct Component300
+public struct Component300 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component301
+public struct Component301 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component302
+public struct Component302 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component303
+public struct Component303 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component304
+public struct Component304 : IEcsIgnoreInFilter
 {
 }
 
@@ -1695,7 +1695,7 @@ public int Field1;
 public short Field2;
 }
 
-public struct Component307
+public struct Component307 : IEcsIgnoreInFilter
 {
 }
 
@@ -1744,19 +1744,19 @@ public struct Component314
 public int Field0;
 }
 
-public struct Component315
+public struct Component315 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component316
+public struct Component316 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component317
+public struct Component317 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component318
+public struct Component318 : IEcsIgnoreInFilter
 {
 }
 
@@ -1771,7 +1771,7 @@ public struct Component320
 public int Field0;
 }
 
-public struct Component321
+public struct Component321 : IEcsIgnoreInFilter
 {
 }
 
@@ -1806,7 +1806,7 @@ public long Field1;
 public short Field2;
 }
 
-public struct Component327
+public struct Component327 : IEcsIgnoreInFilter
 {
 }
 
@@ -1830,15 +1830,15 @@ public int Field0;
 public int Field1;
 }
 
-public struct Component331
+public struct Component331 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component332
+public struct Component332 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component333
+public struct Component333 : IEcsIgnoreInFilter
 {
 }
 
@@ -1869,11 +1869,11 @@ public int Field0;
 public short Field1;
 }
 
-public struct Component338
+public struct Component338 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component339
+public struct Component339 : IEcsIgnoreInFilter
 {
 }
 
@@ -1894,11 +1894,11 @@ public struct Component342
 public int Field0;
 }
 
-public struct Component343
+public struct Component343 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component344
+public struct Component344 : IEcsIgnoreInFilter
 {
 }
 
@@ -1908,7 +1908,7 @@ public int Field0;
 public byte Field1;
 }
 
-public struct Component346
+public struct Component346 : IEcsIgnoreInFilter
 {
 }
 
@@ -1917,7 +1917,7 @@ public struct Component347
 public int Field0;
 }
 
-public struct Component348
+public struct Component348 : IEcsIgnoreInFilter
 {
 }
 
@@ -1939,7 +1939,7 @@ public struct Component351
 public int Field0;
 }
 
-public struct Component352
+public struct Component352 : IEcsIgnoreInFilter
 {
 }
 
@@ -1973,7 +1973,7 @@ public int Field1;
 public int Field2;
 }
 
-public struct Component358
+public struct Component358 : IEcsIgnoreInFilter
 {
 }
 
@@ -2000,7 +2000,7 @@ public byte Field1;
 public short Field2;
 }
 
-public struct Component363
+public struct Component363 : IEcsIgnoreInFilter
 {
 }
 
@@ -2035,7 +2035,7 @@ public int Field0;
 public float Field1;
 }
 
-public struct Component369
+public struct Component369 : IEcsIgnoreInFilter
 {
 }
 
@@ -2060,7 +2060,7 @@ public int Field0;
 public byte Field1;
 }
 
-public struct Component374
+public struct Component374 : IEcsIgnoreInFilter
 {
 }
 
@@ -2076,11 +2076,11 @@ public int Field0;
 public byte Field1;
 }
 
-public struct Component377
+public struct Component377 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component378
+public struct Component378 : IEcsIgnoreInFilter
 {
 }
 
@@ -2119,7 +2119,7 @@ public struct Component384
 public int Field0;
 }
 
-public struct Component385
+public struct Component385 : IEcsIgnoreInFilter
 {
 }
 
@@ -2136,7 +2136,7 @@ public long Field1;
 public short Field2;
 }
 
-public struct Component388
+public struct Component388 : IEcsIgnoreInFilter
 {
 }
 
@@ -2145,11 +2145,11 @@ public struct Component389
 public int Field0;
 }
 
-public struct Component390
+public struct Component390 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component391
+public struct Component391 : IEcsIgnoreInFilter
 {
 }
 
@@ -2179,7 +2179,7 @@ public struct Component395
 public int Field0;
 }
 
-public struct Component396
+public struct Component396 : IEcsIgnoreInFilter
 {
 }
 
@@ -2203,7 +2203,7 @@ public int Field1;
 public float Field2;
 }
 
-public struct Component400
+public struct Component400 : IEcsIgnoreInFilter
 {
 }
 
@@ -2214,7 +2214,7 @@ public short Field1;
 public short Field2;
 }
 
-public struct Component402
+public struct Component402 : IEcsIgnoreInFilter
 {
 }
 
@@ -2223,7 +2223,7 @@ public struct Component403
 public int Field0;
 }
 
-public struct Component404
+public struct Component404 : IEcsIgnoreInFilter
 {
 }
 
@@ -2233,7 +2233,7 @@ public int Field0;
 public long Field1;
 }
 
-public struct Component406
+public struct Component406 : IEcsIgnoreInFilter
 {
 }
 
@@ -2248,11 +2248,11 @@ public int Field0;
 public long Field1;
 }
 
-public struct Component409
+public struct Component409 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component410
+public struct Component410 : IEcsIgnoreInFilter
 {
 }
 
@@ -2291,7 +2291,7 @@ public struct Component416
 public int Field0;
 }
 
-public struct Component417
+public struct Component417 : IEcsIgnoreInFilter
 {
 }
 
@@ -2340,7 +2340,7 @@ public short Field1;
 public int Field2;
 }
 
-public struct Component425
+public struct Component425 : IEcsIgnoreInFilter
 {
 }
 
@@ -2411,7 +2411,7 @@ public int Field0;
 public byte Field1;
 }
 
-public struct Component437
+public struct Component437 : IEcsIgnoreInFilter
 {
 }
 
@@ -2452,7 +2452,7 @@ public int Field0;
 public short Field1;
 }
 
-public struct Component444
+public struct Component444 : IEcsIgnoreInFilter
 {
 }
 
@@ -2509,11 +2509,11 @@ public struct Component453
 public int Field0;
 }
 
-public struct Component454
+public struct Component454 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component455
+public struct Component455 : IEcsIgnoreInFilter
 {
 }
 
@@ -2542,11 +2542,11 @@ public long Field1;
 public int Field2;
 }
 
-public struct Component460
+public struct Component460 : IEcsIgnoreInFilter
 {
 }
 
-public struct Component461
+public struct Component461 : IEcsIgnoreInFilter
 {
 }
 
@@ -2555,7 +2555,7 @@ public struct Component462
 public int Field0;
 }
 
-public struct Component463
+public struct Component463 : IEcsIgnoreInFilter
 {
 }
 
@@ -2578,7 +2578,7 @@ public int Field0;
 public int Field1;
 }
 
-public struct Component467
+public struct Component467 : IEcsIgnoreInFilter
 {
 }
 
@@ -2597,7 +2597,7 @@ public struct Component470
 public int Field0;
 }
 
-public struct Component471
+public struct Component471 : IEcsIgnoreInFilter
 {
 }
 
@@ -2607,7 +2607,7 @@ public int Field0;
 public int Field1;
 }
 
-public struct Component473
+public struct Component473 : IEcsIgnoreInFilter
 {
 }
 
@@ -2648,7 +2648,7 @@ public int Field0;
 public byte Field1;
 }
 
-public struct Component480
+public struct Component480 : IEcsIgnoreInFilter
 {
 }
 
@@ -2731,7 +2731,7 @@ public short Field1;
 public byte Field2;
 }
 
-public struct Component494
+public struct Component494 : IEcsIgnoreInFilter
 {
 }
 
@@ -2742,7 +2742,7 @@ public long Field1;
 public byte Field2;
 }
 
-public struct Component496
+public struct Component496 : IEcsIgnoreInFilter
 {
 }
 
@@ -2751,7 +2751,7 @@ public struct Component497
 public int Field0;
 }
 
-public struct Component498
+public struct Component498 : IEcsIgnoreInFilter
 {
 }
 
