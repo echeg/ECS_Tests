@@ -187,7 +187,7 @@ namespace EcsGenerator
             }
             else
             {
-                output += $"public struct Component{c.Id}\n";
+                output += $"public struct Component{c.Id} : IEcsIgnoreInFilter\n";
             }
 
             output += "{\n";
