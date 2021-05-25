@@ -136,7 +136,7 @@ namespace EcsGenerator.LeoEcs
             if (hasSecondComponent && s.FiltersComponents[1].Fields.Count > 0)
             {
                 secondComponentTag = false;
-                output += "   var component2 = _filter.Get2 (i);\n";
+                output += "   ref var component2 = ref _filter.Get2 (i);\n";
             }
 
             if (!firstComponentTag && hasSecondComponent && !secondComponentTag)

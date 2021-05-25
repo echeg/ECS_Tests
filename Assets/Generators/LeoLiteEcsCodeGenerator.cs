@@ -259,7 +259,7 @@ namespace EcsGenerator.LeoEcsLite
             if (hasSecondComponent && s.FiltersComponents[1].Fields.Count > 0)
             {
                 secondComponentTag = false;
-                output += "   var component2 = _p2.Get(entity);\n";
+                output += "   ref var component2 = ref _p2.Get(entity);\n";
             }
 
             if (!firstComponentTag && hasSecondComponent && !secondComponentTag)
