@@ -271,6 +271,7 @@ namespace EcsGenerator.LeoEcs
                 if (cooldownComponent.Ticks <= 0)
                 {
                     ref var entity = ref _filter.GetEntity (i);
+                    entity.Destroy();
                 }
             }
         }
