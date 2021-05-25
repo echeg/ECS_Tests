@@ -229,11 +229,11 @@ namespace EcsGenerator
         
         private static string CalculateBody(DslSystem s)
         {
-            var output = "";
+            var output = "   var entity = entities[i];\n";
             var firstComponentTag = s.FiltersComponents[0].Fields.Count == 0;
             if (!firstComponentTag)
             {
-                output += "   ref var component1 = ref _p1.Get (entities[i]);\n";
+                output += "   ref var component1 = ref _p1.Get(entity);\n";
             }
 
             var hasSecondComponent = s.FiltersComponents.Count > 1;
@@ -241,7 +241,7 @@ namespace EcsGenerator
             if (hasSecondComponent && s.FiltersComponents[1].Fields.Count > 0)
             {
                 secondComponentTag = false;
-                output += "   var component2 = _p2.Get (entities[i]);\n";
+                output += "   var component2 = _p2.Get(entity);\n";
             }
 
             if (!firstComponentTag && hasSecondComponent && !secondComponentTag)
