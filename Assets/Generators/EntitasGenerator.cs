@@ -70,7 +70,7 @@ namespace EcsGenerator.Entitas
             fileContent += "public void Init() {\n";
             fileContent += "    _context = Contexts.sharedInstance.game;\n";
             fileContent += "    _systems = new Feature(\"world\")\n";
-            fileContent += " .Add(new TickCounterSystem(_context))\n";
+            fileContent += " .Add(new TickCounterSystem(_context));\n";
             fileContent += GenerateListSystems();
             fileContent += ";\n";
             fileContent += "   _systems.Initialize ();\n";
@@ -104,7 +104,7 @@ namespace EcsGenerator.Entitas
             var output = "";
             foreach (var system in _dataProvider.GetSystems())
             {
-                output += $" .Add(new System{system.Id}(_context))\n";
+                output += $" _systems.Add(new System{system.Id}(_context));\n";
             }
 
             output += ";\n";

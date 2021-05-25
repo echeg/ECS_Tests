@@ -39,7 +39,7 @@ namespace EcsGenerator.LeoEcsLite
             fileContent += "public void Init() {\n";
             fileContent += "    _world = new EcsWorld();\n";
             fileContent += "    _systems = new EcsSystems(_world)\n";
-            fileContent += " .Add(new TickCounterSystem())\n";
+            fileContent += " .Add(new TickCounterSystem());\n";
             fileContent += GenerateListSystems();
             fileContent += "   _systems.Init ();\n";
             fileContent += "}\n\n";
@@ -114,7 +114,8 @@ namespace EcsGenerator.LeoEcsLite
             var output = "";
             foreach (var system in _dataProvider.GetSystems())
             {
-                output += $" .Add(new System{system.Id}())\n";
+                //output += $" .Add(new System{system.Id}())\n";
+                output += $" _systems.Add(new System{system.Id}());\n";
             }
 
             output += ";\n";
