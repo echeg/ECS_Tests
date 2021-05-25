@@ -11,7 +11,7 @@ EcsWorld _world;
 EcsSystems _systems;
 
 public void Init() {
-    _world = new EcsWorld();
+    _world = new EcsWorld(new EcsWorld.Config() { Entities = 10000 });
     _systems = new EcsSystems(_world)
  .Add(new TickCounterSystem())
  .Add(new System0())
