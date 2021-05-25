@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using EcsGenerator.Entitas;
+using EcsGenerator.LeoEcs;
+using EcsGenerator.LeoEcsLite;
 using UnityEngine;
 using Random = System.Random;
 
@@ -18,6 +21,10 @@ namespace EcsGenerator
 
         [Tooltip("Systems with add or remove component operations")]
         [SerializeField] int addRemoveComponentsSystemsCount;
+        
+        [Tooltip("Systems with create entity operations")]
+        [SerializeField] int createEntitySystemsCount;
+
 
         [SerializeField] int minFieldsPerComponent;
         [SerializeField] int maxFieldsPerComponent;
@@ -39,20 +46,36 @@ namespace EcsGenerator
             CreateEntities(r);
             CreateOnlyCalcSystems(r);
             CreateAddRemoveSystems(r);
+            CreateEntitySystems(r);
             
             Debug.Log("Generation Presets Complete");
         }
 
         private void CreateAddRemoveSystems(Random r)
         {
-            for (int i = changeComponentsSystemsCount; i < addRemoveComponentsSystemsCount + changeComponentsSystemsCount; i++)
+            for (int i = 0; i < addRemoveComponentsSystemsCount; i++)
             {
                 var filterComponentsCount = r.Next(minComponentsPerSystemFilter, maxComponentsPerSystemFilter + 1);
                 var filtersComponents = GetSubsetComponents(r, preset.components, filterComponentsCount);
                 var logicComponent = GetRandomComponent(r, preset.components);
                 preset.systems.Add(new DslSystem
                 {
-                    Id = i, SystemType = TypeSystem.ComponentAddAndRemove, FiltersComponents = filtersComponents,
+                    Id = preset.systems.Count, SystemType = TypeSystem.ComponentAddAndRemove, FiltersComponents = filtersComponents,
+                    LogicComponent = logicComponent
+                });
+            }
+        }
+        
+        private void CreateEntitySystems(Random r)
+        {
+            for (int i = 0; i < createEntitySystemsCount; i++)
+            {
+                var filterComponentsCount = r.Next(minComponentsPerSystemFilter, maxComponentsPerSystemFilter + 1);
+                var filtersComponents = GetSubsetComponents(r, preset.components, filterComponentsCount);
+                var logicComponent = GetRandomComponent(r, preset.components);
+                preset.systems.Add(new DslSystem
+                {
+                    Id = preset.systems.Count, SystemType = TypeSystem.CreateRemoveEntity, FiltersComponents = filtersComponents,
                     LogicComponent = logicComponent
                 });
             }
@@ -65,7 +88,7 @@ namespace EcsGenerator
                 var filterComponentsCount = r.Next(minComponentsPerSystemFilter, maxComponentsPerSystemFilter + 1);
                 var filtersComponents = GetSubsetComponents(r, preset.components, filterComponentsCount);
                 preset.systems.Add(new DslSystem
-                    {Id = i, SystemType = TypeSystem.OnlyCalculate, FiltersComponents = filtersComponents});
+                    {Id = preset.systems.Count, SystemType = TypeSystem.OnlyCalculate, FiltersComponents = filtersComponents});
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
+using Leopotam.EcsLite;
 
-namespace EcsGenerator
+namespace EcsGenerator.LeoEcsLite
 {
     public class LeoLiteEcsCodeGenerator: BaseGenerator
     {
@@ -38,6 +39,7 @@ namespace EcsGenerator
             fileContent += "public void Init() {\n";
             fileContent += "    _world = new EcsWorld();\n";
             fileContent += "    _systems = new EcsSystems(_world)\n";
+            fileContent += " .Add(new TickCounterSystem())\n";
             fileContent += GenerateListSystems();
             fileContent += "   _systems.Init ();\n";
             fileContent += "}\n\n";
@@ -51,10 +53,19 @@ namespace EcsGenerator
             fileContent += GenerateEntities();
             fileContent += "}\n";
 
-
+            fileContent += GenInfo();
+            
             fileContent += "}\n";
 
             SaveToFile(name+".cs", fileContent);
+        }
+        
+        string GenInfo()
+        {
+            var output = "public void GenInfo(){\n";
+            output += " Debug.Log(\"e \" + _world.GetAllocatedEntitiesCount());\n";
+            output += "}\n";
+            return output;
         }
         
         string GenerateComponent(DslComponent c)
@@ -165,7 +176,11 @@ namespace EcsGenerator
             {
                 output += $"EcsPool<Component{s.LogicComponent.Id}> _pl;\n";
             }
-            
+            if (s.SystemType == TypeSystem.CreateRemoveEntity)
+            {
+                output += $"EcsPool<Component{s.LogicComponent.Id}> _pl;\n";
+                output += $"EcsPool<TicksCooldownComponent> _pt;\n";
+            }
             
             output += " public void Init (EcsSystems systems) {\n";
             output += "  _world = systems.GetWorld ();\n";
@@ -197,30 +212,31 @@ namespace EcsGenerator
             {
                 output += $"   _pl = _world.GetPool<Component{s.LogicComponent.Id}>();\n";
             }
-
+            if (s.SystemType == TypeSystem.CreateRemoveEntity)
+            {
+                output += $"   _pl = _world.GetPool<Component{s.LogicComponent.Id}>();\n";
+                output += $"   _pt = _world.GetPool<TicksCooldownComponent>();\n";
+            }
             
             
             output += " }\n";
 
             output += " public void Run (EcsSystems systems) {\n";
-            output += "  var entities = _filter.GetRawEntities();\n";
+            if (s.SystemType == TypeSystem.OnlyCalculate || s.SystemType == TypeSystem.ComponentAddAndRemove)
+            {
+                output += "  var entities = _filter.GetRawEntities();\n";
+            }
+
             output += "  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){\n";
 
-            switch (s.SystemType)
+            output += s.SystemType switch
             {
-                case TypeSystem.OnlyCalculate:
-                    output += CalculateBody(s);
-                    break;
-                
-                case TypeSystem.ComponentAddAndRemove:
-                    output += AddRemoveBody(s);
-                    break;
-                
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-            
-            
+                TypeSystem.OnlyCalculate => CalculateBody(s),
+                TypeSystem.ComponentAddAndRemove => AddRemoveBody(s),
+                TypeSystem.CreateRemoveEntity => CreateEntityBody(s),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+
             output += "  }\n";
             output += " }\n";
             output += "}\n\n";
@@ -272,5 +288,54 @@ namespace EcsGenerator
 
             return output;
         }
+        
+        private static string CreateEntityBody(DslSystem s)
+        {
+            var output = "";
+            
+            output += "   var e = _world.NewEntity();\n";
+            output += "   ref var c1 = ref _pl.Add(e);\n";
+            output += $"   ref var tick = ref _pt.Add(e);\n";
+            output += $"   tick.Ticks=10;\n";
+            
+            return output;
+        }
+    }
+    
+    public struct TicksCooldownComponent
+    {
+        public int Ticks;
+
+        public TicksCooldownComponent(int ticks)
+        {
+            Ticks = ticks;
+        }
+    }
+    
+    class TickCounterSystem : IEcsInitSystem, IEcsRunSystem{
+        EcsWorld _world = null;
+        EcsFilter _filter;
+        EcsPool<TicksCooldownComponent> _p1;
+            
+        public void Init (EcsSystems systems) {
+            _world = systems.GetWorld ();
+            _filter = _world.Filter<TicksCooldownComponent>().End();
+            _p1 = _world.GetPool<TicksCooldownComponent>();
+        }
+            
+        public void Run(EcsSystems systems)
+        {
+            var entities = _filter.GetRawEntities();
+            for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+                var entity = entities[i];
+                ref var cooldownComponent = ref _p1.Get(entity);
+                cooldownComponent.Ticks -= 1;
+                if (cooldownComponent.Ticks <= 0)
+                {
+                    _world.DelEntity(entity);
+                }
+            }
+        }
+
     }
 }

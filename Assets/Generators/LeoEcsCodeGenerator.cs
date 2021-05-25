@@ -1,7 +1,7 @@
 ﻿using System;
-using System.IO;
+using Leopotam.Ecs;
 
-namespace EcsGenerator
+namespace EcsGenerator.LeoEcs
 {
     public class LeoEcsCodeGenerator : BaseGenerator
     {
@@ -34,6 +34,7 @@ namespace EcsGenerator
             fileContent += "public void Init() {\n";
             fileContent += "    _world = new EcsWorld();\n";
             fileContent += "    _systems = new EcsSystems(_world)\n";
+            fileContent += " .Add(new TickCounterSystem())\n";
             fileContent += GenerateListSystems();
             fileContent += "   _systems.Init ();\n";
             fileContent += "}\n\n";
@@ -47,10 +48,20 @@ namespace EcsGenerator
             fileContent += GenerateEntities();
             fileContent += "}\n";
 
-
+            fileContent += GenInfo();
+            
             fileContent += "}\n";
 
             SaveToFile("LeoEcsRunner.cs", fileContent);
+        }
+
+        string GenInfo()
+        {
+            var output = "public void GenInfo(){\n";
+            output += " var s = _world.GetStats();\n";
+            output += " Debug.Log(\"e \" + s.ActiveEntities + \" c \" + s.Components);\n";
+            output += "}\n";
+            return output;
         }
 
         private void GenerateSystems()
@@ -96,20 +107,14 @@ namespace EcsGenerator
             output += " public void Run () {\n";
             output += "  for (var i = 0; i<_filter.GetEntitiesCount(); i++) {\n";
 
-            switch (s.SystemType)
+            output += s.SystemType switch
             {
-                case TypeSystem.OnlyCalculate:
-                    output += CalculateBody(s);
-                    break;
-                
-                case TypeSystem.ComponentAddAndRemove:
-                    output += AddRemoveBody(s);
-                    break;
-                
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-            
+                TypeSystem.OnlyCalculate => CalculateBody(s),
+                TypeSystem.ComponentAddAndRemove => AddRemoveBody(s),
+                TypeSystem.CreateRemoveEntity => CreateEntityBody(s),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+
             output += "  }\n";
             output += " }\n";
             output += "}\n\n";
@@ -162,6 +167,17 @@ namespace EcsGenerator
             return output;
         }
 
+        private static string CreateEntityBody(DslSystem s)
+        {
+            var output = "";
+            
+            output += "   var e = _world.NewEntity();\n";
+            output += "   e.Replace(new TicksCooldownComponent(10));\n";
+            output += $"   e.Replace(new Component{s.LogicComponent.Id}());\n";
+            
+            return output;
+        }
+        
         
         protected override string DecorateNamespace(string fileContent)
         {
@@ -230,6 +246,33 @@ namespace EcsGenerator
 
         public LeoEcsCodeGenerator(string workWorkPath, IEcsPresetDataProvider dataProvider) : base(workWorkPath, dataProvider)
         {
+        }
+    }
+    
+
+    public struct TicksCooldownComponent
+    {
+        public int Ticks;
+
+        public TicksCooldownComponent(int ticks)
+        {
+            Ticks = ticks;
+        }
+    }
+    
+    class TickCounterSystem : IEcsRunSystem{
+        EcsWorld _world = null;
+        EcsFilter<TicksCooldownComponent> _filter = null;
+        public void Run () {
+            for (var i = 0; i<_filter.GetEntitiesCount(); i++) {
+                ref var cooldownComponent = ref _filter.Get1 (i);
+                cooldownComponent.Ticks -= 1;
+                if (cooldownComponent.Ticks <= 0)
+                {
+                    ref var entity = ref _filter.GetEntity(i);
+                    entity.Destroy();
+                }
+            }
         }
     }
 }

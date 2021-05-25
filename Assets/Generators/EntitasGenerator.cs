@@ -1,6 +1,7 @@
 ﻿using System;
+using Entitas;
 
-namespace EcsGenerator
+namespace EcsGenerator.Entitas
 {
     public class EntitasGenerator : BaseGenerator
     {
@@ -69,6 +70,7 @@ namespace EcsGenerator
             fileContent += "public void Init() {\n";
             fileContent += "    _context = Contexts.sharedInstance.game;\n";
             fileContent += "    _systems = new Feature(\"world\")\n";
+            fileContent += " .Add(new TickCounterSystem(_context))\n";
             fileContent += GenerateListSystems();
             fileContent += ";\n";
             fileContent += "   _systems.Initialize ();\n";
@@ -83,10 +85,18 @@ namespace EcsGenerator
             fileContent += GenerateEntities();
             fileContent += "}\n";
 
-
+            fileContent += GenInfo();
             fileContent += "}\n";
 
             SaveToFile(name+".cs", fileContent);
+        }
+        
+        string GenInfo()
+        {
+            var output = "public void GenInfo(){\n";
+            output += "Debug.Log(Contexts.sharedInstance.game.count+\" c \"+Contexts.sharedInstance.game.totalComponents);\n";
+            output += "}\n";
+            return output;
         }
         
         string GenerateListSystems()
@@ -150,6 +160,10 @@ namespace EcsGenerator
                 
                 case TypeSystem.ComponentAddAndRemove:
                     output += AddRemoveBody(s);
+                    break;    
+                
+                case TypeSystem.CreateRemoveEntity:
+                    output += CreateEntityBody(s);
                     break;
                 
                 default:
@@ -189,7 +203,7 @@ namespace EcsGenerator
         
         private static string CalculateBody(DslSystem s)
         {
-            var output = "var e = entities[i];";
+            var output = "   var e = entities[i];\n";
             var firstComponentTag = s.FiltersComponents[0].Fields.Count == 0;
             if (!firstComponentTag)
             {
@@ -247,6 +261,48 @@ namespace EcsGenerator
             }
 
             return output;
+        }
+        
+        private static string CreateEntityBody(DslSystem s)
+        {
+            var output = "";
+            output += "   var e = _context.CreateEntity();\n";
+            output += "   e.AddComponent(GameComponentsLookup.EcsGeneratorEntitasTicksCooldown,new TicksCooldownComponent(10));\n";
+            output += $"   e.AddComponent(GameComponentsLookup.EcsGeneratorEntitasComponent{s.LogicComponent.Id},new Component{s.LogicComponent.Id}());\n";
+            
+            return output;
+        }
+    }
+    
+    [Game]
+    public sealed class TicksCooldownComponent : IComponent 
+    {
+        public int Ticks;
+
+        public TicksCooldownComponent(int ticks)
+        {
+            Ticks = ticks;
+        }
+    }
+
+    class TickCounterSystem : IExecuteSystem{
+        readonly GameContext _context;
+        private readonly IGroup<GameEntity> _group;
+        public TickCounterSystem(GameContext context)
+        {
+            _context = context;
+            _group = _context.GetGroup(GameMatcher.AllOf(GameMatcher.EcsGeneratorEntitasTicksCooldown));
+        }
+        public void Execute() {
+            var entities = _group.GetEntities();
+            for (var i = 0; i<entities.Length; i++) {
+                var entity = entities[i];
+                entity.ecsGeneratorEntitasTicksCooldown.Ticks -= 1;
+                if (entity.ecsGeneratorEntitasTicksCooldown.Ticks <= 0)
+                {
+                    entity.Destroy();
+                }
+            }
         }
     }
 }

@@ -13975,4 +13975,2616 @@ EcsPool<Component276> _pl;
  }
 }
 
+class System600 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component70> _p1;
+EcsPool<Component221> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component70>().End();
+   _p1 = _world.GetPool<Component70>();
+   _pl = _world.GetPool<Component221>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System601 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component352> _p1;
+EcsPool<Component283> _p2;
+EcsPool<Component18> _p3;
+EcsPool<Component499> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component352>().Inc<Component283>().Inc<Component18>().End();
+   _p1 = _world.GetPool<Component352>();
+   _p2 = _world.GetPool<Component283>();
+   _p3 = _world.GetPool<Component18>();
+   _pl = _world.GetPool<Component499>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System602 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component320> _p1;
+EcsPool<Component192> _p2;
+EcsPool<Component111> _p3;
+EcsPool<Component51> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component320>().Inc<Component192>().Inc<Component111>().End();
+   _p1 = _world.GetPool<Component320>();
+   _p2 = _world.GetPool<Component192>();
+   _p3 = _world.GetPool<Component111>();
+   _pl = _world.GetPool<Component51>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System603 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component143> _p1;
+EcsPool<Component318> _p2;
+EcsPool<Component38> _p3;
+EcsPool<Component160> _p4;
+EcsPool<Component162> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component143>().Inc<Component318>().Inc<Component38>().Inc<Component160>().End();
+   _p1 = _world.GetPool<Component143>();
+   _p2 = _world.GetPool<Component318>();
+   _p3 = _world.GetPool<Component38>();
+   _p4 = _world.GetPool<Component160>();
+   _pl = _world.GetPool<Component162>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System604 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component322> _p1;
+EcsPool<Component169> _p2;
+EcsPool<Component398> _p3;
+EcsPool<Component196> _p4;
+EcsPool<Component256> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component322>().Inc<Component169>().Inc<Component398>().Inc<Component196>().End();
+   _p1 = _world.GetPool<Component322>();
+   _p2 = _world.GetPool<Component169>();
+   _p3 = _world.GetPool<Component398>();
+   _p4 = _world.GetPool<Component196>();
+   _pl = _world.GetPool<Component256>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System605 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component299> _p1;
+EcsPool<Component404> _p2;
+EcsPool<Component136> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component299>().Inc<Component404>().End();
+   _p1 = _world.GetPool<Component299>();
+   _p2 = _world.GetPool<Component404>();
+   _pl = _world.GetPool<Component136>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System606 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component369> _p1;
+EcsPool<Component400> _p2;
+EcsPool<Component321> _p3;
+EcsPool<Component26> _p4;
+EcsPool<Component170> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component369>().Inc<Component400>().Inc<Component321>().Inc<Component26>().End();
+   _p1 = _world.GetPool<Component369>();
+   _p2 = _world.GetPool<Component400>();
+   _p3 = _world.GetPool<Component321>();
+   _p4 = _world.GetPool<Component26>();
+   _pl = _world.GetPool<Component170>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System607 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component18> _p1;
+EcsPool<Component467> _p2;
+EcsPool<Component346> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component18>().Inc<Component467>().End();
+   _p1 = _world.GetPool<Component18>();
+   _p2 = _world.GetPool<Component467>();
+   _pl = _world.GetPool<Component346>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System608 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component76> _p1;
+EcsPool<Component357> _p2;
+EcsPool<Component475> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component76>().Inc<Component357>().End();
+   _p1 = _world.GetPool<Component76>();
+   _p2 = _world.GetPool<Component357>();
+   _pl = _world.GetPool<Component475>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System609 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component277> _p1;
+EcsPool<Component169> _p2;
+EcsPool<Component45> _p3;
+EcsPool<Component338> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component277>().Inc<Component169>().Inc<Component45>().End();
+   _p1 = _world.GetPool<Component277>();
+   _p2 = _world.GetPool<Component169>();
+   _p3 = _world.GetPool<Component45>();
+   _pl = _world.GetPool<Component338>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System610 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component39> _p1;
+EcsPool<Component418> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component39>().End();
+   _p1 = _world.GetPool<Component39>();
+   _pl = _world.GetPool<Component418>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System611 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component398> _p1;
+EcsPool<Component232> _p2;
+EcsPool<Component454> _p3;
+EcsPool<Component345> _p4;
+EcsPool<Component172> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component398>().Inc<Component232>().Inc<Component454>().Inc<Component345>().End();
+   _p1 = _world.GetPool<Component398>();
+   _p2 = _world.GetPool<Component232>();
+   _p3 = _world.GetPool<Component454>();
+   _p4 = _world.GetPool<Component345>();
+   _pl = _world.GetPool<Component172>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System612 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component41> _p1;
+EcsPool<Component221> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component41>().End();
+   _p1 = _world.GetPool<Component41>();
+   _pl = _world.GetPool<Component221>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System613 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component113> _p1;
+EcsPool<Component362> _p2;
+EcsPool<Component408> _p3;
+EcsPool<Component450> _p4;
+EcsPool<Component292> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component113>().Inc<Component362>().Inc<Component408>().Inc<Component450>().End();
+   _p1 = _world.GetPool<Component113>();
+   _p2 = _world.GetPool<Component362>();
+   _p3 = _world.GetPool<Component408>();
+   _p4 = _world.GetPool<Component450>();
+   _pl = _world.GetPool<Component292>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System614 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component25> _p1;
+EcsPool<Component210> _p2;
+EcsPool<Component421> _p3;
+EcsPool<Component299> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component25>().Inc<Component210>().Inc<Component421>().End();
+   _p1 = _world.GetPool<Component25>();
+   _p2 = _world.GetPool<Component210>();
+   _p3 = _world.GetPool<Component421>();
+   _pl = _world.GetPool<Component299>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System615 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component314> _p1;
+EcsPool<Component495> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component314>().End();
+   _p1 = _world.GetPool<Component314>();
+   _pl = _world.GetPool<Component495>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System616 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component464> _p1;
+EcsPool<Component194> _p2;
+EcsPool<Component60> _p3;
+EcsPool<Component418> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component464>().Inc<Component194>().Inc<Component60>().End();
+   _p1 = _world.GetPool<Component464>();
+   _p2 = _world.GetPool<Component194>();
+   _p3 = _world.GetPool<Component60>();
+   _pl = _world.GetPool<Component418>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System617 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component85> _p1;
+EcsPool<Component460> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component85>().End();
+   _p1 = _world.GetPool<Component85>();
+   _pl = _world.GetPool<Component460>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System618 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component96> _p1;
+EcsPool<Component22> _p2;
+EcsPool<Component382> _p3;
+EcsPool<Component1> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component96>().Inc<Component22>().Inc<Component382>().End();
+   _p1 = _world.GetPool<Component96>();
+   _p2 = _world.GetPool<Component22>();
+   _p3 = _world.GetPool<Component382>();
+   _pl = _world.GetPool<Component1>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System619 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component72> _p1;
+EcsPool<Component325> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component72>().End();
+   _p1 = _world.GetPool<Component72>();
+   _pl = _world.GetPool<Component325>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System620 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component493> _p1;
+EcsPool<Component425> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component493>().End();
+   _p1 = _world.GetPool<Component493>();
+   _pl = _world.GetPool<Component425>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System621 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component182> _p1;
+EcsPool<Component462> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component182>().End();
+   _p1 = _world.GetPool<Component182>();
+   _pl = _world.GetPool<Component462>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System622 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component66> _p1;
+EcsPool<Component387> _p2;
+EcsPool<Component485> _p3;
+EcsPool<Component379> _p4;
+EcsPool<Component20> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component66>().Inc<Component387>().Inc<Component485>().Inc<Component379>().End();
+   _p1 = _world.GetPool<Component66>();
+   _p2 = _world.GetPool<Component387>();
+   _p3 = _world.GetPool<Component485>();
+   _p4 = _world.GetPool<Component379>();
+   _pl = _world.GetPool<Component20>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System623 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component189> _p1;
+EcsPool<Component240> _p2;
+EcsPool<Component347> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component189>().Inc<Component240>().End();
+   _p1 = _world.GetPool<Component189>();
+   _p2 = _world.GetPool<Component240>();
+   _pl = _world.GetPool<Component347>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System624 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component403> _p1;
+EcsPool<Component368> _p2;
+EcsPool<Component490> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component403>().Inc<Component368>().End();
+   _p1 = _world.GetPool<Component403>();
+   _p2 = _world.GetPool<Component368>();
+   _pl = _world.GetPool<Component490>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System625 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component112> _p1;
+EcsPool<Component106> _p2;
+EcsPool<Component455> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component112>().Inc<Component106>().End();
+   _p1 = _world.GetPool<Component112>();
+   _p2 = _world.GetPool<Component106>();
+   _pl = _world.GetPool<Component455>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System626 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component23> _p1;
+EcsPool<Component319> _p2;
+EcsPool<Component265> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component23>().Inc<Component319>().End();
+   _p1 = _world.GetPool<Component23>();
+   _p2 = _world.GetPool<Component319>();
+   _pl = _world.GetPool<Component265>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System627 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component68> _p1;
+EcsPool<Component290> _p2;
+EcsPool<Component201> _p3;
+EcsPool<Component453> _p4;
+EcsPool<Component385> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component68>().Inc<Component290>().Inc<Component201>().Inc<Component453>().End();
+   _p1 = _world.GetPool<Component68>();
+   _p2 = _world.GetPool<Component290>();
+   _p3 = _world.GetPool<Component201>();
+   _p4 = _world.GetPool<Component453>();
+   _pl = _world.GetPool<Component385>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System628 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component306> _p1;
+EcsPool<Component145> _p2;
+EcsPool<Component189> _p3;
+EcsPool<Component312> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component306>().Inc<Component145>().Inc<Component189>().End();
+   _p1 = _world.GetPool<Component306>();
+   _p2 = _world.GetPool<Component145>();
+   _p3 = _world.GetPool<Component189>();
+   _pl = _world.GetPool<Component312>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System629 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component468> _p1;
+EcsPool<Component128> _p2;
+EcsPool<Component172> _p3;
+EcsPool<Component433> _p4;
+EcsPool<Component206> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component468>().Inc<Component128>().Inc<Component172>().Inc<Component433>().End();
+   _p1 = _world.GetPool<Component468>();
+   _p2 = _world.GetPool<Component128>();
+   _p3 = _world.GetPool<Component172>();
+   _p4 = _world.GetPool<Component433>();
+   _pl = _world.GetPool<Component206>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System630 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component333> _p1;
+EcsPool<Component104> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component333>().End();
+   _p1 = _world.GetPool<Component333>();
+   _pl = _world.GetPool<Component104>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System631 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component175> _p1;
+EcsPool<Component209> _p2;
+EcsPool<Component98> _p3;
+EcsPool<Component219> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component175>().Inc<Component209>().Inc<Component98>().End();
+   _p1 = _world.GetPool<Component175>();
+   _p2 = _world.GetPool<Component209>();
+   _p3 = _world.GetPool<Component98>();
+   _pl = _world.GetPool<Component219>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System632 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component174> _p1;
+EcsPool<Component437> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component174>().End();
+   _p1 = _world.GetPool<Component174>();
+   _pl = _world.GetPool<Component437>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System633 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component470> _p1;
+EcsPool<Component488> _p2;
+EcsPool<Component158> _p3;
+EcsPool<Component142> _p4;
+EcsPool<Component229> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component470>().Inc<Component488>().Inc<Component158>().Inc<Component142>().End();
+   _p1 = _world.GetPool<Component470>();
+   _p2 = _world.GetPool<Component488>();
+   _p3 = _world.GetPool<Component158>();
+   _p4 = _world.GetPool<Component142>();
+   _pl = _world.GetPool<Component229>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System634 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component318> _p1;
+EcsPool<Component194> _p2;
+EcsPool<Component178> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component318>().Inc<Component194>().End();
+   _p1 = _world.GetPool<Component318>();
+   _p2 = _world.GetPool<Component194>();
+   _pl = _world.GetPool<Component178>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System635 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component242> _p1;
+EcsPool<Component318> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component242>().End();
+   _p1 = _world.GetPool<Component242>();
+   _pl = _world.GetPool<Component318>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System636 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component201> _p1;
+EcsPool<Component483> _p2;
+EcsPool<Component90> _p3;
+EcsPool<Component467> _p4;
+EcsPool<Component21> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component201>().Inc<Component483>().Inc<Component90>().Inc<Component467>().End();
+   _p1 = _world.GetPool<Component201>();
+   _p2 = _world.GetPool<Component483>();
+   _p3 = _world.GetPool<Component90>();
+   _p4 = _world.GetPool<Component467>();
+   _pl = _world.GetPool<Component21>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System637 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component439> _p1;
+EcsPool<Component172> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component439>().End();
+   _p1 = _world.GetPool<Component439>();
+   _pl = _world.GetPool<Component172>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System638 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component70> _p1;
+EcsPool<Component190> _p2;
+EcsPool<Component215> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component70>().Inc<Component190>().End();
+   _p1 = _world.GetPool<Component70>();
+   _p2 = _world.GetPool<Component190>();
+   _pl = _world.GetPool<Component215>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System639 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component211> _p1;
+EcsPool<Component359> _p2;
+EcsPool<Component192> _p3;
+EcsPool<Component481> _p4;
+EcsPool<Component371> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component211>().Inc<Component359>().Inc<Component192>().Inc<Component481>().End();
+   _p1 = _world.GetPool<Component211>();
+   _p2 = _world.GetPool<Component359>();
+   _p3 = _world.GetPool<Component192>();
+   _p4 = _world.GetPool<Component481>();
+   _pl = _world.GetPool<Component371>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System640 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component433> _p1;
+EcsPool<Component419> _p2;
+EcsPool<Component174> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component433>().Inc<Component419>().End();
+   _p1 = _world.GetPool<Component433>();
+   _p2 = _world.GetPool<Component419>();
+   _pl = _world.GetPool<Component174>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System641 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component154> _p1;
+EcsPool<Component258> _p2;
+EcsPool<Component239> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component154>().Inc<Component258>().End();
+   _p1 = _world.GetPool<Component154>();
+   _p2 = _world.GetPool<Component258>();
+   _pl = _world.GetPool<Component239>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System642 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component354> _p1;
+EcsPool<Component239> _p2;
+EcsPool<Component28> _p3;
+EcsPool<Component497> _p4;
+EcsPool<Component90> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component354>().Inc<Component239>().Inc<Component28>().Inc<Component497>().End();
+   _p1 = _world.GetPool<Component354>();
+   _p2 = _world.GetPool<Component239>();
+   _p3 = _world.GetPool<Component28>();
+   _p4 = _world.GetPool<Component497>();
+   _pl = _world.GetPool<Component90>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System643 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component422> _p1;
+EcsPool<Component473> _p2;
+EcsPool<Component225> _p3;
+EcsPool<Component8> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component422>().Inc<Component473>().Inc<Component225>().End();
+   _p1 = _world.GetPool<Component422>();
+   _p2 = _world.GetPool<Component473>();
+   _p3 = _world.GetPool<Component225>();
+   _pl = _world.GetPool<Component8>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System644 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component60> _p1;
+EcsPool<Component152> _p2;
+EcsPool<Component498> _p3;
+EcsPool<Component214> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component60>().Inc<Component152>().Inc<Component498>().End();
+   _p1 = _world.GetPool<Component60>();
+   _p2 = _world.GetPool<Component152>();
+   _p3 = _world.GetPool<Component498>();
+   _pl = _world.GetPool<Component214>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System645 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component417> _p1;
+EcsPool<Component468> _p2;
+EcsPool<Component427> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component417>().Inc<Component468>().End();
+   _p1 = _world.GetPool<Component417>();
+   _p2 = _world.GetPool<Component468>();
+   _pl = _world.GetPool<Component427>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System646 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component468> _p1;
+EcsPool<Component459> _p2;
+EcsPool<Component2> _p3;
+EcsPool<Component196> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component468>().Inc<Component459>().Inc<Component2>().End();
+   _p1 = _world.GetPool<Component468>();
+   _p2 = _world.GetPool<Component459>();
+   _p3 = _world.GetPool<Component2>();
+   _pl = _world.GetPool<Component196>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System647 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component31> _p1;
+EcsPool<Component384> _p2;
+EcsPool<Component14> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component31>().Inc<Component384>().End();
+   _p1 = _world.GetPool<Component31>();
+   _p2 = _world.GetPool<Component384>();
+   _pl = _world.GetPool<Component14>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System648 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component283> _p1;
+EcsPool<Component436> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component283>().End();
+   _p1 = _world.GetPool<Component283>();
+   _pl = _world.GetPool<Component436>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System649 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component282> _p1;
+EcsPool<Component73> _p2;
+EcsPool<Component85> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component282>().Inc<Component73>().End();
+   _p1 = _world.GetPool<Component282>();
+   _p2 = _world.GetPool<Component73>();
+   _pl = _world.GetPool<Component85>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System650 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component220> _p1;
+EcsPool<Component73> _p2;
+EcsPool<Component99> _p3;
+EcsPool<Component428> _p4;
+EcsPool<Component485> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component220>().Inc<Component73>().Inc<Component99>().Inc<Component428>().End();
+   _p1 = _world.GetPool<Component220>();
+   _p2 = _world.GetPool<Component73>();
+   _p3 = _world.GetPool<Component99>();
+   _p4 = _world.GetPool<Component428>();
+   _pl = _world.GetPool<Component485>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System651 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component134> _p1;
+EcsPool<Component184> _p2;
+EcsPool<Component229> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component134>().Inc<Component184>().End();
+   _p1 = _world.GetPool<Component134>();
+   _p2 = _world.GetPool<Component184>();
+   _pl = _world.GetPool<Component229>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System652 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component57> _p1;
+EcsPool<Component435> _p2;
+EcsPool<Component205> _p3;
+EcsPool<Component453> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component57>().Inc<Component435>().Inc<Component205>().End();
+   _p1 = _world.GetPool<Component57>();
+   _p2 = _world.GetPool<Component435>();
+   _p3 = _world.GetPool<Component205>();
+   _pl = _world.GetPool<Component453>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System653 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component185> _p1;
+EcsPool<Component330> _p2;
+EcsPool<Component417> _p3;
+EcsPool<Component480> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component185>().Inc<Component330>().Inc<Component417>().End();
+   _p1 = _world.GetPool<Component185>();
+   _p2 = _world.GetPool<Component330>();
+   _p3 = _world.GetPool<Component417>();
+   _pl = _world.GetPool<Component480>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System654 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component237> _p1;
+EcsPool<Component331> _p2;
+EcsPool<Component301> _p3;
+EcsPool<Component59> _p4;
+EcsPool<Component402> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component237>().Inc<Component331>().Inc<Component301>().Inc<Component59>().End();
+   _p1 = _world.GetPool<Component237>();
+   _p2 = _world.GetPool<Component331>();
+   _p3 = _world.GetPool<Component301>();
+   _p4 = _world.GetPool<Component59>();
+   _pl = _world.GetPool<Component402>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System655 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component446> _p1;
+EcsPool<Component442> _p2;
+EcsPool<Component71> _p3;
+EcsPool<Component42> _p4;
+EcsPool<Component278> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component446>().Inc<Component442>().Inc<Component71>().Inc<Component42>().End();
+   _p1 = _world.GetPool<Component446>();
+   _p2 = _world.GetPool<Component442>();
+   _p3 = _world.GetPool<Component71>();
+   _p4 = _world.GetPool<Component42>();
+   _pl = _world.GetPool<Component278>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System656 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component412> _p1;
+EcsPool<Component280> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component412>().End();
+   _p1 = _world.GetPool<Component412>();
+   _pl = _world.GetPool<Component280>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System657 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component344> _p1;
+EcsPool<Component368> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component344>().End();
+   _p1 = _world.GetPool<Component344>();
+   _pl = _world.GetPool<Component368>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System658 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component335> _p1;
+EcsPool<Component229> _p2;
+EcsPool<Component325> _p3;
+EcsPool<Component318> _p4;
+EcsPool<Component467> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component335>().Inc<Component229>().Inc<Component325>().Inc<Component318>().End();
+   _p1 = _world.GetPool<Component335>();
+   _p2 = _world.GetPool<Component229>();
+   _p3 = _world.GetPool<Component325>();
+   _p4 = _world.GetPool<Component318>();
+   _pl = _world.GetPool<Component467>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System659 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component473> _p1;
+EcsPool<Component448> _p2;
+EcsPool<Component309> _p3;
+EcsPool<Component73> _p4;
+EcsPool<Component499> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component473>().Inc<Component448>().Inc<Component309>().Inc<Component73>().End();
+   _p1 = _world.GetPool<Component473>();
+   _p2 = _world.GetPool<Component448>();
+   _p3 = _world.GetPool<Component309>();
+   _p4 = _world.GetPool<Component73>();
+   _pl = _world.GetPool<Component499>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System660 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component378> _p1;
+EcsPool<Component364> _p2;
+EcsPool<Component93> _p3;
+EcsPool<Component190> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component378>().Inc<Component364>().Inc<Component93>().End();
+   _p1 = _world.GetPool<Component378>();
+   _p2 = _world.GetPool<Component364>();
+   _p3 = _world.GetPool<Component93>();
+   _pl = _world.GetPool<Component190>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System661 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component388> _p1;
+EcsPool<Component271> _p2;
+EcsPool<Component40> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component388>().Inc<Component271>().End();
+   _p1 = _world.GetPool<Component388>();
+   _p2 = _world.GetPool<Component271>();
+   _pl = _world.GetPool<Component40>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System662 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component77> _p1;
+EcsPool<Component292> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component77>().End();
+   _p1 = _world.GetPool<Component77>();
+   _pl = _world.GetPool<Component292>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System663 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component112> _p1;
+EcsPool<Component186> _p2;
+EcsPool<Component31> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component112>().Inc<Component186>().End();
+   _p1 = _world.GetPool<Component112>();
+   _p2 = _world.GetPool<Component186>();
+   _pl = _world.GetPool<Component31>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System664 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component22> _p1;
+EcsPool<Component424> _p2;
+EcsPool<Component451> _p3;
+EcsPool<Component438> _p4;
+EcsPool<Component317> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component22>().Inc<Component424>().Inc<Component451>().Inc<Component438>().End();
+   _p1 = _world.GetPool<Component22>();
+   _p2 = _world.GetPool<Component424>();
+   _p3 = _world.GetPool<Component451>();
+   _p4 = _world.GetPool<Component438>();
+   _pl = _world.GetPool<Component317>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System665 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component81> _p1;
+EcsPool<Component250> _p2;
+EcsPool<Component69> _p3;
+EcsPool<Component418> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component81>().Inc<Component250>().Inc<Component69>().End();
+   _p1 = _world.GetPool<Component81>();
+   _p2 = _world.GetPool<Component250>();
+   _p3 = _world.GetPool<Component69>();
+   _pl = _world.GetPool<Component418>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System666 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component415> _p1;
+EcsPool<Component85> _p2;
+EcsPool<Component453> _p3;
+EcsPool<Component99> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component415>().Inc<Component85>().Inc<Component453>().End();
+   _p1 = _world.GetPool<Component415>();
+   _p2 = _world.GetPool<Component85>();
+   _p3 = _world.GetPool<Component453>();
+   _pl = _world.GetPool<Component99>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System667 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component442> _p1;
+EcsPool<Component321> _p2;
+EcsPool<Component163> _p3;
+EcsPool<Component414> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component442>().Inc<Component321>().Inc<Component163>().End();
+   _p1 = _world.GetPool<Component442>();
+   _p2 = _world.GetPool<Component321>();
+   _p3 = _world.GetPool<Component163>();
+   _pl = _world.GetPool<Component414>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System668 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component222> _p1;
+EcsPool<Component84> _p2;
+EcsPool<Component112> _p3;
+EcsPool<Component73> _p4;
+EcsPool<Component327> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component222>().Inc<Component84>().Inc<Component112>().Inc<Component73>().End();
+   _p1 = _world.GetPool<Component222>();
+   _p2 = _world.GetPool<Component84>();
+   _p3 = _world.GetPool<Component112>();
+   _p4 = _world.GetPool<Component73>();
+   _pl = _world.GetPool<Component327>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System669 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component258> _p1;
+EcsPool<Component437> _p2;
+EcsPool<Component133> _p3;
+EcsPool<Component205> _p4;
+EcsPool<Component280> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component258>().Inc<Component437>().Inc<Component133>().Inc<Component205>().End();
+   _p1 = _world.GetPool<Component258>();
+   _p2 = _world.GetPool<Component437>();
+   _p3 = _world.GetPool<Component133>();
+   _p4 = _world.GetPool<Component205>();
+   _pl = _world.GetPool<Component280>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System670 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component495> _p1;
+EcsPool<Component425> _p2;
+EcsPool<Component384> _p3;
+EcsPool<Component121> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component495>().Inc<Component425>().Inc<Component384>().End();
+   _p1 = _world.GetPool<Component495>();
+   _p2 = _world.GetPool<Component425>();
+   _p3 = _world.GetPool<Component384>();
+   _pl = _world.GetPool<Component121>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System671 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component433> _p1;
+EcsPool<Component47> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component433>().End();
+   _p1 = _world.GetPool<Component433>();
+   _pl = _world.GetPool<Component47>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System672 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component342> _p1;
+EcsPool<Component121> _p2;
+EcsPool<Component277> _p3;
+EcsPool<Component23> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component342>().Inc<Component121>().Inc<Component277>().End();
+   _p1 = _world.GetPool<Component342>();
+   _p2 = _world.GetPool<Component121>();
+   _p3 = _world.GetPool<Component277>();
+   _pl = _world.GetPool<Component23>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System673 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component455> _p1;
+EcsPool<Component72> _p2;
+EcsPool<Component477> _p3;
+EcsPool<Component419> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component455>().Inc<Component72>().Inc<Component477>().End();
+   _p1 = _world.GetPool<Component455>();
+   _p2 = _world.GetPool<Component72>();
+   _p3 = _world.GetPool<Component477>();
+   _pl = _world.GetPool<Component419>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System674 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component290> _p1;
+EcsPool<Component22> _p2;
+EcsPool<Component117> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component290>().Inc<Component22>().End();
+   _p1 = _world.GetPool<Component290>();
+   _p2 = _world.GetPool<Component22>();
+   _pl = _world.GetPool<Component117>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System675 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component300> _p1;
+EcsPool<Component340> _p2;
+EcsPool<Component339> _p3;
+EcsPool<Component365> _p4;
+EcsPool<Component489> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component300>().Inc<Component340>().Inc<Component339>().Inc<Component365>().End();
+   _p1 = _world.GetPool<Component300>();
+   _p2 = _world.GetPool<Component340>();
+   _p3 = _world.GetPool<Component339>();
+   _p4 = _world.GetPool<Component365>();
+   _pl = _world.GetPool<Component489>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System676 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component323> _p1;
+EcsPool<Component312> _p2;
+EcsPool<Component435> _p3;
+EcsPool<Component213> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component323>().Inc<Component312>().Inc<Component435>().End();
+   _p1 = _world.GetPool<Component323>();
+   _p2 = _world.GetPool<Component312>();
+   _p3 = _world.GetPool<Component435>();
+   _pl = _world.GetPool<Component213>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System677 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component61> _p1;
+EcsPool<Component89> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component61>().End();
+   _p1 = _world.GetPool<Component61>();
+   _pl = _world.GetPool<Component89>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System678 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component215> _p1;
+EcsPool<Component250> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component215>().End();
+   _p1 = _world.GetPool<Component215>();
+   _pl = _world.GetPool<Component250>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System679 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component388> _p1;
+EcsPool<Component116> _p2;
+EcsPool<Component131> _p3;
+EcsPool<Component143> _p4;
+EcsPool<Component100> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component388>().Inc<Component116>().Inc<Component131>().Inc<Component143>().End();
+   _p1 = _world.GetPool<Component388>();
+   _p2 = _world.GetPool<Component116>();
+   _p3 = _world.GetPool<Component131>();
+   _p4 = _world.GetPool<Component143>();
+   _pl = _world.GetPool<Component100>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System680 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component89> _p1;
+EcsPool<Component217> _p2;
+EcsPool<Component372> _p3;
+EcsPool<Component399> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component89>().Inc<Component217>().Inc<Component372>().End();
+   _p1 = _world.GetPool<Component89>();
+   _p2 = _world.GetPool<Component217>();
+   _p3 = _world.GetPool<Component372>();
+   _pl = _world.GetPool<Component399>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System681 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component17> _p1;
+EcsPool<Component384> _p2;
+EcsPool<Component414> _p3;
+EcsPool<Component257> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component17>().Inc<Component384>().Inc<Component414>().End();
+   _p1 = _world.GetPool<Component17>();
+   _p2 = _world.GetPool<Component384>();
+   _p3 = _world.GetPool<Component414>();
+   _pl = _world.GetPool<Component257>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System682 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component3> _p1;
+EcsPool<Component124> _p2;
+EcsPool<Component43> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component3>().Inc<Component124>().End();
+   _p1 = _world.GetPool<Component3>();
+   _p2 = _world.GetPool<Component124>();
+   _pl = _world.GetPool<Component43>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System683 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component195> _p1;
+EcsPool<Component444> _p2;
+EcsPool<Component188> _p3;
+EcsPool<Component459> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component195>().Inc<Component444>().Inc<Component188>().End();
+   _p1 = _world.GetPool<Component195>();
+   _p2 = _world.GetPool<Component444>();
+   _p3 = _world.GetPool<Component188>();
+   _pl = _world.GetPool<Component459>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System684 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component185> _p1;
+EcsPool<Component64> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component185>().End();
+   _p1 = _world.GetPool<Component185>();
+   _pl = _world.GetPool<Component64>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System685 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component293> _p1;
+EcsPool<Component366> _p2;
+EcsPool<Component44> _p3;
+EcsPool<Component262> _p4;
+EcsPool<Component169> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component293>().Inc<Component366>().Inc<Component44>().Inc<Component262>().End();
+   _p1 = _world.GetPool<Component293>();
+   _p2 = _world.GetPool<Component366>();
+   _p3 = _world.GetPool<Component44>();
+   _p4 = _world.GetPool<Component262>();
+   _pl = _world.GetPool<Component169>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System686 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component402> _p1;
+EcsPool<Component406> _p2;
+EcsPool<Component486> _p3;
+EcsPool<Component348> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component402>().Inc<Component406>().Inc<Component486>().End();
+   _p1 = _world.GetPool<Component402>();
+   _p2 = _world.GetPool<Component406>();
+   _p3 = _world.GetPool<Component486>();
+   _pl = _world.GetPool<Component348>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System687 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component34> _p1;
+EcsPool<Component250> _p2;
+EcsPool<Component147> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component34>().Inc<Component250>().End();
+   _p1 = _world.GetPool<Component34>();
+   _p2 = _world.GetPool<Component250>();
+   _pl = _world.GetPool<Component147>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System688 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component459> _p1;
+EcsPool<Component41> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component459>().End();
+   _p1 = _world.GetPool<Component459>();
+   _pl = _world.GetPool<Component41>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System689 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component51> _p1;
+EcsPool<Component298> _p2;
+EcsPool<Component326> _p3;
+EcsPool<Component325> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component51>().Inc<Component298>().Inc<Component326>().End();
+   _p1 = _world.GetPool<Component51>();
+   _p2 = _world.GetPool<Component298>();
+   _p3 = _world.GetPool<Component326>();
+   _pl = _world.GetPool<Component325>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System690 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component403> _p1;
+EcsPool<Component171> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component403>().End();
+   _p1 = _world.GetPool<Component403>();
+   _pl = _world.GetPool<Component171>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System691 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component185> _p1;
+EcsPool<Component443> _p2;
+EcsPool<Component428> _p3;
+EcsPool<Component171> _p4;
+EcsPool<Component113> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component185>().Inc<Component443>().Inc<Component428>().Inc<Component171>().End();
+   _p1 = _world.GetPool<Component185>();
+   _p2 = _world.GetPool<Component443>();
+   _p3 = _world.GetPool<Component428>();
+   _p4 = _world.GetPool<Component171>();
+   _pl = _world.GetPool<Component113>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System692 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component242> _p1;
+EcsPool<Component150> _p2;
+EcsPool<Component424> _p3;
+EcsPool<Component6> _p4;
+EcsPool<Component354> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component242>().Inc<Component150>().Inc<Component424>().Inc<Component6>().End();
+   _p1 = _world.GetPool<Component242>();
+   _p2 = _world.GetPool<Component150>();
+   _p3 = _world.GetPool<Component424>();
+   _p4 = _world.GetPool<Component6>();
+   _pl = _world.GetPool<Component354>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System693 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component348> _p1;
+EcsPool<Component15> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component348>().End();
+   _p1 = _world.GetPool<Component348>();
+   _pl = _world.GetPool<Component15>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System694 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component351> _p1;
+EcsPool<Component250> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component351>().End();
+   _p1 = _world.GetPool<Component351>();
+   _pl = _world.GetPool<Component250>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System695 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component425> _p1;
+EcsPool<Component9> _p2;
+EcsPool<Component32> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component425>().Inc<Component9>().End();
+   _p1 = _world.GetPool<Component425>();
+   _p2 = _world.GetPool<Component9>();
+   _pl = _world.GetPool<Component32>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System696 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component327> _p1;
+EcsPool<Component228> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component327>().End();
+   _p1 = _world.GetPool<Component327>();
+   _pl = _world.GetPool<Component228>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System697 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component235> _p1;
+EcsPool<Component134> _p2;
+EcsPool<Component266> _p3;
+EcsPool<Component112> _p4;
+EcsPool<Component467> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component235>().Inc<Component134>().Inc<Component266>().Inc<Component112>().End();
+   _p1 = _world.GetPool<Component235>();
+   _p2 = _world.GetPool<Component134>();
+   _p3 = _world.GetPool<Component266>();
+   _p4 = _world.GetPool<Component112>();
+   _pl = _world.GetPool<Component467>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System698 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component141> _p1;
+EcsPool<Component90> _p2;
+EcsPool<Component202> _p3;
+EcsPool<Component183> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component141>().Inc<Component90>().Inc<Component202>().End();
+   _p1 = _world.GetPool<Component141>();
+   _p2 = _world.GetPool<Component90>();
+   _p3 = _world.GetPool<Component202>();
+   _pl = _world.GetPool<Component183>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+class System699 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component478> _p1;
+EcsPool<Component314> _p2;
+EcsPool<Component235> _p3;
+EcsPool<Component285> _p4;
+EcsPool<Component291> _pl;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component478>().Inc<Component314>().Inc<Component235>().Inc<Component285>().End();
+   _p1 = _world.GetPool<Component478>();
+   _p2 = _world.GetPool<Component314>();
+   _p3 = _world.GetPool<Component235>();
+   _p4 = _world.GetPool<Component285>();
+   _pl = _world.GetPool<Component291>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+ }
+ public void Run (EcsSystems systems) {
+  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
 }

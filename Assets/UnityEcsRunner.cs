@@ -9,6 +9,7 @@ namespace EcsGenerator
         void Init();
         void GenStartEntities();
         void Run();
+        void GenInfo();
     }
     
     public class UnityEcsRunner : MonoBehaviour
@@ -62,6 +63,11 @@ namespace EcsGenerator
         {
             var dt = Time.realtimeSinceStartup-_t;
             Debug.Log(desc + (dt*1000)+"ms");
+        }
+        
+        public void GetInfo()
+        {
+            _runner.GenInfo();
         }
     }
 }

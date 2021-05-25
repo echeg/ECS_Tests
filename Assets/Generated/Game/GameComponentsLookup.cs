@@ -508,8 +508,9 @@ public static class GameComponentsLookup {
     public const int EcsGeneratorEntitasComponent97 = 497;
     public const int EcsGeneratorEntitasComponent98 = 498;
     public const int EcsGeneratorEntitasComponent99 = 499;
+    public const int EcsGeneratorEntitasTicksCooldown = 500;
 
-    public const int TotalComponents = 500;
+    public const int TotalComponents = 501;
 
     public static readonly string[] componentNames = {
         "EcsGeneratorEntitasComponent0",
@@ -1011,7 +1012,8 @@ public static class GameComponentsLookup {
         "EcsGeneratorEntitasComponent96",
         "EcsGeneratorEntitasComponent97",
         "EcsGeneratorEntitasComponent98",
-        "EcsGeneratorEntitasComponent99"
+        "EcsGeneratorEntitasComponent99",
+        "EcsGeneratorEntitasTicksCooldown"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -1514,6 +1516,7 @@ public static class GameComponentsLookup {
         typeof(EcsGenerator.Entitas.Component96),
         typeof(EcsGenerator.Entitas.Component97),
         typeof(EcsGenerator.Entitas.Component98),
-        typeof(EcsGenerator.Entitas.Component99)
+        typeof(EcsGenerator.Entitas.Component99),
+        typeof(EcsGenerator.Entitas.TicksCooldownComponent)
     };
 }
