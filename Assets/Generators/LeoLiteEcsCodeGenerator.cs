@@ -227,7 +227,8 @@ namespace EcsGenerator.LeoEcsLite
                 output += "  var entities = _filter.GetRawEntities();\n";
             }
 
-            output += "  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){\n";
+            //output += "  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){\n";
+            output += "  foreach (int entity in _filter) {\n";
 
             output += s.SystemType switch
             {
@@ -245,7 +246,8 @@ namespace EcsGenerator.LeoEcsLite
         
         private static string CalculateBody(DslSystem s)
         {
-            var output = "   var entity = entities[i];\n";
+            //var output = "   var entity = entities[i];\n";
+            var output = "";
             var firstComponentTag = s.FiltersComponents[0].Fields.Count == 0;
             if (!firstComponentTag)
             {
@@ -276,7 +278,7 @@ namespace EcsGenerator.LeoEcsLite
         {
             var output = "";
             
-            output += "   var entity = entities[i];\n";
+            //output += "   var entity = entities[i];\n";
             output += "   if (_pl.Has(entity))\n";
             output += "   {\n";
             output += $"    _pl.Del(entity);\n";
@@ -326,8 +328,7 @@ namespace EcsGenerator.LeoEcsLite
         public void Run(EcsSystems systems)
         {
             var entities = _filter.GetRawEntities();
-            for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-                var entity = entities[i];
+            foreach (var entity in _filter) {
                 ref var cooldownComponent = ref _p1.Get(entity);
                 cooldownComponent.Ticks -= 1;
                 if (cooldownComponent.Ticks <= 0)

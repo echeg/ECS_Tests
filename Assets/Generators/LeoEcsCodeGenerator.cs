@@ -105,7 +105,8 @@ namespace EcsGenerator.LeoEcs
 
 
             output += " public void Run () {\n";
-            output += "  for (var i = 0; i<_filter.GetEntitiesCount(); i++) {\n";
+            //output += "  for (var i = 0; i<_filter.GetEntitiesCount(); i++) {\n";
+            output += "  foreach (var i in _filter) {\n";
 
             output += s.SystemType switch
             {
@@ -264,13 +265,12 @@ namespace EcsGenerator.LeoEcs
         EcsWorld _world = null;
         EcsFilter<TicksCooldownComponent> _filter = null;
         public void Run () {
-            for (var i = 0; i<_filter.GetEntitiesCount(); i++) {
+            foreach (var i in _filter) {
                 ref var cooldownComponent = ref _filter.Get1 (i);
                 cooldownComponent.Ticks -= 1;
                 if (cooldownComponent.Ticks <= 0)
                 {
-                    ref var entity = ref _filter.GetEntity(i);
-                    entity.Destroy();
+                    ref var entity = ref _filter.GetEntity (i);
                 }
             }
         }

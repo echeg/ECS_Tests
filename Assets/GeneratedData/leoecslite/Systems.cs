@@ -19,8 +19,7 @@ EcsPool<Component91> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -36,8 +35,7 @@ EcsPool<Component398> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -55,8 +53,7 @@ EcsPool<Component63> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -78,8 +75,7 @@ EcsPool<Component292> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -98,8 +94,7 @@ EcsPool<Component405> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -121,8 +116,7 @@ EcsPool<Component320> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -143,8 +137,7 @@ EcsPool<Component442> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -166,8 +159,7 @@ EcsPool<Component236> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -188,8 +180,7 @@ EcsPool<Component306> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -212,8 +203,7 @@ EcsPool<Component361> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -234,8 +224,7 @@ EcsPool<Component48> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -256,8 +245,7 @@ EcsPool<Component337> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -280,8 +268,7 @@ EcsPool<Component151> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -304,8 +291,7 @@ EcsPool<Component244> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -328,8 +314,7 @@ EcsPool<Component364> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -350,8 +335,7 @@ EcsPool<Component450> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -370,8 +354,7 @@ EcsPool<Component261> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -389,8 +372,7 @@ EcsPool<Component323> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -414,8 +396,7 @@ EcsPool<Component135> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -436,8 +417,7 @@ EcsPool<Component82> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -458,8 +438,7 @@ EcsPool<Component151> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -478,8 +457,7 @@ EcsPool<Component271> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -498,8 +476,7 @@ EcsPool<Component40> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -521,8 +498,7 @@ EcsPool<Component120> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -545,8 +521,7 @@ EcsPool<Component405> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -567,8 +542,7 @@ EcsPool<Component483> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -591,8 +565,7 @@ EcsPool<Component121> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -612,8 +585,7 @@ EcsPool<Component226> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -634,8 +606,7 @@ EcsPool<Component16> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -660,8 +631,7 @@ EcsPool<Component134> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -683,8 +653,7 @@ EcsPool<Component45> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -709,8 +678,7 @@ EcsPool<Component262> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -730,8 +698,7 @@ EcsPool<Component18> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -749,8 +716,7 @@ EcsPool<Component253> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -772,8 +738,7 @@ EcsPool<Component36> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -791,8 +756,7 @@ EcsPool<Component127> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -813,8 +777,7 @@ EcsPool<Component2> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -837,8 +800,7 @@ EcsPool<Component303> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -859,8 +821,7 @@ EcsPool<Component146> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -880,8 +841,7 @@ EcsPool<Component72> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -906,8 +866,7 @@ EcsPool<Component303> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -930,8 +889,7 @@ EcsPool<Component441> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -950,8 +908,7 @@ EcsPool<Component399> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -971,8 +928,7 @@ EcsPool<Component405> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -993,8 +949,7 @@ EcsPool<Component315> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1017,8 +972,7 @@ EcsPool<Component342> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1039,8 +993,7 @@ EcsPool<Component391> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1060,8 +1013,7 @@ EcsPool<Component6> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1082,8 +1034,7 @@ EcsPool<Component56> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1106,8 +1057,7 @@ EcsPool<Component385> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1132,8 +1082,7 @@ EcsPool<Component486> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1156,8 +1105,7 @@ EcsPool<Component492> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1182,8 +1130,7 @@ EcsPool<Component13> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1201,8 +1148,7 @@ EcsPool<Component322> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1224,8 +1170,7 @@ EcsPool<Component452> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1244,8 +1189,7 @@ EcsPool<Component109> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -1267,8 +1211,7 @@ EcsPool<Component258> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1291,8 +1234,7 @@ EcsPool<Component118> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -1309,8 +1251,7 @@ EcsPool<Component225> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1328,8 +1269,7 @@ EcsPool<Component313> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1347,8 +1287,7 @@ EcsPool<Component435> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1372,8 +1311,7 @@ EcsPool<Component253> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -1392,8 +1330,7 @@ EcsPool<Component39> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1414,8 +1351,7 @@ EcsPool<Component493> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1434,8 +1370,7 @@ EcsPool<Component279> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1455,8 +1390,7 @@ EcsPool<Component274> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1477,8 +1411,7 @@ EcsPool<Component363> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -1500,8 +1433,7 @@ EcsPool<Component103> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1526,8 +1458,7 @@ EcsPool<Component307> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -1547,8 +1478,7 @@ EcsPool<Component47> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -1571,8 +1501,7 @@ EcsPool<Component42> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1595,8 +1524,7 @@ EcsPool<Component286> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -1616,8 +1544,7 @@ EcsPool<Component170> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1636,8 +1563,7 @@ EcsPool<Component228> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1657,8 +1583,7 @@ EcsPool<Component495> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -1677,8 +1602,7 @@ EcsPool<Component160> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1703,8 +1627,7 @@ EcsPool<Component490> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -1721,8 +1644,7 @@ EcsPool<Component116> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -1738,8 +1660,7 @@ EcsPool<Component232> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1763,8 +1684,7 @@ EcsPool<Component393> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1787,8 +1707,7 @@ EcsPool<Component186> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -1811,8 +1730,7 @@ EcsPool<Component439> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1832,8 +1750,7 @@ EcsPool<Component248> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1853,8 +1770,7 @@ EcsPool<Component48> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1873,8 +1789,7 @@ EcsPool<Component311> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1894,8 +1809,7 @@ EcsPool<Component387> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1920,8 +1834,7 @@ EcsPool<Component51> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -1943,8 +1856,7 @@ EcsPool<Component54> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -1966,8 +1878,7 @@ EcsPool<Component166> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -1990,8 +1901,7 @@ EcsPool<Component308> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2014,8 +1924,7 @@ EcsPool<Component236> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2036,8 +1945,7 @@ EcsPool<Component203> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2058,8 +1966,7 @@ EcsPool<Component307> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -2081,8 +1988,7 @@ EcsPool<Component44> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -2100,8 +2006,7 @@ EcsPool<Component152> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2124,8 +2029,7 @@ EcsPool<Component83> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2143,8 +2047,7 @@ EcsPool<Component163> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -2162,8 +2065,7 @@ EcsPool<Component17> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2186,8 +2088,7 @@ EcsPool<Component435> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2206,8 +2107,7 @@ EcsPool<Component311> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2225,8 +2125,7 @@ EcsPool<Component332> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -2244,8 +2143,7 @@ EcsPool<Component206> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -2268,8 +2166,7 @@ EcsPool<Component31> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2288,8 +2185,7 @@ EcsPool<Component124> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2311,8 +2207,7 @@ EcsPool<Component427> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2336,8 +2231,7 @@ EcsPool<Component376> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2358,8 +2252,7 @@ EcsPool<Component472> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2380,8 +2273,7 @@ EcsPool<Component240> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -2402,8 +2294,7 @@ EcsPool<Component293> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2426,8 +2317,7 @@ EcsPool<Component88> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2450,8 +2340,7 @@ EcsPool<Component243> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2471,8 +2360,7 @@ EcsPool<Component362> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2495,8 +2383,7 @@ EcsPool<Component38> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2519,8 +2406,7 @@ EcsPool<Component437> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2541,8 +2427,7 @@ EcsPool<Component212> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2560,8 +2445,7 @@ EcsPool<Component435> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2583,8 +2467,7 @@ EcsPool<Component265> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -2601,8 +2484,7 @@ EcsPool<Component233> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2622,8 +2504,7 @@ EcsPool<Component220> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2643,8 +2524,7 @@ EcsPool<Component265> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2669,8 +2549,7 @@ EcsPool<Component214> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2695,8 +2574,7 @@ EcsPool<Component348> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2716,8 +2594,7 @@ EcsPool<Component190> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2740,8 +2617,7 @@ EcsPool<Component399> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2763,8 +2639,7 @@ EcsPool<Component312> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2788,8 +2663,7 @@ EcsPool<Component427> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2807,8 +2681,7 @@ EcsPool<Component445> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2826,8 +2699,7 @@ EcsPool<Component212> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -2843,8 +2715,7 @@ EcsPool<Component315> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -2866,8 +2737,7 @@ EcsPool<Component346> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2890,8 +2760,7 @@ EcsPool<Component169> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -2909,8 +2778,7 @@ EcsPool<Component480> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -2934,8 +2802,7 @@ EcsPool<Component121> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -2956,8 +2823,7 @@ EcsPool<Component249> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -2982,8 +2848,7 @@ EcsPool<Component408> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3007,8 +2872,7 @@ EcsPool<Component250> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -3028,8 +2892,7 @@ EcsPool<Component51> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -3052,8 +2915,7 @@ EcsPool<Component52> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3076,8 +2938,7 @@ EcsPool<Component67> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3096,8 +2957,7 @@ EcsPool<Component280> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3119,8 +2979,7 @@ EcsPool<Component291> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -3141,8 +3000,7 @@ EcsPool<Component229> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3161,8 +3019,7 @@ EcsPool<Component382> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3184,8 +3041,7 @@ EcsPool<Component438> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3208,8 +3064,7 @@ EcsPool<Component71> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3234,8 +3089,7 @@ EcsPool<Component250> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3256,8 +3110,7 @@ EcsPool<Component366> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3280,8 +3133,7 @@ EcsPool<Component92> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -3298,8 +3150,7 @@ EcsPool<Component385> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -3315,8 +3166,7 @@ EcsPool<Component230> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3334,8 +3184,7 @@ EcsPool<Component186> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3357,8 +3206,7 @@ EcsPool<Component337> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3377,8 +3225,7 @@ EcsPool<Component290> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3398,8 +3245,7 @@ EcsPool<Component199> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3424,8 +3270,7 @@ EcsPool<Component176> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3449,8 +3294,7 @@ EcsPool<Component233> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3468,8 +3312,7 @@ EcsPool<Component192> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3493,8 +3336,7 @@ EcsPool<Component165> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3518,8 +3360,7 @@ EcsPool<Component117> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -3540,8 +3381,7 @@ EcsPool<Component418> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3564,8 +3404,7 @@ EcsPool<Component224> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3588,8 +3427,7 @@ EcsPool<Component150> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3613,8 +3451,7 @@ EcsPool<Component415> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3633,8 +3470,7 @@ EcsPool<Component312> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3652,8 +3488,7 @@ EcsPool<Component187> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3675,8 +3510,7 @@ EcsPool<Component119> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -3697,8 +3531,7 @@ EcsPool<Component348> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3721,8 +3554,7 @@ EcsPool<Component425> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3745,8 +3577,7 @@ EcsPool<Component259> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3769,8 +3600,7 @@ EcsPool<Component120> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -3791,8 +3621,7 @@ EcsPool<Component128> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -3813,8 +3642,7 @@ EcsPool<Component257> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -3833,8 +3661,7 @@ EcsPool<Component283> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3853,8 +3680,7 @@ EcsPool<Component171> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3878,8 +3704,7 @@ EcsPool<Component298> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -3900,8 +3725,7 @@ EcsPool<Component471> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -3922,8 +3746,7 @@ EcsPool<Component168> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3942,8 +3765,7 @@ EcsPool<Component490> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -3963,8 +3785,7 @@ EcsPool<Component470> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -3985,8 +3806,7 @@ EcsPool<Component368> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4011,8 +3831,7 @@ EcsPool<Component316> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4033,8 +3852,7 @@ EcsPool<Component178> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -4055,8 +3873,7 @@ EcsPool<Component253> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4078,8 +3895,7 @@ EcsPool<Component193> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4104,8 +3920,7 @@ EcsPool<Component442> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -4128,8 +3943,7 @@ EcsPool<Component330> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4148,8 +3962,7 @@ EcsPool<Component267> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -4171,8 +3984,7 @@ EcsPool<Component189> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4191,8 +4003,7 @@ EcsPool<Component62> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4214,8 +4025,7 @@ EcsPool<Component167> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4234,8 +4044,7 @@ EcsPool<Component393> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4255,8 +4064,7 @@ EcsPool<Component276> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -4277,8 +4085,7 @@ EcsPool<Component297> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4297,8 +4104,7 @@ EcsPool<Component42> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4318,8 +4124,7 @@ EcsPool<Component242> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4337,8 +4142,7 @@ EcsPool<Component426> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4360,8 +4164,7 @@ EcsPool<Component264> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4382,8 +4185,7 @@ EcsPool<Component245> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4405,8 +4207,7 @@ EcsPool<Component63> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -4427,8 +4228,7 @@ EcsPool<Component243> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4453,8 +4253,7 @@ EcsPool<Component244> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -4475,8 +4274,7 @@ EcsPool<Component92> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -4493,8 +4291,7 @@ EcsPool<Component216> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4516,8 +4313,7 @@ EcsPool<Component477> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -4536,8 +4332,7 @@ EcsPool<Component134> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -4554,8 +4349,7 @@ EcsPool<Component385> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -4571,8 +4365,7 @@ EcsPool<Component205> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -4590,8 +4383,7 @@ EcsPool<Component345> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4616,8 +4408,7 @@ EcsPool<Component408> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4635,8 +4426,7 @@ EcsPool<Component109> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -4658,8 +4448,7 @@ EcsPool<Component360> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4678,8 +4467,7 @@ EcsPool<Component181> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4699,8 +4487,7 @@ EcsPool<Component28> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4721,8 +4508,7 @@ EcsPool<Component431> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -4743,8 +4529,7 @@ EcsPool<Component221> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4768,8 +4553,7 @@ EcsPool<Component219> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -4788,8 +4572,7 @@ EcsPool<Component285> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4813,8 +4596,7 @@ EcsPool<Component327> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4833,8 +4615,7 @@ EcsPool<Component184> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -4852,8 +4633,7 @@ EcsPool<Component107> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -4873,8 +4653,7 @@ EcsPool<Component109> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -4895,8 +4674,7 @@ EcsPool<Component431> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4919,8 +4697,7 @@ EcsPool<Component218> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -4943,8 +4720,7 @@ EcsPool<Component356> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -4969,8 +4745,7 @@ EcsPool<Component187> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -4986,8 +4761,7 @@ EcsPool<Component423> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5005,8 +4779,7 @@ EcsPool<Component377> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -5028,8 +4801,7 @@ EcsPool<Component441> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -5052,8 +4824,7 @@ EcsPool<Component264> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5074,8 +4845,7 @@ EcsPool<Component37> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5099,8 +4869,7 @@ EcsPool<Component150> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -5121,8 +4890,7 @@ EcsPool<Component121> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -5140,8 +4908,7 @@ EcsPool<Component470> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5162,8 +4929,7 @@ EcsPool<Component170> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -5180,8 +4946,7 @@ EcsPool<Component159> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -5203,8 +4968,7 @@ EcsPool<Component184> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5223,8 +4987,7 @@ EcsPool<Component155> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5242,8 +5005,7 @@ EcsPool<Component90> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -5259,8 +5021,7 @@ EcsPool<Component268> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -5278,8 +5039,7 @@ EcsPool<Component331> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -5295,8 +5055,7 @@ EcsPool<Component245> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -5316,8 +5075,7 @@ EcsPool<Component398> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5340,8 +5098,7 @@ EcsPool<Component13> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5363,8 +5120,7 @@ EcsPool<Component59> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5386,8 +5142,7 @@ EcsPool<Component279> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -5408,8 +5163,7 @@ EcsPool<Component98> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5427,8 +5181,7 @@ EcsPool<Component69> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5448,8 +5201,7 @@ EcsPool<Component484> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5472,8 +5224,7 @@ EcsPool<Component299> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -5494,8 +5245,7 @@ EcsPool<Component190> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -5514,8 +5264,7 @@ EcsPool<Component135> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -5531,8 +5280,7 @@ EcsPool<Component171> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5556,8 +5304,7 @@ EcsPool<Component103> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5582,8 +5329,7 @@ EcsPool<Component345> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5606,8 +5352,7 @@ EcsPool<Component313> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5625,8 +5370,7 @@ EcsPool<Component427> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5646,8 +5390,7 @@ EcsPool<Component391> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5671,8 +5414,7 @@ EcsPool<Component468> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5693,8 +5435,7 @@ EcsPool<Component241> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -5715,8 +5456,7 @@ EcsPool<Component401> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5737,8 +5477,7 @@ EcsPool<Component83> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5763,8 +5502,7 @@ EcsPool<Component465> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5787,8 +5525,7 @@ EcsPool<Component96> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5808,8 +5545,7 @@ EcsPool<Component311> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5834,8 +5570,7 @@ EcsPool<Component61> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -5852,8 +5587,7 @@ EcsPool<Component244> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5871,8 +5605,7 @@ EcsPool<Component256> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -5896,8 +5629,7 @@ EcsPool<Component108> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -5916,8 +5648,7 @@ EcsPool<Component226> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5938,8 +5669,7 @@ EcsPool<Component149> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -5960,8 +5690,7 @@ EcsPool<Component411> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -5982,8 +5711,7 @@ EcsPool<Component316> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6001,8 +5729,7 @@ EcsPool<Component211> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -6018,8 +5745,7 @@ EcsPool<Component311> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6039,8 +5765,7 @@ EcsPool<Component403> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6059,8 +5784,7 @@ EcsPool<Component35> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6078,8 +5802,7 @@ EcsPool<Component105> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6103,8 +5826,7 @@ EcsPool<Component326> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6129,8 +5851,7 @@ EcsPool<Component356> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6149,8 +5870,7 @@ EcsPool<Component224> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6170,8 +5890,7 @@ EcsPool<Component271> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6194,8 +5913,7 @@ EcsPool<Component293> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6214,8 +5932,7 @@ EcsPool<Component39> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6239,8 +5956,7 @@ EcsPool<Component231> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6261,8 +5977,7 @@ EcsPool<Component380> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6287,8 +6002,7 @@ EcsPool<Component121> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -6307,8 +6021,7 @@ EcsPool<Component263> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -6325,8 +6038,7 @@ EcsPool<Component481> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6350,8 +6062,7 @@ EcsPool<Component460> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6370,8 +6081,7 @@ EcsPool<Component487> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6393,8 +6103,7 @@ EcsPool<Component272> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6417,8 +6126,7 @@ EcsPool<Component442> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6436,8 +6144,7 @@ EcsPool<Component30> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6455,8 +6162,7 @@ EcsPool<Component263> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6478,8 +6184,7 @@ EcsPool<Component264> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -6502,8 +6207,7 @@ EcsPool<Component179> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6522,8 +6226,7 @@ EcsPool<Component176> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6543,8 +6246,7 @@ EcsPool<Component6> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6565,8 +6267,7 @@ EcsPool<Component474> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6585,8 +6286,7 @@ EcsPool<Component139> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6608,8 +6308,7 @@ EcsPool<Component367> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6630,8 +6329,7 @@ EcsPool<Component107> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6649,8 +6347,7 @@ EcsPool<Component247> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6674,8 +6371,7 @@ EcsPool<Component6> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -6691,8 +6387,7 @@ EcsPool<Component211> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -6714,8 +6409,7 @@ EcsPool<Component457> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6735,8 +6429,7 @@ EcsPool<Component307> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -6756,8 +6449,7 @@ EcsPool<Component263> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -6778,8 +6470,7 @@ EcsPool<Component467> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6804,8 +6495,7 @@ EcsPool<Component492> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -6824,8 +6514,7 @@ EcsPool<Component271> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6848,8 +6537,7 @@ EcsPool<Component34> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6868,8 +6556,7 @@ EcsPool<Component485> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6893,8 +6580,7 @@ EcsPool<Component304> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -6913,8 +6599,7 @@ EcsPool<Component153> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6932,8 +6617,7 @@ EcsPool<Component182> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6951,8 +6635,7 @@ EcsPool<Component494> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -6968,8 +6651,7 @@ EcsPool<Component43> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -6993,8 +6675,7 @@ EcsPool<Component92> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7018,8 +6699,7 @@ EcsPool<Component193> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -7040,8 +6720,7 @@ EcsPool<Component214> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7060,8 +6739,7 @@ EcsPool<Component264> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7081,8 +6759,7 @@ EcsPool<Component60> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7102,8 +6779,7 @@ EcsPool<Component253> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -7120,8 +6796,7 @@ EcsPool<Component253> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7139,8 +6814,7 @@ EcsPool<Component350> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7162,8 +6836,7 @@ EcsPool<Component207> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7184,8 +6857,7 @@ EcsPool<Component446> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7206,8 +6878,7 @@ EcsPool<Component29> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7231,8 +6902,7 @@ EcsPool<Component441> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7257,8 +6927,7 @@ EcsPool<Component76> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7279,8 +6948,7 @@ EcsPool<Component103> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7302,8 +6970,7 @@ EcsPool<Component434> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -7323,8 +6990,7 @@ EcsPool<Component153> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -7340,8 +7006,7 @@ EcsPool<Component188> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -7359,8 +7024,7 @@ EcsPool<Component320> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7381,8 +7045,7 @@ EcsPool<Component469> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7403,8 +7066,7 @@ EcsPool<Component474> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7425,8 +7087,7 @@ EcsPool<Component321> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7444,8 +7105,7 @@ EcsPool<Component254> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7469,8 +7129,7 @@ EcsPool<Component120> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7489,8 +7148,7 @@ EcsPool<Component460> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -7508,8 +7166,7 @@ EcsPool<Component211> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7529,8 +7186,7 @@ EcsPool<Component314> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7551,8 +7207,7 @@ EcsPool<Component477> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7575,8 +7230,7 @@ EcsPool<Component396> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7597,8 +7251,7 @@ EcsPool<Component120> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7621,8 +7274,7 @@ EcsPool<Component36> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -7642,8 +7294,7 @@ EcsPool<Component82> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7667,8 +7318,7 @@ EcsPool<Component24> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7691,8 +7341,7 @@ EcsPool<Component21> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7712,8 +7361,7 @@ EcsPool<Component108> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7732,8 +7380,7 @@ EcsPool<Component482> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7757,8 +7404,7 @@ EcsPool<Component496> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7783,8 +7429,7 @@ EcsPool<Component71> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7803,8 +7448,7 @@ EcsPool<Component170> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7824,8 +7468,7 @@ EcsPool<Component121> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7844,8 +7487,7 @@ EcsPool<Component155> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7863,8 +7505,7 @@ EcsPool<Component331> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -7882,8 +7523,7 @@ EcsPool<Component193> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7903,8 +7543,7 @@ EcsPool<Component106> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7925,8 +7564,7 @@ EcsPool<Component343> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -7946,8 +7584,7 @@ EcsPool<Component348> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -7966,8 +7603,7 @@ EcsPool<Component278> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -7987,8 +7623,7 @@ EcsPool<Component134> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -8007,8 +7642,7 @@ EcsPool<Component256> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8033,8 +7667,7 @@ EcsPool<Component399> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8057,8 +7690,7 @@ EcsPool<Component410> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8083,8 +7715,7 @@ EcsPool<Component481> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8106,8 +7737,7 @@ EcsPool<Component95> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8125,8 +7755,7 @@ EcsPool<Component291> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8148,8 +7777,7 @@ EcsPool<Component496> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -8172,8 +7800,7 @@ EcsPool<Component224> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8195,8 +7822,7 @@ EcsPool<Component361> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8215,8 +7841,7 @@ EcsPool<Component190> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8236,8 +7861,7 @@ EcsPool<Component76> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8261,8 +7885,7 @@ EcsPool<Component433> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8285,8 +7908,7 @@ EcsPool<Component71> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8305,8 +7927,7 @@ EcsPool<Component6> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8330,8 +7951,7 @@ EcsPool<Component382> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8355,8 +7975,7 @@ EcsPool<Component159> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8377,8 +7996,7 @@ EcsPool<Component204> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8396,8 +8014,7 @@ EcsPool<Component133> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -8413,8 +8030,7 @@ EcsPool<Component83> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8434,8 +8050,7 @@ EcsPool<Component290> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8454,8 +8069,7 @@ EcsPool<Component337> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8479,8 +8093,7 @@ EcsPool<Component483> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8503,8 +8116,7 @@ EcsPool<Component278> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8522,8 +8134,7 @@ EcsPool<Component130> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8547,8 +8158,7 @@ EcsPool<Component360> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8573,8 +8183,7 @@ EcsPool<Component64> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8599,8 +8208,7 @@ EcsPool<Component301> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8623,8 +8231,7 @@ EcsPool<Component6> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8647,8 +8254,7 @@ EcsPool<Component150> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8673,8 +8279,7 @@ EcsPool<Component455> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8697,8 +8302,7 @@ EcsPool<Component380> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8717,8 +8321,7 @@ EcsPool<Component64> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8740,8 +8343,7 @@ EcsPool<Component229> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8761,8 +8363,7 @@ EcsPool<Component65> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8783,8 +8384,7 @@ EcsPool<Component273> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8803,8 +8403,7 @@ EcsPool<Component492> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8824,8 +8423,7 @@ EcsPool<Component181> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8844,8 +8442,7 @@ EcsPool<Component47> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -8867,8 +8464,7 @@ EcsPool<Component425> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8887,8 +8483,7 @@ EcsPool<Component497> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -8906,8 +8501,7 @@ EcsPool<Component12> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -8927,8 +8521,7 @@ EcsPool<Component347> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8949,8 +8542,7 @@ EcsPool<Component106> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -8975,8 +8567,7 @@ EcsPool<Component22> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -8996,8 +8587,7 @@ EcsPool<Component2> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9019,8 +8609,7 @@ EcsPool<Component357> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9039,8 +8628,7 @@ EcsPool<Component413> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9062,8 +8650,7 @@ EcsPool<Component23> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9082,8 +8669,7 @@ EcsPool<Component340> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9103,8 +8689,7 @@ EcsPool<Component211> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -9122,8 +8707,7 @@ EcsPool<Component210> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -9146,8 +8730,7 @@ EcsPool<Component124> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9172,8 +8755,7 @@ EcsPool<Component176> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -9196,8 +8778,7 @@ EcsPool<Component445> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9221,8 +8802,7 @@ EcsPool<Component152> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9247,8 +8827,7 @@ EcsPool<Component353> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9269,8 +8848,7 @@ EcsPool<Component265> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9293,8 +8871,7 @@ EcsPool<Component385> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -9315,8 +8892,7 @@ EcsPool<Component418> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -9333,8 +8909,7 @@ EcsPool<Component499> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9356,8 +8931,7 @@ EcsPool<Component385> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -9375,8 +8949,7 @@ EcsPool<Component227> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9401,8 +8974,7 @@ EcsPool<Component283> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9425,8 +8997,7 @@ EcsPool<Component66> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9449,8 +9020,7 @@ EcsPool<Component370> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9475,8 +9045,7 @@ EcsPool<Component415> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9495,8 +9064,7 @@ EcsPool<Component382> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9514,8 +9082,7 @@ EcsPool<Component221> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9533,8 +9100,7 @@ EcsPool<Component460> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -9550,8 +9116,7 @@ EcsPool<Component340> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9569,8 +9134,7 @@ EcsPool<Component456> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9588,8 +9152,7 @@ EcsPool<Component181> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9607,8 +9170,7 @@ EcsPool<Component153> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9630,8 +9192,7 @@ EcsPool<Component207> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9651,8 +9212,7 @@ EcsPool<Component35> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9677,8 +9237,7 @@ EcsPool<Component258> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9702,8 +9261,7 @@ EcsPool<Component255> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9728,8 +9286,7 @@ EcsPool<Component214> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9750,8 +9307,7 @@ EcsPool<Component391> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -9769,8 +9325,7 @@ EcsPool<Component443> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9791,8 +9346,7 @@ EcsPool<Component35> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9817,8 +9371,7 @@ EcsPool<Component16> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9837,8 +9390,7 @@ EcsPool<Component289> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -9858,8 +9410,7 @@ EcsPool<Component84> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9878,8 +9429,7 @@ EcsPool<Component343> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -9901,8 +9451,7 @@ EcsPool<Component161> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -9919,8 +9468,7 @@ EcsPool<Component200> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -9940,8 +9488,7 @@ EcsPool<Component36> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9966,8 +9513,7 @@ EcsPool<Component315> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -9986,8 +9532,7 @@ EcsPool<Component2> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10005,8 +9550,7 @@ EcsPool<Component265> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10026,8 +9570,7 @@ EcsPool<Component350> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10052,8 +9595,7 @@ EcsPool<Component476> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10078,8 +9620,7 @@ EcsPool<Component124> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10098,8 +9639,7 @@ EcsPool<Component295> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10121,8 +9661,7 @@ EcsPool<Component282> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10145,8 +9684,7 @@ EcsPool<Component358> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10165,8 +9703,7 @@ EcsPool<Component276> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10190,8 +9727,7 @@ EcsPool<Component474> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10213,8 +9749,7 @@ EcsPool<Component319> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -10234,8 +9769,7 @@ EcsPool<Component321> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -10257,8 +9791,7 @@ EcsPool<Component235> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10277,8 +9810,7 @@ EcsPool<Component228> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10302,8 +9834,7 @@ EcsPool<Component377> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10323,8 +9854,7 @@ EcsPool<Component220> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10346,8 +9876,7 @@ EcsPool<Component351> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10369,8 +9898,7 @@ EcsPool<Component202> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10393,8 +9921,7 @@ EcsPool<Component383> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10417,8 +9944,7 @@ EcsPool<Component279> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -10437,8 +9963,7 @@ EcsPool<Component301> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10460,8 +9985,7 @@ EcsPool<Component485> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10479,8 +10003,7 @@ EcsPool<Component322> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10502,8 +10025,7 @@ EcsPool<Component100> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10527,8 +10049,7 @@ EcsPool<Component26> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10553,8 +10074,7 @@ EcsPool<Component339> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10574,8 +10094,7 @@ EcsPool<Component109> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10595,8 +10114,7 @@ EcsPool<Component244> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10617,8 +10135,7 @@ EcsPool<Component146> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10637,8 +10154,7 @@ EcsPool<Component192> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10660,8 +10176,7 @@ EcsPool<Component4> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10682,8 +10197,7 @@ EcsPool<Component197> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -10703,8 +10217,7 @@ EcsPool<Component341> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -10721,8 +10234,7 @@ EcsPool<Component101> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10746,8 +10258,7 @@ EcsPool<Component328> _p4;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10770,8 +10281,7 @@ EcsPool<Component380> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    var component2 = _p2.Get(entity);
   }
  }
@@ -10792,8 +10302,7 @@ EcsPool<Component361> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10813,8 +10322,7 @@ EcsPool<Component365> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10835,8 +10343,7 @@ EcsPool<Component182> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10855,8 +10362,7 @@ EcsPool<Component408> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10874,8 +10380,7 @@ EcsPool<Component301> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
   }
  }
 }
@@ -10895,8 +10400,7 @@ EcsPool<Component451> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10917,8 +10421,7 @@ EcsPool<Component370> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10941,8 +10444,7 @@ EcsPool<Component160> _p3;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -10961,8 +10463,7 @@ EcsPool<Component36> _p1;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    component1.Field0 += 1;
   }
@@ -10982,8 +10483,7 @@ EcsPool<Component325> _p2;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    ref var component1 = ref _p1.Get(entity);
    var component2 = _p2.Get(entity);
    component1.Field0 += component2.Field0;
@@ -11008,8 +10508,7 @@ EcsPool<Component239> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11041,8 +10540,7 @@ EcsPool<Component359> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11068,8 +10566,7 @@ EcsPool<Component15> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11097,8 +10594,7 @@ EcsPool<Component315> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11124,8 +10620,7 @@ EcsPool<Component369> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11153,8 +10648,7 @@ EcsPool<Component415> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11184,8 +10678,7 @@ EcsPool<Component376> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11215,8 +10708,7 @@ EcsPool<Component232> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11242,8 +10734,7 @@ EcsPool<Component335> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11271,8 +10762,7 @@ EcsPool<Component65> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11300,8 +10790,7 @@ EcsPool<Component355> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11329,8 +10818,7 @@ EcsPool<Component306> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11360,8 +10848,7 @@ EcsPool<Component455> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11387,8 +10874,7 @@ EcsPool<Component248> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11414,8 +10900,7 @@ EcsPool<Component448> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11441,8 +10926,7 @@ EcsPool<Component386> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11468,8 +10952,7 @@ EcsPool<Component108> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11499,8 +10982,7 @@ EcsPool<Component356> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11528,8 +11010,7 @@ EcsPool<Component304> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11555,8 +11036,7 @@ EcsPool<Component236> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11582,8 +11062,7 @@ EcsPool<Component356> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11609,8 +11088,7 @@ EcsPool<Component9> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11636,8 +11114,7 @@ EcsPool<Component414> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11669,8 +11146,7 @@ EcsPool<Component254> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11696,8 +11172,7 @@ EcsPool<Component161> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11727,8 +11202,7 @@ EcsPool<Component349> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11758,8 +11232,7 @@ EcsPool<Component57> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11787,8 +11260,7 @@ EcsPool<Component59> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11816,8 +11288,7 @@ EcsPool<Component209> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11843,8 +11314,7 @@ EcsPool<Component229> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11876,8 +11346,7 @@ EcsPool<Component166> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11907,8 +11376,7 @@ EcsPool<Component399> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11938,8 +11406,7 @@ EcsPool<Component247> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -11969,8 +11436,7 @@ EcsPool<Component475> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12002,8 +11468,7 @@ EcsPool<Component57> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12031,8 +11496,7 @@ EcsPool<Component44> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12064,8 +11528,7 @@ EcsPool<Component329> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12091,8 +11554,7 @@ EcsPool<Component159> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12124,8 +11586,7 @@ EcsPool<Component18> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12151,8 +11612,7 @@ EcsPool<Component405> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12182,8 +11642,7 @@ EcsPool<Component132> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12213,8 +11672,7 @@ EcsPool<Component109> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12242,8 +11700,7 @@ EcsPool<Component121> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12273,8 +11730,7 @@ EcsPool<Component211> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12304,8 +11760,7 @@ EcsPool<Component390> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12335,8 +11790,7 @@ EcsPool<Component401> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12364,8 +11818,7 @@ EcsPool<Component264> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12393,8 +11846,7 @@ EcsPool<Component174> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12426,8 +11878,7 @@ EcsPool<Component179> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12459,8 +11910,7 @@ EcsPool<Component162> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12490,8 +11940,7 @@ EcsPool<Component436> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12519,8 +11968,7 @@ EcsPool<Component480> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12548,8 +11996,7 @@ EcsPool<Component317> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12575,8 +12022,7 @@ EcsPool<Component42> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12608,8 +12054,7 @@ EcsPool<Component188> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12641,8 +12086,7 @@ EcsPool<Component238> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12672,8 +12116,7 @@ EcsPool<Component416> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12705,8 +12148,7 @@ EcsPool<Component327> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12732,8 +12174,7 @@ EcsPool<Component201> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12761,8 +12202,7 @@ EcsPool<Component309> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12790,8 +12230,7 @@ EcsPool<Component400> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12823,8 +12262,7 @@ EcsPool<Component98> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12856,8 +12294,7 @@ EcsPool<Component109> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12883,8 +12320,7 @@ EcsPool<Component371> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12910,8 +12346,7 @@ EcsPool<Component419> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12943,8 +12378,7 @@ EcsPool<Component356> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -12970,8 +12404,7 @@ EcsPool<Component494> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13001,8 +12434,7 @@ EcsPool<Component285> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13028,8 +12460,7 @@ EcsPool<Component207> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13055,8 +12486,7 @@ EcsPool<Component347> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13088,8 +12518,7 @@ EcsPool<Component211> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13117,8 +12546,7 @@ EcsPool<Component307> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13148,8 +12576,7 @@ EcsPool<Component255> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13181,8 +12608,7 @@ EcsPool<Component44> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13208,8 +12634,7 @@ EcsPool<Component165> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13237,8 +12662,7 @@ EcsPool<Component484> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13264,8 +12688,7 @@ EcsPool<Component179> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13295,8 +12718,7 @@ EcsPool<Component405> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13328,8 +12750,7 @@ EcsPool<Component259> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13359,8 +12780,7 @@ EcsPool<Component366> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13390,8 +12810,7 @@ EcsPool<Component291> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13423,8 +12842,7 @@ EcsPool<Component158> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13450,8 +12868,7 @@ EcsPool<Component199> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13481,8 +12898,7 @@ EcsPool<Component100> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13512,8 +12928,7 @@ EcsPool<Component69> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13545,8 +12960,7 @@ EcsPool<Component189> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13578,8 +12992,7 @@ EcsPool<Component455> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13605,8 +13018,7 @@ EcsPool<Component387> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13636,8 +13048,7 @@ EcsPool<Component493> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13665,8 +13076,7 @@ EcsPool<Component104> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13696,8 +13106,7 @@ EcsPool<Component303> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13727,8 +13136,7 @@ EcsPool<Component493> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13754,8 +13162,7 @@ EcsPool<Component37> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13783,8 +13190,7 @@ EcsPool<Component494> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13816,8 +13222,7 @@ EcsPool<Component185> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13847,8 +13252,7 @@ EcsPool<Component450> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13874,8 +13278,7 @@ EcsPool<Component323> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13903,8 +13306,7 @@ EcsPool<Component97> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13932,8 +13334,7 @@ EcsPool<Component456> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13961,8 +13362,7 @@ EcsPool<Component276> _pl;
  }
  public void Run (EcsSystems systems) {
   var entities = _filter.GetRawEntities();
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
-   var entity = entities[i];
+  foreach (int entity in _filter) {
    if (_pl.Has(entity))
    {
     _pl.Del(entity);
@@ -13989,7 +13389,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14016,7 +13416,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14043,7 +13443,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14072,7 +13472,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14101,7 +13501,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14126,7 +13526,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14155,7 +13555,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14180,7 +13580,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14205,7 +13605,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14232,7 +13632,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14255,7 +13655,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14284,7 +13684,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14307,7 +13707,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14336,7 +13736,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14363,7 +13763,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14386,7 +13786,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14413,7 +13813,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14436,7 +13836,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14463,7 +13863,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14486,7 +13886,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14509,7 +13909,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14532,7 +13932,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14561,7 +13961,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14586,7 +13986,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14611,7 +14011,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14636,7 +14036,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14661,7 +14061,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14690,7 +14090,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14717,7 +14117,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14746,7 +14146,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14769,7 +14169,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14796,7 +14196,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14819,7 +14219,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14848,7 +14248,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14873,7 +14273,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14896,7 +14296,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14925,7 +14325,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14948,7 +14348,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -14973,7 +14373,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15002,7 +14402,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15027,7 +14427,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15052,7 +14452,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15081,7 +14481,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15108,7 +14508,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15135,7 +14535,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15160,7 +14560,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15187,7 +14587,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15212,7 +14612,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15235,7 +14635,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15260,7 +14660,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15289,7 +14689,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15314,7 +14714,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15341,7 +14741,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15368,7 +14768,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15397,7 +14797,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15426,7 +14826,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15449,7 +14849,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15472,7 +14872,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15501,7 +14901,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15530,7 +14930,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15557,7 +14957,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15582,7 +14982,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15605,7 +15005,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15630,7 +15030,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15659,7 +15059,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15686,7 +15086,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15713,7 +15113,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15740,7 +15140,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15769,7 +15169,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15798,7 +15198,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15825,7 +15225,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15848,7 +15248,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15875,7 +15275,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15902,7 +15302,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15927,7 +15327,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15956,7 +15356,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -15983,7 +15383,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16006,7 +15406,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16029,7 +15429,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16058,7 +15458,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16085,7 +15485,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16112,7 +15512,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16137,7 +15537,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16164,7 +15564,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16187,7 +15587,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16216,7 +15616,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16243,7 +15643,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16268,7 +15668,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16291,7 +15691,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16318,7 +15718,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16341,7 +15741,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16370,7 +15770,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16399,7 +15799,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16422,7 +15822,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16445,7 +15845,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16470,7 +15870,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16493,7 +15893,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16522,7 +15922,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16549,7 +15949,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
@@ -16578,7 +15978,7 @@ EcsPool<TicksCooldownComponent> _pt;
    _pt = _world.GetPool<TicksCooldownComponent>();
  }
  public void Run (EcsSystems systems) {
-  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){
+  foreach (int entity in _filter) {
    var e = _world.NewEntity();
    ref var c1 = ref _pl.Add(e);
    ref var tick = ref _pt.Add(e);
