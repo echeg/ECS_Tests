@@ -225,7 +225,7 @@ namespace EcsGenerator.LeoEcsLite
             output += " public void Run (EcsSystems systems) {\n";
             if (s.SystemType == TypeSystem.OnlyCalculate || s.SystemType == TypeSystem.ComponentAddAndRemove)
             {
-                output += "  var entities = _filter.GetRawEntities();\n";
+                //output += "  var entities = _filter.GetRawEntities();\n";
             }
 
             //output += "  for (int i = 0, iMax = _filter.GetEntitiesCount(); i < iMax; i++){\n";
