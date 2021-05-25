@@ -67,7 +67,7 @@ namespace EcsGenerator
             fileContent += "Systems _systems;\n\n";
 
             fileContent += "public void Init() {\n";
-            //fileContent += "    _world = new EcsWorld();\n";
+            fileContent += "    _context = Contexts.sharedInstance.game;\n";
             fileContent += "    _systems = new Feature(\"world\")\n";
             fileContent += GenerateListSystems();
             fileContent += ";\n";
@@ -94,7 +94,7 @@ namespace EcsGenerator
             var output = "";
             foreach (var system in _dataProvider.GetSystems())
             {
-                output += $" .Add(new System{system.Id}(Contexts.sharedInstance.game))\n";
+                output += $" .Add(new System{system.Id}(_context))\n";
             }
 
             output += ";\n";

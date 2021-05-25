@@ -7,6 +7,7 @@ namespace EcsGenerator
     public interface IEcsRunner
     {
         void Init();
+        void GenStartEntities();
         void Run();
     }
     
@@ -32,6 +33,13 @@ namespace EcsGenerator
             StartTimer();
             _runner.Init();
             EndTimer("Init time: ");
+        }
+        
+        public void GenStartEntities()
+        {
+            StartTimer();
+            _runner.GenStartEntities();
+            EndTimer("Creation entities time: ");
         }
         
         public void Run(int r)
