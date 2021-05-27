@@ -1,3 +1,6 @@
+using System;
+using Unity.Entities;
+
 namespace EcsGenerator.UEcs
 {
     public class UnityEcsGenerator : BaseGenerator
@@ -51,8 +54,8 @@ namespace EcsGenerator.UEcs
             fileContent += "IReadOnlyList<ComponentSystemBase> _presSystems;\n\n";
 
             fileContent += "public void Init() {\n";
-            fileContent += "    _em = World.DefaultGameObjectInjectionWorld.EntityManager;\n";
             fileContent += "    DefaultWorldInitialization.Initialize(\"world\",true);\n";
+            fileContent += "    _em = World.DefaultGameObjectInjectionWorld.EntityManager;\n";
             fileContent += "    World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<SimulationSystemGroup>().Enabled = false;\n";
             fileContent += "    World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<PresentationSystemGroup>().Enabled = false;\n";
             fileContent += "    _simSystems = World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<SimulationSystemGroup>().Systems;\n";
@@ -130,10 +133,110 @@ namespace EcsGenerator.UEcs
             var fileContent = "";
             foreach (var system in _dataProvider.GetSystems())
             {
-                //fileContent += GenerateSystem(system);
+                fileContent += GenerateSystem(system);
             }
 
             SaveToFile("Systems.cs", fileContent);
+        }
+        
+        string GenerateSystem(DslSystem s)
+        {
+            var output = $"class System{s.Id} : SystemBase";
+            output += "{\n";
+
+            output += " private EntityQuery _notifyGroup;\n";
+            output += "  EntityManager _em;\n";
+
+
+            output += " protected override void OnCreate(){\n";
+            output += "  base.OnCreate();\n";
+            output += "  _em = EntityManager;\n";
+            output += "  RequireForUpdate(_notifyGroup);\n";
+            output += " }\n";
+        
+
+            output += "  protected override void OnUpdate(){\n";
+
+            switch (s.SystemType)
+            {
+                case TypeSystem.OnlyCalculate:
+                    output += CalculateBody(s);
+                    break;
+            }
+            output += " }\n";
+            output += "}\n\n";
+            return output;
+        }
+        
+        private static string CalculateBody(DslSystem s)
+        {
+            var output = "";
+            var filters = "";
+            if (s.FiltersComponents.Count > 2)
+            {
+                filters = ".WithAll<";
+                for (var index = 2; index < s.FiltersComponents.Count; index++)
+                {
+                    var component = s.FiltersComponents[index];
+                    filters += "Component" + component.Id + ",";
+                }
+
+                filters = filters.TrimEnd(',');
+                filters += ">()";
+            }
+
+            output += $"Entities.WithoutBurst()\n.WithStoreEntityQueryInField(ref _notifyGroup)\n{filters}\n.ForEach((";
+            for (var index = 0; index < 2; index++)
+            {
+                if (index >= s.FiltersComponents.Count) break;
+                var component = s.FiltersComponents[index];
+                output += $"ref Component{component.Id} c{index+1},";
+            }
+            output=output.TrimEnd(',');
+
+            output += " ) =>{";
+            output += " }).Run();";
+            return output;
+        }
+    }
+
+    public struct TicksCooldownComponent : IComponentData
+    {
+        public int Ticks;
+
+        public TicksCooldownComponent(int ticks)
+        {
+            Ticks = ticks;
+        }
+    }
+    
+    public class TickCounterSystem : SystemBase
+    {
+        private EntityQuery _notifyGroup;
+        private EntityManager _em;
+
+        protected override void OnCreate()
+        {
+            base.OnCreate();
+            _em = EntityManager;
+            RequireForUpdate(_notifyGroup);
+        }
+
+        protected override void OnUpdate()
+        {
+            if (_notifyGroup.CalculateEntityCount() == 0) return;
+            Entities.WithoutBurst()
+                .WithStoreEntityQueryInField(ref _notifyGroup)
+                .WithAll<TicksCooldownComponent>()
+                .ForEach((Entity e, ref TicksCooldownComponent tick) =>
+                {
+                    tick.Ticks -= 1;
+                    if (tick.Ticks<=0)
+                    {
+                        _em.DestroyEntity(e);
+                    }
+                }).Run();
+
         }
     }
 }

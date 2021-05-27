@@ -12,8 +12,8 @@ IReadOnlyList<ComponentSystemBase> _simSystems;
 IReadOnlyList<ComponentSystemBase> _presSystems;
 
 public void Init() {
-    _em = World.DefaultGameObjectInjectionWorld.EntityManager;
     DefaultWorldInitialization.Initialize("world",true);
+    _em = World.DefaultGameObjectInjectionWorld.EntityManager;
     World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<SimulationSystemGroup>().Enabled = false;
     World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<PresentationSystemGroup>().Enabled = false;
     _simSystems = World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<SimulationSystemGroup>().Systems;
