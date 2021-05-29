@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public EcsGenerator.Entitas.Component35 ecsGeneratorEntitasComponent35 { get { return (EcsGenerator.Entitas.Component35)GetComponent(GameComponentsLookup.EcsGeneratorEntitasComponent35); } }
-    public bool hasEcsGeneratorEntitasComponent35 { get { return HasComponent(GameComponentsLookup.EcsGeneratorEntitasComponent35); } }
+    static readonly EcsGenerator.Entitas.Component35 ecsGeneratorEntitasComponent35Component = new EcsGenerator.Entitas.Component35();
 
-    public void AddEcsGeneratorEntitasComponent35(int newField0) {
-        var index = GameComponentsLookup.EcsGeneratorEntitasComponent35;
-        var component = (EcsGenerator.Entitas.Component35)CreateComponent(index, typeof(EcsGenerator.Entitas.Component35));
-        component.Field0 = newField0;
-        AddComponent(index, component);
-    }
+    public bool isEcsGeneratorEntitasComponent35 {
+        get { return HasComponent(GameComponentsLookup.EcsGeneratorEntitasComponent35); }
+        set {
+            if (value != isEcsGeneratorEntitasComponent35) {
+                var index = GameComponentsLookup.EcsGeneratorEntitasComponent35;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : ecsGeneratorEntitasComponent35Component;
 
-    public void ReplaceEcsGeneratorEntitasComponent35(int newField0) {
-        var index = GameComponentsLookup.EcsGeneratorEntitasComponent35;
-        var component = (EcsGenerator.Entitas.Component35)CreateComponent(index, typeof(EcsGenerator.Entitas.Component35));
-        component.Field0 = newField0;
-        ReplaceComponent(index, component);
-    }
-
-    public void RemoveEcsGeneratorEntitasComponent35() {
-        RemoveComponent(GameComponentsLookup.EcsGeneratorEntitasComponent35);
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }
 

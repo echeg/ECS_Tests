@@ -11,19 +11,23 @@ public partial class GameEntity {
     public EcsGenerator.Entitas.Component106 ecsGeneratorEntitasComponent106 { get { return (EcsGenerator.Entitas.Component106)GetComponent(GameComponentsLookup.EcsGeneratorEntitasComponent106); } }
     public bool hasEcsGeneratorEntitasComponent106 { get { return HasComponent(GameComponentsLookup.EcsGeneratorEntitasComponent106); } }
 
-    public void AddEcsGeneratorEntitasComponent106(int newField0, short newField1) {
+    public void AddEcsGeneratorEntitasComponent106(int newField0, int newField1, int newField2, long newField3) {
         var index = GameComponentsLookup.EcsGeneratorEntitasComponent106;
         var component = (EcsGenerator.Entitas.Component106)CreateComponent(index, typeof(EcsGenerator.Entitas.Component106));
         component.Field0 = newField0;
         component.Field1 = newField1;
+        component.Field2 = newField2;
+        component.Field3 = newField3;
         AddComponent(index, component);
     }
 
-    public void ReplaceEcsGeneratorEntitasComponent106(int newField0, short newField1) {
+    public void ReplaceEcsGeneratorEntitasComponent106(int newField0, int newField1, int newField2, long newField3) {
         var index = GameComponentsLookup.EcsGeneratorEntitasComponent106;
         var component = (EcsGenerator.Entitas.Component106)CreateComponent(index, typeof(EcsGenerator.Entitas.Component106));
         component.Field0 = newField0;
         component.Field1 = newField1;
+        component.Field2 = newField2;
+        component.Field3 = newField3;
         ReplaceComponent(index, component);
     }
 

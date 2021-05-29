@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public EcsGenerator.Entitas.Component136 ecsGeneratorEntitasComponent136 { get { return (EcsGenerator.Entitas.Component136)GetComponent(GameComponentsLookup.EcsGeneratorEntitasComponent136); } }
-    public bool hasEcsGeneratorEntitasComponent136 { get { return HasComponent(GameComponentsLookup.EcsGeneratorEntitasComponent136); } }
+    static readonly EcsGenerator.Entitas.Component136 ecsGeneratorEntitasComponent136Component = new EcsGenerator.Entitas.Component136();
 
-    public void AddEcsGeneratorEntitasComponent136(int newField0) {
-        var index = GameComponentsLookup.EcsGeneratorEntitasComponent136;
-        var component = (EcsGenerator.Entitas.Component136)CreateComponent(index, typeof(EcsGenerator.Entitas.Component136));
-        component.Field0 = newField0;
-        AddComponent(index, component);
-    }
+    public bool isEcsGeneratorEntitasComponent136 {
+        get { return HasComponent(GameComponentsLookup.EcsGeneratorEntitasComponent136); }
+        set {
+            if (value != isEcsGeneratorEntitasComponent136) {
+                var index = GameComponentsLookup.EcsGeneratorEntitasComponent136;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : ecsGeneratorEntitasComponent136Component;
 
-    public void ReplaceEcsGeneratorEntitasComponent136(int newField0) {
-        var index = GameComponentsLookup.EcsGeneratorEntitasComponent136;
-        var component = (EcsGenerator.Entitas.Component136)CreateComponent(index, typeof(EcsGenerator.Entitas.Component136));
-        component.Field0 = newField0;
-        ReplaceComponent(index, component);
-    }
-
-    public void RemoveEcsGeneratorEntitasComponent136() {
-        RemoveComponent(GameComponentsLookup.EcsGeneratorEntitasComponent136);
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }
 

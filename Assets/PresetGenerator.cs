@@ -5,6 +5,7 @@ using EcsGenerator.Entitas;
 using EcsGenerator.LeoEcs;
 using EcsGenerator.LeoEcsLite;
 using EcsGenerator.UEcs;
+using EcsGenerator.UEcsBurst;
 using UnityEngine;
 using Random = System.Random;
 
@@ -154,6 +155,13 @@ namespace EcsGenerator
             var codeGenerator = new UnityEcsGenerator(Application.dataPath + "/" + workPath + "/uecs/", preset);
             codeGenerator.Generate();
             Debug.Log("Unity Ecs generation complete reload editor");
+        }
+        
+        public void GenerateUnityEcsBurst()
+        {
+            var codeGenerator = new UnityEcsGeneratorBurst(Application.dataPath + "/" + workPath + "/uecs/", preset);
+            codeGenerator.Generate();
+            Debug.Log("Unity Ecs Burst generation complete reload editor");
         }
 
         List<DslComponent> GetSubsetComponents(Random random, IReadOnlyList<DslComponent> allComponents, int count)

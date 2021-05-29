@@ -8,25 +8,27 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly EcsGenerator.Entitas.Component229 ecsGeneratorEntitasComponent229Component = new EcsGenerator.Entitas.Component229();
+    public EcsGenerator.Entitas.Component229 ecsGeneratorEntitasComponent229 { get { return (EcsGenerator.Entitas.Component229)GetComponent(GameComponentsLookup.EcsGeneratorEntitasComponent229); } }
+    public bool hasEcsGeneratorEntitasComponent229 { get { return HasComponent(GameComponentsLookup.EcsGeneratorEntitasComponent229); } }
 
-    public bool isEcsGeneratorEntitasComponent229 {
-        get { return HasComponent(GameComponentsLookup.EcsGeneratorEntitasComponent229); }
-        set {
-            if (value != isEcsGeneratorEntitasComponent229) {
-                var index = GameComponentsLookup.EcsGeneratorEntitasComponent229;
-                if (value) {
-                    var componentPool = GetComponentPool(index);
-                    var component = componentPool.Count > 0
-                            ? componentPool.Pop()
-                            : ecsGeneratorEntitasComponent229Component;
+    public void AddEcsGeneratorEntitasComponent229(int newField0, float newField1) {
+        var index = GameComponentsLookup.EcsGeneratorEntitasComponent229;
+        var component = (EcsGenerator.Entitas.Component229)CreateComponent(index, typeof(EcsGenerator.Entitas.Component229));
+        component.Field0 = newField0;
+        component.Field1 = newField1;
+        AddComponent(index, component);
+    }
 
-                    AddComponent(index, component);
-                } else {
-                    RemoveComponent(index);
-                }
-            }
-        }
+    public void ReplaceEcsGeneratorEntitasComponent229(int newField0, float newField1) {
+        var index = GameComponentsLookup.EcsGeneratorEntitasComponent229;
+        var component = (EcsGenerator.Entitas.Component229)CreateComponent(index, typeof(EcsGenerator.Entitas.Component229));
+        component.Field0 = newField0;
+        component.Field1 = newField1;
+        ReplaceComponent(index, component);
+    }
+
+    public void RemoveEcsGeneratorEntitasComponent229() {
+        RemoveComponent(GameComponentsLookup.EcsGeneratorEntitasComponent229);
     }
 }
 
