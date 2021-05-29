@@ -1,11 +1,12 @@
 using System;
+using EcsGenerator;
 using Unity.Entities;
 
-namespace EcsGenerator.UEcs
+namespace EcsGenerator.UEcsBurst
 {
-    public class UnityEcsGenerator : BaseGenerator
+    public class UnityEcsGeneratorBurst : BaseGenerator
     {
-        public UnityEcsGenerator(string workWorkPath, IEcsPresetDataProvider dataProvider) : base(workWorkPath,
+        public UnityEcsGeneratorBurst(string workWorkPath, IEcsPresetDataProvider dataProvider) : base(workWorkPath,
             dataProvider)
         {
         }
@@ -103,7 +104,7 @@ namespace EcsGenerator.UEcs
             pre += "using System.Collections.Generic;\n";
             pre += "using System.Globalization;\n";
             pre += "using UnityEngine;\n";
-            pre += "namespace EcsGenerator.UEcs{\n\n\n";
+            pre += "namespace EcsGenerator.UEcsBurst{\n\n\n";
 
             var post = "}\n";
 
@@ -156,7 +157,7 @@ namespace EcsGenerator.UEcs
 
         string GenerateSystem(DslSystem s)
         {
-            var output = $"[AlwaysUpdateSystem]class System{s.Id} : SystemBase";
+            var output = $"[AlwaysUpdateSystem]class System{s.Id} : SystemWithBuffer";
             output += "{\n";
 
             output += " private EntityQuery _notifyGroup;\n";
@@ -226,7 +227,7 @@ namespace EcsGenerator.UEcs
 
         private static string AddRemoveBody(DslSystem s)
         {
-            var output = "";
+            var output = "var ecb = _addCommandBufferSystem.CreateCommandBuffer();\n";
             var filters = "";
 
             filters = ".WithAll<";
@@ -240,15 +241,15 @@ namespace EcsGenerator.UEcs
             filters += ">()";
 
 
-            output += $"Entities.WithoutBurst().WithStructuralChanges()\n{filters}\n";
+            output += $"Entities\n{filters}\n";
             output += ".ForEach((Entity e) =>{\n";
             output += $"if (HasComponent<Component{s.LogicComponent.Id}>(e))\n";
             output += "   {\n";
-            output += $"    _em.RemoveComponent<Component{s.LogicComponent.Id}>(e);\n";
+            output += $"    ecb.RemoveComponent<Component{s.LogicComponent.Id}>(e);\n";
             output += "   }\n";
             output += "   else\n";
             output += "   {\n";
-            output += $"    _em.AddComponent<Component{s.LogicComponent.Id}>(e);\n";
+            output += $"    ecb.AddComponent<Component{s.LogicComponent.Id}>(e);\n";
             output += "   }\n";
             
             output += " }).Run();";
@@ -257,7 +258,7 @@ namespace EcsGenerator.UEcs
         
         private static string CreateEntityBody(DslSystem s)
         {
-            var output = "";
+            var output = "var ecb = _addCommandBufferSystem.CreateCommandBuffer();\n";
             var filters = "";
 
             filters = ".WithAll<";
@@ -271,18 +272,17 @@ namespace EcsGenerator.UEcs
             filters += ">()";
 
 
-            output += $"Entities.WithoutBurst().WithStructuralChanges()\n{filters}\n";
+            output += $"Entities\n{filters}\n";
             output += ".ForEach((Entity e) =>{\n";
             
-            output += "   var e1 = _em.CreateEntity();\n";
-            output += "   _em.AddComponentData(e1, new TicksCooldownComponent(10));\n";
-            output += $"  _em.AddComponentData(e1, new Component{s.LogicComponent.Id}());\n";
+            output += "   var e1 = ecb.CreateEntity();\n";
+            output += "   ecb.AddComponent(e1, new TicksCooldownComponent(10));\n";
+            output += $"  ecb.AddComponent(e1, new Component{s.LogicComponent.Id}());\n";
             
             output += " }).Run();";
             return output;
         }
     }
-
     
     public struct TicksCooldownComponent : IComponentData
     {
@@ -293,8 +293,26 @@ namespace EcsGenerator.UEcs
             Ticks = ticks;
         }
     }
+    
+    public class SystemWithBuffer : SystemBase
+    {
+        protected AddEndSimulationEntityCommandBufferSystem _addCommandBufferSystem;
 
-    public class TickCounterSystem : SystemBase
+        protected override void OnCreate()
+        {
+            _addCommandBufferSystem = World.GetOrCreateSystem<AddEndSimulationEntityCommandBufferSystem>();
+        }
+
+        protected override void OnUpdate()
+        {
+        }
+    }
+    
+    [UnityEngine.ExecuteAlways]
+    [UpdateInGroup(typeof(LateSimulationSystemGroup))]
+    public class AddEndSimulationEntityCommandBufferSystem : EntityCommandBufferSystem {}
+
+    public class TickCounterSystem : SystemWithBuffer
     {
         private EntityQuery _notifyGroup;
         private EntityManager _em;
@@ -309,7 +327,8 @@ namespace EcsGenerator.UEcs
         protected override void OnUpdate()
         {
             if (_notifyGroup.CalculateEntityCount() == 0) return;
-            Entities.WithoutBurst().WithStructuralChanges()
+            var ecb = _addCommandBufferSystem.CreateCommandBuffer();
+            Entities
                 .WithStoreEntityQueryInField(ref _notifyGroup)
                 .WithAll<TicksCooldownComponent>()
                 .ForEach((Entity e, ref TicksCooldownComponent tick) =>
@@ -317,7 +336,7 @@ namespace EcsGenerator.UEcs
                     tick.Ticks -= 1;
                     if (tick.Ticks <= 0)
                     {
-                        _em.DestroyEntity(e);
+                        ecb.DestroyEntity(e);
                     }
                 }).Run();
         }

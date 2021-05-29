@@ -274,6 +274,7 @@ namespace EcsGenerator.Entitas
         }
     }
     
+    //*
     [Game]
     public sealed class TicksCooldownComponent : IComponent 
     {
@@ -284,7 +285,7 @@ namespace EcsGenerator.Entitas
             Ticks = ticks;
         }
     }
-
+//*
     class TickCounterSystem : IExecuteSystem{
         readonly GameContext _context;
         private readonly IGroup<GameEntity> _group;
@@ -304,5 +305,6 @@ namespace EcsGenerator.Entitas
                 }
             }
         }
-    }
+    }//*/
+    
 }

@@ -33,6 +33,7 @@ namespace EcsGenerator.LeoEcs
 
             fileContent += "public void Init() {\n";
             fileContent += "    _world = new EcsWorld();\n";
+            //fileContent += "    _world = new EcsWorld( new EcsWorldConfig{WorldEntitiesCacheSize  = 5000, EntityComponentsCacheSize = 20});\n";
             fileContent += "    _systems = new EcsSystems(_world)\n";
             fileContent += " .Add(new TickCounterSystem());\n";
             fileContent += GenerateListSystems();
