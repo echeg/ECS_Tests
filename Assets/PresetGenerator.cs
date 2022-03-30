@@ -11,31 +11,41 @@ namespace EcsGenerator
 {
     public class PresetGenerator : MonoBehaviour
     {
-        [SerializeField] int seed = 42;
+        [SerializeField] private int seed = 42;
 
-        [SerializeField] int entityCount;
-        [SerializeField] int componentsCount;
+        [SerializeField] private int entityCount;
+        [SerializeField] private int componentsCount;
 
         [Tooltip("Systems with only math operations")]
-        [SerializeField] int changeComponentsSystemsCount;
+        [SerializeField]
+        private int changeComponentsSystemsCount;
 
         [Tooltip("Systems with add or remove component operations")]
-        [SerializeField] int addRemoveComponentsSystemsCount;
+        [SerializeField]
+        private int addRemoveComponentsSystemsCount;
         
         [Tooltip("Systems with create entity operations")]
-        [SerializeField] int createEntitySystemsCount;
+        [SerializeField]
+        private int createEntitySystemsCount;
 
+        [Tooltip("Systems with random Has and Get(if has) operations")]
+        [SerializeField]
+        private int hasGetSystemsCount;
+        
 
-        [SerializeField] int minFieldsPerComponent;
-        [SerializeField] int maxFieldsPerComponent;
+        [SerializeField] private int minFieldsPerComponent;
+        [SerializeField] private int maxFieldsPerComponent;
 
-        [SerializeField] int minComponentsPerEntity;
-        [SerializeField] int maxComponentsPerEntity;
+        [SerializeField] private int minComponentsPerEntity;
+        [SerializeField] private int maxComponentsPerEntity;
 
-        [SerializeField] int minComponentsPerSystemFilter;
-        [SerializeField] int maxComponentsPerSystemFilter;
-
-        [SerializeField] DataPreset preset;
+        [SerializeField] private int minComponentsPerSystemFilter;
+        [SerializeField] private int maxComponentsPerSystemFilter;
+        
+        [SerializeField]
+        private int hasGetPerSystems;
+        
+        [SerializeField] private DataPreset preset;
 
         public void GeneratePresetData()
         {
@@ -47,6 +57,7 @@ namespace EcsGenerator
             CreateOnlyCalcSystems(r);
             CreateAddRemoveSystems(r);
             CreateEntitySystems(r);
+            CreateHasGetSystems(r);
             
             Debug.Log("Generation Presets Complete");
         }
@@ -57,11 +68,11 @@ namespace EcsGenerator
             {
                 var filterComponentsCount = r.Next(minComponentsPerSystemFilter, maxComponentsPerSystemFilter + 1);
                 var filtersComponents = GetSubsetComponents(r, preset.components, filterComponentsCount);
-                var logicComponent = GetRandomComponent(r, preset.components);
+                var logicComponent = GetSubsetComponents(r, preset.components, 1);
                 preset.systems.Add(new DslSystem
                 {
                     Id = preset.systems.Count, SystemType = TypeSystem.ComponentAddAndRemove, FiltersComponents = filtersComponents,
-                    LogicComponent = logicComponent
+                    LogicComponents = logicComponent
                 });
             }
         }
@@ -72,11 +83,11 @@ namespace EcsGenerator
             {
                 var filterComponentsCount = r.Next(minComponentsPerSystemFilter, maxComponentsPerSystemFilter + 1);
                 var filtersComponents = GetSubsetComponents(r, preset.components, filterComponentsCount);
-                var logicComponent = GetRandomComponent(r, preset.components);
+                var logicComponent = GetSubsetComponents(r, preset.components,1);
                 preset.systems.Add(new DslSystem
                 {
                     Id = preset.systems.Count, SystemType = TypeSystem.CreateRemoveEntity, FiltersComponents = filtersComponents,
-                    LogicComponent = logicComponent
+                    LogicComponents = logicComponent
                 });
             }
         }
@@ -89,6 +100,21 @@ namespace EcsGenerator
                 var filtersComponents = GetSubsetComponents(r, preset.components, filterComponentsCount);
                 preset.systems.Add(new DslSystem
                     {Id = preset.systems.Count, SystemType = TypeSystem.OnlyCalculate, FiltersComponents = filtersComponents});
+            }
+        }
+        
+        private void CreateHasGetSystems(Random r)
+        {
+            for (int i = 0; i < hasGetSystemsCount; i++)
+            {
+                var filterComponentsCount = r.Next(minComponentsPerSystemFilter, maxComponentsPerSystemFilter + 1);
+                var filtersComponents = GetSubsetComponents(r, preset.components, filterComponentsCount);
+                var logicComponent = GetSubsetComponents(r, preset.components, hasGetPerSystems);
+                preset.systems.Add(new DslSystem
+                {
+                    Id = preset.systems.Count, SystemType = TypeSystem.HasGetComponents, FiltersComponents = filtersComponents,
+                    LogicComponents = logicComponent
+                });
             }
         }
 
@@ -126,7 +152,7 @@ namespace EcsGenerator
             }
         }
 
-        [SerializeField] string workPath = "";
+        [SerializeField] private string workPath = "";
         public void GenerateLeo()
         {
             var codeGenerator = new LeoEcsCodeGenerator(Application.dataPath + "/" + workPath + "/leoecs/", preset);
@@ -148,7 +174,7 @@ namespace EcsGenerator
             Debug.Log("Entitas generation complete reload editor");
         }
 
-        List<DslComponent> GetSubsetComponents(Random random, IReadOnlyList<DslComponent> allComponents, int count)
+        private List<DslComponent> GetSubsetComponents(Random random, IReadOnlyList<DslComponent> allComponents, int count)
         {
             var output = new List<DslComponent>();
             for (int i = 0; i < count; i++)

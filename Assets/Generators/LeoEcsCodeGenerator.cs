@@ -113,6 +113,7 @@ namespace EcsGenerator.LeoEcs
                 TypeSystem.OnlyCalculate => CalculateBody(s),
                 TypeSystem.ComponentAddAndRemove => AddRemoveBody(s),
                 TypeSystem.CreateRemoveEntity => CreateEntityBody(s),
+                TypeSystem.HasGetComponents => HasGetBody(s),
                 _ => throw new ArgumentOutOfRangeException()
             };
 
@@ -154,16 +155,38 @@ namespace EcsGenerator.LeoEcs
         private static string AddRemoveBody(DslSystem s)
         {
             var output = "";
-            
+            var c = s.LogicComponents[0];
             output += "   ref var entity = ref _filter.GetEntity (i);\n";
-            output += $"   if (entity.Has<Component{s.LogicComponent.Id}>())\n";
+            output += $"   if (entity.Has<Component{c.Id}>())\n";
             output += "   {\n";
-            output += $"    entity.Del<Component{s.LogicComponent.Id}>();\n";
+            output += $"    entity.Del<Component{c.Id}>();\n";
             output += "   }\n";
             output += "   else\n";
             output += "   {\n";
-            output += $"    entity.Replace(new Component{s.LogicComponent.Id}());\n";
+            output += $"    entity.Replace(new Component{c.Id}());\n";
             output += "   }\n";
+
+            return output;
+        }
+        
+        private static string HasGetBody(DslSystem s)
+        {
+            var output = "   var q = 0;\n";
+           
+            output += "   ref var entity = ref _filter.GetEntity (i);\n";
+            for (int i = 0; i < s.LogicComponents.Count; i++) {
+                var c = s.LogicComponents[i];
+                output += $"   if (entity.Has<Component{c.Id}>())\n";
+                output += "   {\n";
+                output += $"    q+=1;\n";
+                output += $"    var com = entity.Get<Component{c.Id}>();\n";
+                output += "   }\n";
+                output += "   else\n";
+                output += "   {\n";
+                output += $"    q-=1;\n";
+                output += "   }\n";
+            }
+
 
             return output;
         }
@@ -171,10 +194,10 @@ namespace EcsGenerator.LeoEcs
         private static string CreateEntityBody(DslSystem s)
         {
             var output = "";
-            
+            var c = s.LogicComponents[0];
             output += "   var e = _world.NewEntity();\n";
             output += "   e.Replace(new TicksCooldownComponent(10));\n";
-            output += $"   e.Replace(new Component{s.LogicComponent.Id}());\n";
+            output += $"   e.Replace(new Component{c.Id}());\n";
             
             return output;
         }

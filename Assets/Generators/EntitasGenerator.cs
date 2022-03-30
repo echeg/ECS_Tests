@@ -152,24 +152,14 @@ namespace EcsGenerator.Entitas
             output += "  var entities = _group.GetEntities();\n";
             output += "  for (var i = 0; i<entities.Length; i++) {\n";
 
-            switch (s.SystemType)
-            {
-                case TypeSystem.OnlyCalculate:
-                    output += CalculateBody(s);
-                    break;
-                
-                case TypeSystem.ComponentAddAndRemove:
-                    output += AddRemoveBody(s);
-                    break;    
-                
-                case TypeSystem.CreateRemoveEntity:
-                    output += CreateEntityBody(s);
-                    break;
-                
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-            
+            output += s.SystemType switch {
+                TypeSystem.OnlyCalculate => CalculateBody(s),
+                TypeSystem.ComponentAddAndRemove => AddRemoveBody(s),
+                TypeSystem.CreateRemoveEntity => CreateEntityBody(s),
+                TypeSystem.HasGetComponents => HasGetBody(s),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+
             output += "  }\n";
             output += " }\n";
             output += "}\n\n";
@@ -230,33 +220,55 @@ namespace EcsGenerator.Entitas
             return output;
         }
         
+        private static string HasGetBody(DslSystem s)
+        {
+            var output = "   var q = 0;";
+            
+            output += "   var entity = entities[i];\n";
+            
+            for (int i = 0; i < s.LogicComponents.Count; i++) {
+                var c = s.LogicComponents[i];
+                output += $"   if (entity.hasEcsGeneratorEntitasComponent{c.Id})\n";
+                output += "   {\n";
+                output += $"    entity.getEcsGeneratorEntitasComponent{c.Id}();\n";
+                output += $"    q+=1;\n";
+                output += "   }\n";
+                output += "   else\n";
+                output += "   {\n";
+                output += $"    q-=1;\n";
+                output += "   }\n";
+            }
+
+            return output;
+        }
+        
         private static string AddRemoveBody(DslSystem s)
         {
             var output = "";
             
             output += "   var entity = entities[i];\n";
-
-            if (s.LogicComponent.Fields.Count > 0)
+            var c = s.LogicComponents[0];
+            if (c.Fields.Count > 0)
             {
-                output += $"   if (entity.hasEcsGeneratorEntitasComponent{s.LogicComponent.Id})\n";
+                output += $"   if (entity.hasEcsGeneratorEntitasComponent{c.Id})\n";
                 output += "   {\n";
-                output += $"    entity.RemoveEcsGeneratorEntitasComponent{s.LogicComponent.Id}();\n";
+                output += $"    entity.RemoveEcsGeneratorEntitasComponent{c.Id}();\n";
                 output += "   }\n";
                 output += "   else\n";
                 output += "   {\n";
                 output +=
-                    $"    entity.AddComponent(GameComponentsLookup.EcsGeneratorEntitasComponent{s.LogicComponent.Id},new Component{s.LogicComponent.Id}());\n";
+                    $"    entity.AddComponent(GameComponentsLookup.EcsGeneratorEntitasComponent{c.Id},new Component{c.Id}());\n";
                 output += "   }\n";
             }
             else
             {
-                output += $"   if (entity.isEcsGeneratorEntitasComponent{s.LogicComponent.Id})\n";
+                output += $"   if (entity.isEcsGeneratorEntitasComponent{c.Id})\n";
                 output += "   {\n";
-                output += $"    entity.isEcsGeneratorEntitasComponent{s.LogicComponent.Id}=false;\n";
+                output += $"    entity.isEcsGeneratorEntitasComponent{c.Id}=false;\n";
                 output += "   }\n";
                 output += "   else\n";
                 output += "   {\n";
-                output += $"    entity.isEcsGeneratorEntitasComponent{s.LogicComponent.Id}=true;\n";
+                output += $"    entity.isEcsGeneratorEntitasComponent{c.Id}=true;\n";
                 output += "   }\n";
             }
 
@@ -265,10 +277,11 @@ namespace EcsGenerator.Entitas
         
         private static string CreateEntityBody(DslSystem s)
         {
+            var c = s.LogicComponents[0];
             var output = "";
             output += "   var e = _context.CreateEntity();\n";
             output += "   e.AddComponent(GameComponentsLookup.EcsGeneratorEntitasTicksCooldown,new TicksCooldownComponent(10));\n";
-            output += $"   e.AddComponent(GameComponentsLookup.EcsGeneratorEntitasComponent{s.LogicComponent.Id},new Component{s.LogicComponent.Id}());\n";
+            output += $"   e.AddComponent(GameComponentsLookup.EcsGeneratorEntitasComponent{c.Id},new Component{c.Id}());\n";
             
             return output;
         }

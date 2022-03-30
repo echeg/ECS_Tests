@@ -173,13 +173,13 @@ namespace EcsGenerator.LeoEcsLite
                 output += $"EcsPool<Component{component.Id}> _p{index+1};\n";
             }
 
-            if (s.SystemType == TypeSystem.ComponentAddAndRemove)
-            {
-                output += $"EcsPool<Component{s.LogicComponent.Id}> _pl;\n";
+            for (int i = 0; i < s.LogicComponents.Count; i++) {
+                var c = s.LogicComponents[i];
+                output += $"EcsPool<Component{c.Id}> _pl{i};\n";
             }
+            
             if (s.SystemType == TypeSystem.CreateRemoveEntity)
             {
-                output += $"EcsPool<Component{s.LogicComponent.Id}> _pl;\n";
                 output += $"EcsPool<TicksCooldownComponent> _pt;\n";
             }
             
@@ -209,16 +209,18 @@ namespace EcsGenerator.LeoEcsLite
                 var component = s.FiltersComponents[index];
                 output += $"   _p{index+1} = _world.GetPool<Component{component.Id}>();\n";
             }
-            if (s.SystemType == TypeSystem.ComponentAddAndRemove)
-            {
-                output += $"   _pl = _world.GetPool<Component{s.LogicComponent.Id}>();\n";
-            }
+            
             if (s.SystemType == TypeSystem.CreateRemoveEntity)
             {
-                output += $"   _pl = _world.GetPool<Component{s.LogicComponent.Id}>();\n";
                 output += $"   _pt = _world.GetPool<TicksCooldownComponent>();\n";
             }
-            
+            if (s.SystemType == TypeSystem.HasGetComponents)
+            {
+                for (int i = 0; i < s.LogicComponents.Count; i++) {
+                    var cl = s.LogicComponents[i];
+                    output += $"   _pl{i} = _world.GetPool<Component{cl.Id}>();\n";
+                }
+            }
             
             output += " }\n";
 
@@ -236,6 +238,7 @@ namespace EcsGenerator.LeoEcsLite
                 TypeSystem.OnlyCalculate => CalculateBody(s),
                 TypeSystem.ComponentAddAndRemove => AddRemoveBody(s),
                 TypeSystem.CreateRemoveEntity => CreateEntityBody(s),
+                TypeSystem.HasGetComponents => HasGetBody(s),
                 _ => throw new ArgumentOutOfRangeException()
             };
 
@@ -280,14 +283,33 @@ namespace EcsGenerator.LeoEcsLite
             var output = "";
             
             //output += "   var entity = entities[i];\n";
-            output += "   if (_pl.Has(entity))\n";
+            output += "   if (_pl1.Has(entity))\n";
             output += "   {\n";
-            output += $"    _pl.Del(entity);\n";
+            output += $"    _pl1.Del(entity);\n";
             output += "   }\n";
             output += "   else\n";
             output += "   {\n";
-            output += $"    _pl.Add(entity);\n";
+            output += $"    _pl1.Add(entity);\n";
             output += "   }\n";
+
+            return output;
+        }
+        
+        private static string HasGetBody(DslSystem s)
+        {
+            var output = "  var q = 0;\n";
+
+            for (int i = 0; i < s.LogicComponents.Count; i++) {
+                output += $"   if (_pl{i}.Has(entity))\n";
+                output += "   {\n";
+                output += $"    q+=1;\n";
+                output += $"    var component1 = _pl{i}.Get(entity);\n";
+                output += "   }\n";
+                output += "   else\n";
+                output += "   {\n";
+                output += $"    q-=1;\n";
+                output += "   }\n";
+            }
 
             return output;
         }
@@ -297,7 +319,7 @@ namespace EcsGenerator.LeoEcsLite
             var output = "";
             
             output += "   var e = _world.NewEntity();\n";
-            output += "   ref var c1 = ref _pl.Add(e);\n";
+            output += "   ref var c1 = ref _p1.Add(e);\n";
             output += $"   ref var tick = ref _pt.Add(e);\n";
             output += $"   tick.Ticks=10;\n";
             

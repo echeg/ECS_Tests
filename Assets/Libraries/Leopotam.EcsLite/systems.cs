@@ -1,7 +1,6 @@
 // ----------------------------------------------------------------------------
-// The MIT License
-// Lightweight ECS framework https://github.com/Leopotam/ecslite
-// Copyright (c) 2021 Leopotam <leopotam@gmail.com>
+// The Proprietary or MIT-Red License
+// Copyright (c) 2012-2022 Leopotam <leopotam@yandex.ru>
 // ----------------------------------------------------------------------------
 
 using System.Collections.Generic;
@@ -38,7 +37,7 @@ namespace Leopotam.EcsLite {
     [Il2CppSetOption (Option.NullChecks, false)]
     [Il2CppSetOption (Option.ArrayBoundsChecks, false)]
 #endif
-    public sealed class EcsSystems {
+    public class EcsSystems {
         readonly EcsWorld _defaultWorld;
         readonly Dictionary<string, EcsWorld> _worlds;
         readonly List<IEcsSystem> _allSystems;
@@ -53,11 +52,39 @@ namespace Leopotam.EcsLite {
             _allSystems = new List<IEcsSystem> (128);
         }
 
+        public Dictionary<string, EcsWorld> GetAllNamedWorlds () {
+            return _worlds;
+        }
+
+        public int GetAllSystems (ref IEcsSystem[] list) {
+            var itemsCount = _allSystems.Count;
+            if (itemsCount == 0) { return 0; }
+            if (list == null || list.Length < itemsCount) {
+                list = new IEcsSystem[_allSystems.Capacity];
+            }
+            for (int i = 0, iMax = itemsCount; i < iMax; i++) {
+                list[i] = _allSystems[i];
+            }
+            return itemsCount;
+        }
+
+        public int GetRunSystems (ref IEcsRunSystem[] list) {
+            var itemsCount = _runSystemsCount;
+            if (itemsCount == 0) { return 0; }
+            if (list == null || list.Length < itemsCount) {
+                list = new IEcsRunSystem[_runSystems.Length];
+            }
+            for (int i = 0, iMax = itemsCount; i < iMax; i++) {
+                list[i] = _runSystems[i];
+            }
+            return itemsCount;
+        }
+
         [MethodImpl (MethodImplOptions.AggressiveInlining)]
         public T GetShared<T> () where T : class {
             return _shared as T;
         }
-        
+
         [MethodImpl (MethodImplOptions.AggressiveInlining)]
         public EcsWorld GetWorld (string name = null) {
             if (name == null) {
@@ -71,7 +98,7 @@ namespace Leopotam.EcsLite {
             for (var i = _allSystems.Count - 1; i >= 0; i--) {
                 if (_allSystems[i] is IEcsDestroySystem destroySystem) {
                     destroySystem.Destroy (this);
-#if DEBUG
+#if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
                     var worldName = CheckForLeakedEntities ();
                     if (worldName != null) { throw new System.Exception ($"Empty entity detected in world \"{worldName}\" after {destroySystem.GetType ().Name}.Destroy()."); }
 #endif
@@ -80,7 +107,7 @@ namespace Leopotam.EcsLite {
             for (var i = _allSystems.Count - 1; i >= 0; i--) {
                 if (_allSystems[i] is IEcsPostDestroySystem postDestroySystem) {
                     postDestroySystem.PostDestroy (this);
-#if DEBUG
+#if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
                     var worldName = CheckForLeakedEntities ();
                     if (worldName != null) { throw new System.Exception ($"Empty entity detected in world \"{worldName}\" after {postDestroySystem.GetType ().Name}.PostDestroy()."); }
 #endif
@@ -91,6 +118,9 @@ namespace Leopotam.EcsLite {
         }
 
         public EcsSystems AddWorld (EcsWorld world, string name) {
+#if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
+            if (string.IsNullOrEmpty (name)) { throw new System.Exception ("World name cant be null or empty."); }
+#endif
             _worlds[name] = world;
             return this;
         }
@@ -110,7 +140,7 @@ namespace Leopotam.EcsLite {
             foreach (var system in _allSystems) {
                 if (system is IEcsPreInitSystem initSystem) {
                     initSystem.PreInit (this);
-#if DEBUG
+#if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
                     var worldName = CheckForLeakedEntities ();
                     if (worldName != null) { throw new System.Exception ($"Empty entity detected in world \"{worldName}\" after {initSystem.GetType ().Name}.PreInit()."); }
 #endif
@@ -120,7 +150,7 @@ namespace Leopotam.EcsLite {
             foreach (var system in _allSystems) {
                 if (system is IEcsInitSystem initSystem) {
                     initSystem.Init (this);
-#if DEBUG
+#if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
                     var worldName = CheckForLeakedEntities ();
                     if (worldName != null) { throw new System.Exception ($"Empty entity detected in world \"{worldName}\" after {initSystem.GetType ().Name}.Init()."); }
 #endif
@@ -134,19 +164,15 @@ namespace Leopotam.EcsLite {
         public void Run () {
             for (int i = 0, iMax = _runSystemsCount; i < iMax; i++) {
                 _runSystems[i].Run (this);
-#if DEBUG
+#if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
                 var worldName = CheckForLeakedEntities ();
                 if (worldName != null) { throw new System.Exception ($"Empty entity detected in world \"{worldName}\" after {_runSystems[i].GetType ().Name}.Run()."); }
 #endif
             }
         }
 
-        public EcsSystems DelHere<T> (string worldName = null) where T : struct {
-            return Add (new DelHereSystem<T> (GetWorld (worldName)));
-        }
-
-#if DEBUG
-        string CheckForLeakedEntities () {
+#if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
+        public string CheckForLeakedEntities () {
             if (_defaultWorld.CheckForLeakedEntities ()) { return "default"; }
             foreach (var pair in _worlds) {
                 if (pair.Value.CheckForLeakedEntities ()) {
@@ -156,25 +182,5 @@ namespace Leopotam.EcsLite {
             return null;
         }
 #endif
-    }
-
-#if ENABLE_IL2CPP
-    [Il2CppSetOption (Option.NullChecks, false)]
-    [Il2CppSetOption (Option.ArrayBoundsChecks, false)]
-#endif
-    sealed class DelHereSystem<T> : IEcsRunSystem where T : struct {
-        readonly EcsFilter _filter;
-        readonly EcsPool<T> _pool;
-
-        public DelHereSystem (EcsWorld world) {
-            _filter = world.Filter<T> ().End ();
-            _pool = world.GetPool<T> ();
-        }
-
-        public void Run (EcsSystems systems) {
-            foreach (var entity in _filter) {
-                _pool.Del (entity);
-            }
-        }
     }
 }

@@ -18,6 +18,7 @@ namespace EcsGenerator
         OnlyCalculate = 0,
         ComponentAddAndRemove = 1,
         CreateRemoveEntity = 2,
+        HasGetComponents = 3,
     }
 
     [System.Serializable]
@@ -34,7 +35,7 @@ namespace EcsGenerator
 
         public TypeSystem SystemType;
         public List<DslComponent> FiltersComponents;
-        public DslComponent LogicComponent;
+        public List<DslComponent> LogicComponents;
     }
 
     [System.Serializable]
