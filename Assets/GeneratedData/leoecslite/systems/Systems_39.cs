@@ -1,0 +1,36 @@
+using System;
+using Leopotam.EcsLite;
+using System.Collections.Generic;
+using System.Globalization;
+using UnityEngine;
+namespace EcsGenerator.LeoEcsLite{
+
+
+class System39 : IEcsInitSystem, IEcsRunSystem{
+ EcsWorld _world = null;
+ EcsFilter _filter;
+EcsPool<Component319> _p1;
+EcsPool<Component354> _p2;
+EcsPool<Component486> _p3;
+EcsPool<Component362> _pl0;
+EcsPool<TicksCooldownComponent> _pt;
+ public void Init (EcsSystems systems) {
+  _world = systems.GetWorld ();
+  _filter = _world.Filter<Component319>().Inc<Component354>().Inc<Component486>().End();
+   _p1 = _world.GetPool<Component319>();
+   _p2 = _world.GetPool<Component354>();
+   _p3 = _world.GetPool<Component486>();
+   _pt = _world.GetPool<TicksCooldownComponent>();
+   _pl0 = _world.GetPool<Component362>();
+ }
+ public void Run (EcsSystems systems) {
+  foreach (int entity in _filter) {
+   var e = _world.NewEntity();
+   ref var c1 = ref _pl0.Add(e);
+   ref var tick = ref _pt.Add(e);
+   tick.Ticks=10;
+  }
+ }
+}
+
+}
