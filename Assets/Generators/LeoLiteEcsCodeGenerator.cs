@@ -5,30 +5,11 @@ namespace EcsGenerator.LeoEcsLite
 {
     public class LeoLiteEcsCodeGenerator: BaseGenerator
     {
-        public override void Generate()
-        {
-            base.Generate();
-            GenerateComponents();
-            GenerateRunner();
-            GenerateSystems();
-        }
-        
         public LeoLiteEcsCodeGenerator(string workWorkPath, IEcsPresetDataProvider dataProvider) : base(workWorkPath, dataProvider)
         {
         }
-        
-        void GenerateComponents()
-        {
-            var fileContent = "";
-            foreach (var component in _dataProvider.GetComponents())
-            {
-                fileContent += GenerateComponent(component);
-            }
 
-            SaveToFile("Components.cs", fileContent);
-        }
-        
-        void GenerateRunner()
+        protected override void GenerateRunner()
         {
             var name = "LeoEcsLiteRunner";
             var fileContent = "";
@@ -59,29 +40,19 @@ namespace EcsGenerator.LeoEcsLite
 
             SaveToFile(name+".cs", fileContent);
         }
-        
-        string GenInfo()
+
+        private string GenInfo()
         {
             var output = "public void GenInfo(){\n";
             output += " Debug.Log(\"e \" + _world.GetAllocatedEntitiesCount());\n";
             output += "}\n";
             return output;
         }
-        
-        string GenerateComponent(DslComponent c)
+
+        protected override string GenerateComponent(DslComponent c)
         {
             var output = "";
             output += $"public struct Component{c.Id}\n";
-            /*
-            if (c.Fields.Count > 0)
-            {
-                output += $"public struct Component{c.Id}\n";
-            }
-            else
-            {
-                output += $"public struct Component{c.Id} : IEcsIgnoreInFilter\n";
-            }
-            */
 
             output += "{\n";
             for (var index = 0; index < c.Fields.Count; index++)
@@ -108,8 +79,8 @@ namespace EcsGenerator.LeoEcsLite
 
             return pre + fileContent + post;
         }
-        
-        string GenerateListSystems()
+
+        private string GenerateListSystems()
         {
             var output = "";
             foreach (var system in _dataProvider.GetSystems())
@@ -122,8 +93,8 @@ namespace EcsGenerator.LeoEcsLite
 
             return output;
         }
-        
-        string GenerateEntities()
+
+        private string GenerateEntities()
         {
             var fileContent = "";
             foreach (var entity in _dataProvider.GetEntities())
@@ -133,8 +104,8 @@ namespace EcsGenerator.LeoEcsLite
 
             return fileContent;
         }
-        
-        string GenerateEntity(DslEntity e)
+
+        private static string GenerateEntity(DslEntity e)
         {
             var output = $"var entity{e.Id} = _world.NewEntity();\n";
 
@@ -147,19 +118,8 @@ namespace EcsGenerator.LeoEcsLite
             output += "\n";
             return output;
         }
-        
-        private void GenerateSystems()
-        {
-            var fileContent = "";
-            foreach (var system in _dataProvider.GetSystems())
-            {
-                fileContent += GenerateSystem(system);
-            }
 
-            SaveToFile("Systems.cs", fileContent);
-        }
-        
-        string GenerateSystem(DslSystem s)
+        protected override string GenerateSystem(DslSystem s)
         {
             var output = $"class System{s.Id} : IEcsInitSystem, IEcsRunSystem";
             output += "{\n";
@@ -214,14 +174,13 @@ namespace EcsGenerator.LeoEcsLite
             {
                 output += $"   _pt = _world.GetPool<TicksCooldownComponent>();\n";
             }
-            if (s.SystemType == TypeSystem.HasGetComponents)
-            {
-                for (int i = 0; i < s.LogicComponents.Count; i++) {
-                    var cl = s.LogicComponents[i];
-                    output += $"   _pl{i} = _world.GetPool<Component{cl.Id}>();\n";
-                }
-            }
             
+            for (var index = 0; index < s.LogicComponents.Count; index++)
+            {
+                var cl = s.LogicComponents[index];
+                output += $"   _pl{index} = _world.GetPool<Component{cl.Id}>();\n";
+            }
+
             output += " }\n";
 
             output += " public void Run (EcsSystems systems) {\n";
@@ -317,9 +276,8 @@ namespace EcsGenerator.LeoEcsLite
         private static string CreateEntityBody(DslSystem s)
         {
             var output = "";
-            
             output += "   var e = _world.NewEntity();\n";
-            output += "   ref var c1 = ref _p1.Add(e);\n";
+            output += "   ref var c1 = ref _pl0.Add(e);\n";
             output += $"   ref var tick = ref _pt.Add(e);\n";
             output += $"   tick.Ticks=10;\n";
             
@@ -336,11 +294,11 @@ namespace EcsGenerator.LeoEcsLite
             Ticks = ticks;
         }
     }
-    
-    class TickCounterSystem : IEcsInitSystem, IEcsRunSystem{
-        EcsWorld _world = null;
-        EcsFilter _filter;
-        EcsPool<TicksCooldownComponent> _p1;
+
+    internal class TickCounterSystem : IEcsInitSystem, IEcsRunSystem{
+        private EcsWorld _world = null;
+        private EcsFilter _filter;
+        private EcsPool<TicksCooldownComponent> _p1;
             
         public void Init (EcsSystems systems) {
             _world = systems.GetWorld ();

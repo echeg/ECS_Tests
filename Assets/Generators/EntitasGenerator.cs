@@ -8,27 +8,8 @@ namespace EcsGenerator.Entitas
         public EntitasGenerator(string workWorkPath, IEcsPresetDataProvider dataProvider) : base(workWorkPath, dataProvider)
         {
         }
-        
-        public override void Generate()
-        {
-            base.Generate();
-            GenerateComponents();
-            GenerateRunner();;
-            GenerateSystems();
-        }
-        
-        void GenerateComponents()
-        {
-            var fileContent = "";
-            foreach (var component in _dataProvider.GetComponents())
-            {
-                fileContent += GenerateComponent(component);
-            }
 
-            SaveToFile("Components.cs", fileContent);
-        }
-        
-        string GenerateComponent(DslComponent c)
+        protected override string GenerateComponent(DslComponent c)
         {
             var output = "[Game]\n";
             output += $"public sealed class Component{c.Id} : IComponent \n";
@@ -58,8 +39,8 @@ namespace EcsGenerator.Entitas
 
             return pre + fileContent + post;
         }
-        
-        void GenerateRunner()
+
+        protected override void GenerateRunner()
         {
             var name = "EntitasRunner";
             var fileContent = "";
@@ -90,16 +71,16 @@ namespace EcsGenerator.Entitas
 
             SaveToFile(name+".cs", fileContent);
         }
-        
-        string GenInfo()
+
+        private string GenInfo()
         {
             var output = "public void GenInfo(){\n";
             output += "Debug.Log(Contexts.sharedInstance.game.count+\" c \"+Contexts.sharedInstance.game.totalComponents);\n";
             output += "}\n";
             return output;
         }
-        
-        string GenerateListSystems()
+
+        private string GenerateListSystems()
         {
             var output = "";
             foreach (var system in _dataProvider.GetSystems())
@@ -111,19 +92,8 @@ namespace EcsGenerator.Entitas
 
             return output;
         }
-        
-        private void GenerateSystems()
-        {
-            var fileContent = "";
-            foreach (var system in _dataProvider.GetSystems())
-            {
-                fileContent += GenerateSystem(system);
-            }
 
-            SaveToFile("Systems.cs", fileContent);
-        }
-        
-        string GenerateSystem(DslSystem s)
+        protected override string GenerateSystem(DslSystem s)
         {
             var output = $"class System{s.Id} : IExecuteSystem";
             output += "{\n";
@@ -165,8 +135,8 @@ namespace EcsGenerator.Entitas
             output += "}\n\n";
             return output;
         }
-        
-        string GenerateEntities()
+
+        private string GenerateEntities()
         {
             var fileContent = "";
             foreach (var entity in _dataProvider.GetEntities())
@@ -176,8 +146,8 @@ namespace EcsGenerator.Entitas
 
             return fileContent;
         }
-        
-        string GenerateEntity(DslEntity e)
+
+        private string GenerateEntity(DslEntity e)
         {
             var output = $"var entity{e.Id} = _context.CreateEntity();\n";
 
@@ -298,8 +268,8 @@ namespace EcsGenerator.Entitas
         }
     }
 
-    class TickCounterSystem : IExecuteSystem{
-        readonly GameContext _context;
+    internal class TickCounterSystem : IExecuteSystem{
+        private readonly GameContext _context;
         private readonly IGroup<GameEntity> _group;
         public TickCounterSystem(GameContext context)
         {
