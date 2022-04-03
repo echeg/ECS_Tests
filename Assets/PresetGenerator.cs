@@ -4,6 +4,7 @@ using System.Linq;
 using EcsGenerator.Entitas;
 using EcsGenerator.LeoEcs;
 using EcsGenerator.LeoEcsLite;
+using EcsGenerator.LeoEcsLite2;
 using UnityEngine;
 using Random = System.Random;
 
@@ -165,6 +166,13 @@ namespace EcsGenerator
             var codeGenerator = new LeoLiteEcsCodeGenerator(Application.dataPath + "/" + workPath + "/leoecslite/", preset);
             codeGenerator.Generate();
             Debug.Log("leoliteecs generation complete reload editor");
+        }
+        
+        public void GenerateLeoLite2()
+        {
+            var codeGenerator = new LeoLite2EcsCodeGenerator(Application.dataPath + "/" + workPath + "/leoecslite2/", preset);
+            codeGenerator.Generate();
+            Debug.Log("leoliteecs2 generation complete reload editor");
         }
         
         public void GenerateEntitas()
