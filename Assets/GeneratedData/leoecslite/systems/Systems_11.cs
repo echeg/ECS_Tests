@@ -9,28 +9,65 @@ namespace EcsGenerator.LeoEcsLite{
 class System11 : IEcsInitSystem, IEcsRunSystem{
  EcsWorld _world = null;
  EcsFilter _filter;
-EcsPool<Component24> _p1;
-EcsPool<Component364> _p2;
-EcsPool<Component275> _p3;
-EcsPool<Component207> _p4;
-EcsPool<Component280> _pl0;
-EcsPool<TicksCooldownComponent> _pt;
+EcsPool<Component203> _p1;
+EcsPool<Component180> _p2;
+EcsPool<Component320> _p3;
+EcsPool<Component113> _p4;
+EcsPool<Component359> _pl0;
+EcsPool<Component120> _pl1;
+EcsPool<Component277> _pl2;
+EcsPool<Component183> _pl3;
  public void Init (EcsSystems systems) {
   _world = systems.GetWorld ();
-  _filter = _world.Filter<Component24>().Inc<Component364>().Inc<Component275>().Inc<Component207>().End();
-   _p1 = _world.GetPool<Component24>();
-   _p2 = _world.GetPool<Component364>();
-   _p3 = _world.GetPool<Component275>();
-   _p4 = _world.GetPool<Component207>();
-   _pt = _world.GetPool<TicksCooldownComponent>();
-   _pl0 = _world.GetPool<Component280>();
+  _filter = _world.Filter<Component203>().Inc<Component180>().Inc<Component320>().Inc<Component113>().End();
+   _p1 = _world.GetPool<Component203>();
+   _p2 = _world.GetPool<Component180>();
+   _p3 = _world.GetPool<Component320>();
+   _p4 = _world.GetPool<Component113>();
+   _pl0 = _world.GetPool<Component359>();
+   _pl1 = _world.GetPool<Component120>();
+   _pl2 = _world.GetPool<Component277>();
+   _pl3 = _world.GetPool<Component183>();
  }
  public void Run (EcsSystems systems) {
   foreach (int entity in _filter) {
-   var e = _world.NewEntity();
-   ref var c1 = ref _pl0.Add(e);
-   ref var tick = ref _pt.Add(e);
-   tick.Ticks=10;
+  var q = 0;
+   if (_pl0.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl0.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl1.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl1.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl2.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl2.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl3.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl3.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
   }
  }
 }

@@ -9,26 +9,65 @@ namespace EcsGenerator.LeoEcsLite{
 class System85 : IEcsInitSystem, IEcsRunSystem{
  EcsWorld _world = null;
  EcsFilter _filter;
-EcsPool<Component372> _p1;
-EcsPool<Component359> _p2;
-EcsPool<Component381> _p3;
-EcsPool<Component88> _pl0;
-EcsPool<TicksCooldownComponent> _pt;
+EcsPool<Component202> _p1;
+EcsPool<Component60> _p2;
+EcsPool<Component360> _p3;
+EcsPool<Component143> _p4;
+EcsPool<Component137> _pl0;
+EcsPool<Component343> _pl1;
+EcsPool<Component106> _pl2;
+EcsPool<Component7> _pl3;
  public void Init (EcsSystems systems) {
   _world = systems.GetWorld ();
-  _filter = _world.Filter<Component372>().Inc<Component359>().Inc<Component381>().End();
-   _p1 = _world.GetPool<Component372>();
-   _p2 = _world.GetPool<Component359>();
-   _p3 = _world.GetPool<Component381>();
-   _pt = _world.GetPool<TicksCooldownComponent>();
-   _pl0 = _world.GetPool<Component88>();
+  _filter = _world.Filter<Component202>().Inc<Component60>().Inc<Component360>().Inc<Component143>().End();
+   _p1 = _world.GetPool<Component202>();
+   _p2 = _world.GetPool<Component60>();
+   _p3 = _world.GetPool<Component360>();
+   _p4 = _world.GetPool<Component143>();
+   _pl0 = _world.GetPool<Component137>();
+   _pl1 = _world.GetPool<Component343>();
+   _pl2 = _world.GetPool<Component106>();
+   _pl3 = _world.GetPool<Component7>();
  }
  public void Run (EcsSystems systems) {
   foreach (int entity in _filter) {
-   var e = _world.NewEntity();
-   ref var c1 = ref _pl0.Add(e);
-   ref var tick = ref _pt.Add(e);
-   tick.Ticks=10;
+  var q = 0;
+   if (_pl0.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl0.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl1.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl1.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl2.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl2.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl3.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl3.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
   }
  }
 }

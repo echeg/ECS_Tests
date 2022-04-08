@@ -9,28 +9,63 @@ namespace EcsGenerator.LeoEcsLite{
 class System56 : IEcsInitSystem, IEcsRunSystem{
  EcsWorld _world = null;
  EcsFilter _filter;
-EcsPool<Component133> _p1;
-EcsPool<Component286> _p2;
-EcsPool<Component353> _p3;
-EcsPool<Component30> _p4;
-EcsPool<Component265> _pl0;
-EcsPool<TicksCooldownComponent> _pt;
+EcsPool<Component370> _p1;
+EcsPool<Component204> _p2;
+EcsPool<Component241> _p3;
+EcsPool<Component26> _pl0;
+EcsPool<Component163> _pl1;
+EcsPool<Component282> _pl2;
+EcsPool<Component408> _pl3;
  public void Init (EcsSystems systems) {
   _world = systems.GetWorld ();
-  _filter = _world.Filter<Component133>().Inc<Component286>().Inc<Component353>().Inc<Component30>().End();
-   _p1 = _world.GetPool<Component133>();
-   _p2 = _world.GetPool<Component286>();
-   _p3 = _world.GetPool<Component353>();
-   _p4 = _world.GetPool<Component30>();
-   _pt = _world.GetPool<TicksCooldownComponent>();
-   _pl0 = _world.GetPool<Component265>();
+  _filter = _world.Filter<Component370>().Inc<Component204>().Inc<Component241>().End();
+   _p1 = _world.GetPool<Component370>();
+   _p2 = _world.GetPool<Component204>();
+   _p3 = _world.GetPool<Component241>();
+   _pl0 = _world.GetPool<Component26>();
+   _pl1 = _world.GetPool<Component163>();
+   _pl2 = _world.GetPool<Component282>();
+   _pl3 = _world.GetPool<Component408>();
  }
  public void Run (EcsSystems systems) {
   foreach (int entity in _filter) {
-   var e = _world.NewEntity();
-   ref var c1 = ref _pl0.Add(e);
-   ref var tick = ref _pt.Add(e);
-   tick.Ticks=10;
+  var q = 0;
+   if (_pl0.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl0.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl1.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl1.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl2.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl2.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl3.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl3.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
   }
  }
 }

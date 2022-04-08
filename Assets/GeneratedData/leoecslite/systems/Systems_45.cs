@@ -9,26 +9,65 @@ namespace EcsGenerator.LeoEcsLite{
 class System45 : IEcsInitSystem, IEcsRunSystem{
  EcsWorld _world = null;
  EcsFilter _filter;
-EcsPool<Component453> _p1;
-EcsPool<Component118> _p2;
-EcsPool<Component43> _p3;
-EcsPool<Component225> _pl0;
-EcsPool<TicksCooldownComponent> _pt;
+EcsPool<Component45> _p1;
+EcsPool<Component433> _p2;
+EcsPool<Component98> _p3;
+EcsPool<Component256> _p4;
+EcsPool<Component50> _pl0;
+EcsPool<Component331> _pl1;
+EcsPool<Component11> _pl2;
+EcsPool<Component375> _pl3;
  public void Init (EcsSystems systems) {
   _world = systems.GetWorld ();
-  _filter = _world.Filter<Component453>().Inc<Component118>().Inc<Component43>().End();
-   _p1 = _world.GetPool<Component453>();
-   _p2 = _world.GetPool<Component118>();
-   _p3 = _world.GetPool<Component43>();
-   _pt = _world.GetPool<TicksCooldownComponent>();
-   _pl0 = _world.GetPool<Component225>();
+  _filter = _world.Filter<Component45>().Inc<Component433>().Inc<Component98>().Inc<Component256>().End();
+   _p1 = _world.GetPool<Component45>();
+   _p2 = _world.GetPool<Component433>();
+   _p3 = _world.GetPool<Component98>();
+   _p4 = _world.GetPool<Component256>();
+   _pl0 = _world.GetPool<Component50>();
+   _pl1 = _world.GetPool<Component331>();
+   _pl2 = _world.GetPool<Component11>();
+   _pl3 = _world.GetPool<Component375>();
  }
  public void Run (EcsSystems systems) {
   foreach (int entity in _filter) {
-   var e = _world.NewEntity();
-   ref var c1 = ref _pl0.Add(e);
-   ref var tick = ref _pt.Add(e);
-   tick.Ticks=10;
+  var q = 0;
+   if (_pl0.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl0.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl1.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl1.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl2.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl2.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl3.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl3.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
   }
  }
 }
