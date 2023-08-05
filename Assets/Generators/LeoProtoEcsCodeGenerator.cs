@@ -15,9 +15,9 @@ namespace EcsGenerator.LeoProto {
 
             fileContent += "public void Init() {\n";
             fileContent += "    _world = new ProtoWorld (new Aspect1 ());\n";
-            fileContent += "    _systems = new ProtoSystems (_world)\n";
-            fileContent += " .AddModule(new AutoInjectModule ())\n";
-            fileContent += " .AddSystem(new TickCounterSystem());\n";
+            fileContent += "    _systems = new ProtoSystems (_world);\n";
+            fileContent += "  _systems.AddModule(new AutoInjectModule ());\n";
+            fileContent += "  _systems.AddSystem(new TickCounterSystem());\n";
             fileContent += GenerateListSystems();
             fileContent += "   _systems.Init ();\n";
             fileContent += "}\n\n";
@@ -40,12 +40,24 @@ namespace EcsGenerator.LeoProto {
 
         private string GenAspect() {
             var aspect = "public class Aspect1 : IProtoAspect  {\n";
-            // public ProtoPool<Component1> C1Pool;
+            
+            foreach (var dslComponent in _dataProvider.GetComponents()) {
+                aspect += $"public ProtoPool<Component{dslComponent.Id}> Component{dslComponent.Id}Pool;\n";
+            }
+            aspect += $"public ProtoPool<TicksCooldownComponent> TicksCooldownComponentPool;\n";
+            
             aspect += " public void Init (ProtoWorld world) {\n";
 
             aspect += "world.AddAspect (this);\n";
+            aspect += "TicksCooldownComponentPool = new ProtoPool<TicksCooldownComponent> ();\n";
+            aspect += "world.AddPool (TicksCooldownComponentPool);\n";
+            
+            foreach (var dslComponent in _dataProvider.GetComponents()) {
+                aspect += $"Component{dslComponent.Id}Pool = new ProtoPool<Component{dslComponent.Id}> ();\n";
+                aspect += $"world.AddPool (Component{dslComponent.Id}Pool);\n";
+            }
 
-            //C1Pool = new ProtoPool<Component1> ();
+            aspect += "var C1Pool = new ProtoPool<Component1> ();\n";
 
             aspect += " world.AddPool (C1Pool);\n";
             aspect += " }\n";
@@ -70,7 +82,7 @@ namespace EcsGenerator.LeoProto {
 
             output += " public void Init (IProtoSystems systems) {\n";
             output += "  _world = systems.World ();\n";
-            output += "  _aspect = (Aspect1) world.Aspect (typeof (Aspect1));\n";
+            output += "  _aspect = (Aspect1) _world.Aspect (typeof (Aspect1));\n";
             output += " _it = new ProtoIt (new [] {";
 
             for (var index = 0; index < s.FiltersComponents.Count; index++) {
@@ -81,14 +93,13 @@ namespace EcsGenerator.LeoProto {
 
             output += " } );\n";
 
-            output += "  _it.Init (world);\n";
+            output += "  _it.Init (_world);\n";
             output += " }\n";
 
-            output += " public void Run (EcsSystems systems) {\n";
+            output += " public void Run () {\n";
 
-            output += "  foreach (int entity in _filter) {\n";
-
-            /*
+            output += "  for (_it.Begin (); _it.Next ();) {\n";
+            
             output += s.SystemType switch
             {
                 TypeSystem.OnlyCalculate => CalculateBody(s),
@@ -97,11 +108,63 @@ namespace EcsGenerator.LeoProto {
                 TypeSystem.HasGetComponents => HasGetBody(s),
                 _ => throw new ArgumentOutOfRangeException()
             };
-            */
 
             output += "  }\n";
             output += " }\n";
             output += "}\n\n";
+            return output;
+        }
+        
+        private string HasGetBody(DslSystem dslSystem) {
+            var output = "";
+            return output;
+        }
+        
+        private string CreateEntityBody(DslSystem dslSystem) {
+            var output = "";
+            return output;
+        }
+        
+        private string AddRemoveBody(DslSystem s) {
+            var output = "";
+            
+            output += $"   if (_aspect.Component{s.LogicComponents[0].Id}Pool.Has(entity))\n";
+            output += "   {\n";
+            output += $"    _aspect.Component{s.LogicComponents[0].Id}Pool.Del(entity);\n";
+            output += "   }\n";
+            output += "   else\n";
+            output += "   {\n";
+            output += $"    _aspect.Component{s.LogicComponents[0].Id}Pool.Add(entity);\n";
+            output += "   }\n";
+            
+            return output;
+        }
+        
+        private string CalculateBody(DslSystem s) {
+            var output = "";
+            var firstComponentTag = s.FiltersComponents[0].Fields.Count == 0;
+            if (!firstComponentTag)
+            {
+                output += $"   ref var component1 = ref _aspect.Component{s.FiltersComponents[0].Id}Pool.Get(_it.Entity());\n";
+            }
+            
+            var hasSecondComponent = s.FiltersComponents.Count > 1;
+            var secondComponentTag = true;
+            if (hasSecondComponent && s.FiltersComponents[1].Fields.Count > 0)
+            {
+                secondComponentTag = false;
+                output += $"   ref var component2 = ref _aspect.Component{s.FiltersComponents[1].Id}Pool.Get(_it.Entity());\n";
+            }
+            
+            if (!firstComponentTag && hasSecondComponent && !secondComponentTag)
+            {
+                output += "   component1.Field0 += component2.Field0;\n";
+            }
+            else if (!firstComponentTag)
+            {
+                output += "   component1.Field0 += 1;\n";
+            }
+
             return output;
         }
 
@@ -157,9 +220,42 @@ namespace EcsGenerator.LeoProto {
 
         private string GenInfo() {
             var output = "public void GenInfo(){\n";
-            output += " Debug.Log(\"e \" + _world.GetAliveEntities());\n";
+            output += " Debug.Log(\"e \" + _world.Entities().Len());\n";
             output += "}\n";
             return output;
         }
     }
+    
+    public struct TicksCooldownComponent
+    {
+        public int Ticks;
+
+        public TicksCooldownComponent(int ticks)
+        {
+            Ticks = ticks;
+        }
+    }
+        
+    /*
+    internal class TickCounterSystem : IProtoInitSystem, IProtoRunSystem{
+        private ProtoWorld _world = null;
+        private Aspect1 _aspect;
+        ProtoIt _it;
+            
+        public void Init (IProtoSystems systems) {
+            _world = systems.World();
+            _aspect = (Aspect1) _world.Aspect (typeof (Aspect1));
+            _it = new ProtoIt (new [] { typeof (TicksCooldownComponent) } );
+            _it.Init (_world);
+        }
+            
+        public void Run()
+        {
+            for (_it.Begin (); _it.Next ();) {
+                // получаем доступ к компоненту на отфильтрованной сущности.
+                ref var c1 = ref _aspect.TicksCooldownComponentPool.Get (_it.Entity ());
+            }
+        }
+    }
+    //*/
 }
