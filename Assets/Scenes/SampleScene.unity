@@ -3869,9 +3869,9 @@ MonoBehaviour:
   seed: 42
   entityCount: 1000
   componentsCount: 500
-  changeComponentsSystemsCount: 0
-  addRemoveComponentsSystemsCount: 0
-  createEntitySystemsCount: 0
+  changeComponentsSystemsCount: 100
+  addRemoveComponentsSystemsCount: 100
+  createEntitySystemsCount: 50
   hasGetSystemsCount: 100
   minFieldsPerComponent: 0
   maxFieldsPerComponent: 3
