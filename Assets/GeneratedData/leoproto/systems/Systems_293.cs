@@ -14,43 +14,43 @@ class System293 : IProtoInitSystem, IProtoRunSystem{
  public void Init (IProtoSystems systems) {
   _world = systems.World ();
   _aspect = (Aspect1) _world.Aspect (typeof (Aspect1));
- _it = new ProtoIt (new [] {typeof(Component106),typeof(Component425),typeof(Component373),typeof(Component270) } );
+ _it = new ProtoIt (new [] {typeof(Component3) } );
   _it.Init (_world);
  }
  public void Run () {
   for (_it.Begin (); _it.Next ();) {
   var q = 0;
-   if (_aspect.Component70Pool.Has(_it.Entity()))
+   if (_aspect.Component26Pool.Has(_it.Entity()))
    {
     q+=1;
-    var component1 = _aspect.Component70Pool.Get(_it.Entity());
+    var component1 = _aspect.Component26Pool.Get(_it.Entity());
    }
    else
    {
     q-=1;
    }
-   if (_aspect.Component335Pool.Has(_it.Entity()))
+   if (_aspect.Component43Pool.Has(_it.Entity()))
    {
     q+=1;
-    var component1 = _aspect.Component335Pool.Get(_it.Entity());
+    var component1 = _aspect.Component43Pool.Get(_it.Entity());
    }
    else
    {
     q-=1;
    }
-   if (_aspect.Component213Pool.Has(_it.Entity()))
+   if (_aspect.Component363Pool.Has(_it.Entity()))
    {
     q+=1;
-    var component1 = _aspect.Component213Pool.Get(_it.Entity());
+    var component1 = _aspect.Component363Pool.Get(_it.Entity());
    }
    else
    {
     q-=1;
    }
-   if (_aspect.Component418Pool.Has(_it.Entity()))
+   if (_aspect.Component139Pool.Has(_it.Entity()))
    {
     q+=1;
-    var component1 = _aspect.Component418Pool.Get(_it.Entity());
+    var component1 = _aspect.Component139Pool.Get(_it.Entity());
    }
    else
    {

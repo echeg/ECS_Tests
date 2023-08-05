@@ -9,21 +9,21 @@ namespace EcsGenerator.LeoEcsLite{
 class System253 : IEcsInitSystem, IEcsRunSystem{
  EcsWorld _world = null;
  EcsFilter _filter;
-EcsPool<Component140> _p1;
-EcsPool<Component381> _p2;
-EcsPool<Component47> _pl0;
-EcsPool<Component271> _pl1;
-EcsPool<Component186> _pl2;
-EcsPool<Component107> _pl3;
+EcsPool<Component430> _p1;
+EcsPool<Component98> _p2;
+EcsPool<Component286> _pl0;
+EcsPool<Component439> _pl1;
+EcsPool<Component206> _pl2;
+EcsPool<Component354> _pl3;
  public void Init (EcsSystems systems) {
   _world = systems.GetWorld ();
-  _filter = _world.Filter<Component140>().Inc<Component381>().End();
-   _p1 = _world.GetPool<Component140>();
-   _p2 = _world.GetPool<Component381>();
-   _pl0 = _world.GetPool<Component47>();
-   _pl1 = _world.GetPool<Component271>();
-   _pl2 = _world.GetPool<Component186>();
-   _pl3 = _world.GetPool<Component107>();
+  _filter = _world.Filter<Component430>().Inc<Component98>().End();
+   _p1 = _world.GetPool<Component430>();
+   _p2 = _world.GetPool<Component98>();
+   _pl0 = _world.GetPool<Component286>();
+   _pl1 = _world.GetPool<Component439>();
+   _pl2 = _world.GetPool<Component206>();
+   _pl3 = _world.GetPool<Component354>();
  }
  public void Run (EcsSystems systems) {
   foreach (int entity in _filter) {

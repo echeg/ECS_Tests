@@ -10,20 +10,24 @@ class System266 : IEcsInitSystem, IEcsRunSystem{
  EcsWorld _world = null;
  EcsFilter _filter;
 EcsPool<Component46> _p1;
-EcsPool<Component340> _p2;
-EcsPool<Component111> _pl0;
-EcsPool<Component457> _pl1;
-EcsPool<Component424> _pl2;
-EcsPool<Component247> _pl3;
+EcsPool<Component29> _p2;
+EcsPool<Component179> _p3;
+EcsPool<Component77> _p4;
+EcsPool<Component55> _pl0;
+EcsPool<Component365> _pl1;
+EcsPool<Component295> _pl2;
+EcsPool<Component98> _pl3;
  public void Init (EcsSystems systems) {
   _world = systems.GetWorld ();
-  _filter = _world.Filter<Component46>().Inc<Component340>().End();
+  _filter = _world.Filter<Component46>().Inc<Component29>().Inc<Component179>().Inc<Component77>().End();
    _p1 = _world.GetPool<Component46>();
-   _p2 = _world.GetPool<Component340>();
-   _pl0 = _world.GetPool<Component111>();
-   _pl1 = _world.GetPool<Component457>();
-   _pl2 = _world.GetPool<Component424>();
-   _pl3 = _world.GetPool<Component247>();
+   _p2 = _world.GetPool<Component29>();
+   _p3 = _world.GetPool<Component179>();
+   _p4 = _world.GetPool<Component77>();
+   _pl0 = _world.GetPool<Component55>();
+   _pl1 = _world.GetPool<Component365>();
+   _pl2 = _world.GetPool<Component295>();
+   _pl3 = _world.GetPool<Component98>();
  }
  public void Run (EcsSystems systems) {
   foreach (int entity in _filter) {

@@ -9,28 +9,63 @@ namespace EcsGenerator.LeoEcsLite{
 class System244 : IEcsInitSystem, IEcsRunSystem{
  EcsWorld _world = null;
  EcsFilter _filter;
-EcsPool<Component372> _p1;
-EcsPool<Component442> _p2;
-EcsPool<Component280> _p3;
-EcsPool<Component328> _p4;
-EcsPool<Component87> _pl0;
-EcsPool<TicksCooldownComponent> _pt;
+EcsPool<Component465> _p1;
+EcsPool<Component92> _p2;
+EcsPool<Component229> _p3;
+EcsPool<Component356> _pl0;
+EcsPool<Component142> _pl1;
+EcsPool<Component280> _pl2;
+EcsPool<Component295> _pl3;
  public void Init (EcsSystems systems) {
   _world = systems.GetWorld ();
-  _filter = _world.Filter<Component372>().Inc<Component442>().Inc<Component280>().Inc<Component328>().End();
-   _p1 = _world.GetPool<Component372>();
-   _p2 = _world.GetPool<Component442>();
-   _p3 = _world.GetPool<Component280>();
-   _p4 = _world.GetPool<Component328>();
-   _pt = _world.GetPool<TicksCooldownComponent>();
-   _pl0 = _world.GetPool<Component87>();
+  _filter = _world.Filter<Component465>().Inc<Component92>().Inc<Component229>().End();
+   _p1 = _world.GetPool<Component465>();
+   _p2 = _world.GetPool<Component92>();
+   _p3 = _world.GetPool<Component229>();
+   _pl0 = _world.GetPool<Component356>();
+   _pl1 = _world.GetPool<Component142>();
+   _pl2 = _world.GetPool<Component280>();
+   _pl3 = _world.GetPool<Component295>();
  }
  public void Run (EcsSystems systems) {
   foreach (int entity in _filter) {
-   var e = _world.NewEntity();
-   ref var c1 = ref _pl0.Add(e);
-   ref var tick = ref _pt.Add(e);
-   tick.Ticks=10;
+  var q = 0;
+   if (_pl0.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl0.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl1.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl1.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl2.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl2.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_pl3.Has(entity))
+   {
+    q+=1;
+    var component1 = _pl3.Get(entity);
+   }
+   else
+   {
+    q-=1;
+   }
   }
  }
 }

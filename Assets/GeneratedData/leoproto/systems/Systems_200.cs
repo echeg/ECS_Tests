@@ -19,10 +19,43 @@ class System200 : IProtoInitSystem, IProtoRunSystem{
  }
  public void Run () {
   for (_it.Begin (); _it.Next ();) {
-   var e = _world.NewEntity();
-   ref var c1 = ref _aspect.Component169Pool.Add(e);
-   ref var tick = ref _aspect.TicksCooldownComponentPool.Add(e);
-   tick.Ticks=10;
+  var q = 0;
+   if (_aspect.Component169Pool.Has(_it.Entity()))
+   {
+    q+=1;
+    var component1 = _aspect.Component169Pool.Get(_it.Entity());
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_aspect.Component450Pool.Has(_it.Entity()))
+   {
+    q+=1;
+    var component1 = _aspect.Component450Pool.Get(_it.Entity());
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_aspect.Component140Pool.Has(_it.Entity()))
+   {
+    q+=1;
+    var component1 = _aspect.Component140Pool.Get(_it.Entity());
+   }
+   else
+   {
+    q-=1;
+   }
+   if (_aspect.Component33Pool.Has(_it.Entity()))
+   {
+    q+=1;
+    var component1 = _aspect.Component33Pool.Get(_it.Entity());
+   }
+   else
+   {
+    q-=1;
+   }
   }
  }
 }
