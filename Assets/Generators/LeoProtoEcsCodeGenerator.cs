@@ -11,10 +11,12 @@ namespace EcsGenerator.LeoProto {
             var fileContent = "";
             fileContent += $"class {name} : MonoBehaviour, IEcsRunner {{\n";
             fileContent += "ProtoWorld _world;\n";
+            fileContent += "Aspect1 _a1;\n";
             fileContent += "ProtoSystems _systems;\n\n";
 
             fileContent += "public void Init() {\n";
-            fileContent += "    _world = new ProtoWorld (new Aspect1 ());\n";
+            fileContent += "    _a1 = new Aspect1 ();\n";
+            fileContent += "    _world = new ProtoWorld (_a1);\n";
             fileContent += "    _systems = new ProtoSystems (_world);\n";
             fileContent += "  _systems.AddModule(new AutoInjectModule ());\n";
             fileContent += "  _systems.AddSystem(new TickCounterSystem());\n";
@@ -56,10 +58,6 @@ namespace EcsGenerator.LeoProto {
                 aspect += $"Component{dslComponent.Id}Pool = new ProtoPool<Component{dslComponent.Id}> ();\n";
                 aspect += $"world.AddPool (Component{dslComponent.Id}Pool);\n";
             }
-
-            aspect += "var C1Pool = new ProtoPool<Component1> ();\n";
-
-            aspect += " world.AddPool (C1Pool);\n";
             aspect += " }\n";
             aspect += "}\n";
 
@@ -214,12 +212,26 @@ namespace EcsGenerator.LeoProto {
         private string GenerateEntities() {
             var fileContent = "";
             foreach (var entity in _dataProvider.GetEntities()) {
-                //fileContent += GenerateEntity(entity);
+                fileContent += GenerateEntity(entity);
             }
 
             return fileContent;
         }
 
+        private static string GenerateEntity(DslEntity e)
+        {
+            var output = $"var entity{e.Id} = _world.NewEntity();\n";
+
+            for (var index = 0; index < e.Components.Count; index++)
+            {
+                var component = e.Components[index];
+                output += $"_a1.Component{component.Id}Pool.Add(entity{e.Id});\n";
+            }
+
+            output += "\n";
+            return output;
+        }
+        
         protected override string DecorateNamespace(string fileContent) {
             var pre = "";
             pre += "using System;\n";
