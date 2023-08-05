@@ -115,26 +115,43 @@ namespace EcsGenerator.LeoProto {
             return output;
         }
         
-        private string HasGetBody(DslSystem dslSystem) {
-            var output = "";
+        private string HasGetBody(DslSystem s) {
+            var output = "  var q = 0;\n";
+            
+            for (int i = 0; i < s.LogicComponents.Count; i++) {
+                output += $"   if (_aspect.Component{s.LogicComponents[i].Id}Pool.Has(_it.Entity()))\n";
+                output += "   {\n";
+                output += $"    q+=1;\n";
+                output += $"    var component1 = _aspect.Component{s.LogicComponents[i].Id}Pool.Get(_it.Entity());\n";
+                output += "   }\n";
+                output += "   else\n";
+                output += "   {\n";
+                output += $"    q-=1;\n";
+                output += "   }\n";
+            }
+            
             return output;
         }
         
-        private string CreateEntityBody(DslSystem dslSystem) {
+        private string CreateEntityBody(DslSystem s) {
             var output = "";
+            output += "   var e = _world.NewEntity();\n";
+            output += $"   ref var c1 = ref _aspect.Component{s.LogicComponents[0].Id}Pool.Add(e);\n";
+            output += $"   ref var tick = ref _aspect.TicksCooldownComponentPool.Add(e);\n";
+            output += $"   tick.Ticks=10;\n";
             return output;
         }
         
         private string AddRemoveBody(DslSystem s) {
             var output = "";
             
-            output += $"   if (_aspect.Component{s.LogicComponents[0].Id}Pool.Has(entity))\n";
+            output += $"   if (_aspect.Component{s.LogicComponents[0].Id}Pool.Has(_it.Entity()))\n";
             output += "   {\n";
-            output += $"    _aspect.Component{s.LogicComponents[0].Id}Pool.Del(entity);\n";
+            output += $"    _aspect.Component{s.LogicComponents[0].Id}Pool.Del(_it.Entity());\n";
             output += "   }\n";
             output += "   else\n";
             output += "   {\n";
-            output += $"    _aspect.Component{s.LogicComponents[0].Id}Pool.Add(entity);\n";
+            output += $"    _aspect.Component{s.LogicComponents[0].Id}Pool.Add(_it.Entity());\n";
             output += "   }\n";
             
             return output;
@@ -236,7 +253,7 @@ namespace EcsGenerator.LeoProto {
         }
     }
         
-    /*
+    //*
     internal class TickCounterSystem : IProtoInitSystem, IProtoRunSystem{
         private ProtoWorld _world = null;
         private Aspect1 _aspect;
