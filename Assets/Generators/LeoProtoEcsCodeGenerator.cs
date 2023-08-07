@@ -28,6 +28,8 @@ namespace EcsGenerator.LeoProto {
             fileContent += "_systems.Run();\n";
             fileContent += "}\n\n";
 
+            fileContent += GenerateModules();
+            
             fileContent += "public void GenStartEntities() {\n";
             fileContent += GenerateEntities();
             fileContent += "}\n";
@@ -211,16 +213,30 @@ namespace EcsGenerator.LeoProto {
 
         private string GenerateEntities() {
             var fileContent = "";
-            foreach (var entity in _dataProvider.GetEntities()) {
-                fileContent += GenerateEntity(entity);
+            var list = _dataProvider.GetEntities();
+            for (var index = 0; index < list.Count; index++) {
+                fileContent += $"Create{index}();";
+            }
+
+            return fileContent;
+        }
+        
+        private string GenerateModules() {
+            var fileContent = "";
+            var list = _dataProvider.GetEntities();
+            for (var index = 0; index < list.Count; index++) {
+                var entity = list[index];
+                fileContent += GenerateEntityMethod(entity, index);
             }
 
             return fileContent;
         }
 
-        private static string GenerateEntity(DslEntity e)
+        private static string GenerateEntityMethod(DslEntity e, int id)
         {
-            var output = $"var entity{e.Id} = _world.NewEntity();\n";
+            var output = $"public void Create{id}()";
+            output += "{\n";
+            output += $"var entity{e.Id} = _world.NewEntity();\n";
 
             for (var index = 0; index < e.Components.Count; index++)
             {
@@ -228,7 +244,7 @@ namespace EcsGenerator.LeoProto {
                 output += $"_a1.Component{component.Id}Pool.Add(entity{e.Id});\n";
             }
 
-            output += "\n";
+            output += "}\n\n";
             return output;
         }
         
