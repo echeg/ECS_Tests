@@ -14,7 +14,7 @@ class System31 : IProtoInitSystem, IProtoRunSystem{
  public void Init (IProtoSystems systems) {
   _world = systems.World ();
   _aspect = (Aspect1) _world.Aspect (typeof (Aspect1));
- _it = new ProtoIt (new [] {typeof(Component166) } );
+ _it = new ProtoIt (new [] {typeof(Component304),typeof(Component496),typeof(Component318) } );
   _it.Init (_world);
  }
  public void Run () {

@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // The Proprietary or MIT-Red License
-// Copyright (c) 2012-2022 Leopotam <leopotam@yandex.ru>
+// Copyright (c) 2012-2023 Leopotam <leopotam@yandex.ru>
 // ----------------------------------------------------------------------------
 
 using System;
@@ -44,6 +44,15 @@ namespace Leopotam.EcsLite {
             _delayedOps = new DelayedOp[512];
             _delayedOpsCount = 0;
             _lockCount = 0;
+        }
+        
+        [MethodImpl (MethodImplOptions.AggressiveInlining)]
+        public EcsFilter DeepCopy(EcsWorld world) {
+            var filter = new EcsFilter(world, _mask, _denseEntities.Length, SparseEntities.Length);
+            Array.Copy(_denseEntities, filter._denseEntities, _entitiesCount);
+            Array.Copy(SparseEntities, filter.SparseEntities, SparseEntities.Length);
+            filter._entitiesCount = _entitiesCount;
+            return filter;
         }
 
         [MethodImpl (MethodImplOptions.AggressiveInlining)]

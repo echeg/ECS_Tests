@@ -9,16 +9,19 @@ namespace EcsGenerator.LeoEcsLite{
 class System29 : IEcsInitSystem, IEcsRunSystem{
  EcsWorld _world = null;
  EcsFilter _filter;
-EcsPool<Component269> _p1;
-EcsPool<Component369> _p2;
- public void Init (EcsSystems systems) {
+EcsPool<Component185> _p1;
+EcsPool<Component448> _p2;
+ public void Init (IEcsSystems systems) {
   _world = systems.GetWorld ();
-  _filter = _world.Filter<Component269>().Inc<Component369>().End();
-   _p1 = _world.GetPool<Component269>();
-   _p2 = _world.GetPool<Component369>();
+  _filter = _world.Filter<Component185>().Inc<Component448>().End();
+   _p1 = _world.GetPool<Component185>();
+   _p2 = _world.GetPool<Component448>();
  }
- public void Run (EcsSystems systems) {
+ public void Run (IEcsSystems systems) {
   foreach (int entity in _filter) {
+   ref var component1 = ref _p1.Get(entity);
+   ref var component2 = ref _p2.Get(entity);
+   component1.Field0 += component2.Field0;
   }
  }
 }

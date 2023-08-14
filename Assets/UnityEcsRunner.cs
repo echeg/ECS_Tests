@@ -10,6 +10,7 @@ namespace EcsGenerator
         void GenStartEntities();
         void Run();
         void GenInfo();
+        void CopyWorld(int i);
     }
     
     public class UnityEcsRunner : MonoBehaviour
@@ -68,6 +69,13 @@ namespace EcsGenerator
         public void GetInfo()
         {
             _runner.GenInfo();
+        }      
+        
+        public void CopyWorld(int i)
+        {
+            StartTimer();
+            _runner.CopyWorld(i);
+            EndTimer($"CopyWorld {i} time: ");
         }
     }
 }

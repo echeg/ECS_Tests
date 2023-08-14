@@ -10,61 +10,26 @@ class System270 : IEcsInitSystem, IEcsRunSystem{
  EcsWorld _world = null;
  EcsFilter _filter;
 EcsPool<Component105> _p1;
-EcsPool<Component201> _p2;
-EcsPool<Component129> _p3;
-EcsPool<Component446> _pl0;
-EcsPool<Component284> _pl1;
-EcsPool<Component179> _pl2;
-EcsPool<Component496> _pl3;
- public void Init (EcsSystems systems) {
+EcsPool<Component47> _p2;
+EcsPool<Component357> _p3;
+EcsPool<Component21> _pl0;
+ public void Init (IEcsSystems systems) {
   _world = systems.GetWorld ();
-  _filter = _world.Filter<Component105>().Inc<Component201>().Inc<Component129>().End();
+  _filter = _world.Filter<Component105>().Inc<Component47>().Inc<Component357>().End();
    _p1 = _world.GetPool<Component105>();
-   _p2 = _world.GetPool<Component201>();
-   _p3 = _world.GetPool<Component129>();
-   _pl0 = _world.GetPool<Component446>();
-   _pl1 = _world.GetPool<Component284>();
-   _pl2 = _world.GetPool<Component179>();
-   _pl3 = _world.GetPool<Component496>();
+   _p2 = _world.GetPool<Component47>();
+   _p3 = _world.GetPool<Component357>();
+   _pl0 = _world.GetPool<Component21>();
  }
- public void Run (EcsSystems systems) {
+ public void Run (IEcsSystems systems) {
   foreach (int entity in _filter) {
-  var q = 0;
-   if (_pl0.Has(entity))
+   if (_p1.Has(entity))
    {
-    q+=1;
-    var component1 = _pl0.Get(entity);
+    _p1.Del(entity);
    }
    else
    {
-    q-=1;
-   }
-   if (_pl1.Has(entity))
-   {
-    q+=1;
-    var component1 = _pl1.Get(entity);
-   }
-   else
-   {
-    q-=1;
-   }
-   if (_pl2.Has(entity))
-   {
-    q+=1;
-    var component1 = _pl2.Get(entity);
-   }
-   else
-   {
-    q-=1;
-   }
-   if (_pl3.Has(entity))
-   {
-    q+=1;
-    var component1 = _pl3.Get(entity);
-   }
-   else
-   {
-    q-=1;
+    _p1.Add(entity);
    }
   }
  }

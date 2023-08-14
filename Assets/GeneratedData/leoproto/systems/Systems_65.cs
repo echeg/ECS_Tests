@@ -14,7 +14,7 @@ class System65 : IProtoInitSystem, IProtoRunSystem{
  public void Init (IProtoSystems systems) {
   _world = systems.World ();
   _aspect = (Aspect1) _world.Aspect (typeof (Aspect1));
- _it = new ProtoIt (new [] {typeof(Component480),typeof(Component338),typeof(Component94) } );
+ _it = new ProtoIt (new [] {typeof(Component331),typeof(Component289),typeof(Component240) } );
   _it.Init (_world);
  }
  public void Run () {

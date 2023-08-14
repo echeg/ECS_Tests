@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // The Proprietary or MIT-Red License
-// Copyright (c) 2012-2022 Leopotam <leopotam@yandex.ru>
+// Copyright (c) 2012-2023 Leopotam <leopotam@yandex.ru>
 // ----------------------------------------------------------------------------
 
 using System;
@@ -20,10 +20,16 @@ namespace Leopotam.EcsLite {
         void SetRaw (int entity, object dataRaw);
         int GetId ();
         Type GetComponentType ();
+        void Copy (int srcEntity, int dstEntity);
+        IEcsPool DeepCopy(EcsWorld world);
     }
 
     public interface IEcsAutoReset<T> where T : struct {
         void AutoReset (ref T c);
+    }
+
+    public interface IEcsAutoCopy<T> where T : struct {
+        void AutoCopy (ref T src, ref T dst);
     }
 
 #if ENABLE_IL2CPP
@@ -33,8 +39,9 @@ namespace Leopotam.EcsLite {
     public sealed class EcsPool<T> : IEcsPool where T : struct {
         readonly Type _type;
         readonly EcsWorld _world;
-        readonly int _id;
-        readonly AutoResetHandler _autoReset;
+        readonly short _id;
+        AutoResetHandler _autoResetHandler;
+        AutoCopyHandler _autoCopyHandler;
         // 1-based index.
         T[] _denseItems;
         int[] _sparseItems;
@@ -42,11 +49,11 @@ namespace Leopotam.EcsLite {
         int[] _recycledItems;
         int _recycledItemsCount;
 #if ENABLE_IL2CPP && !UNITY_EDITOR
-        T _autoresetFakeInstance;
+        T _fakeInstance;
 #endif
 
-        internal EcsPool (EcsWorld world, int id, int denseCapacity, int sparseCapacity, int recycledCapacity) {
-            _type = typeof (T);
+         internal EcsPool(EcsWorld world, short id, int denseCapacity, int sparseCapacity, int recycledCapacity) {
+            _type = typeof(T);
             _world = world;
             _id = id;
             _denseItems = new T[denseCapacity + 1];
@@ -54,30 +61,59 @@ namespace Leopotam.EcsLite {
             _denseItemsCount = 1;
             _recycledItems = new int[recycledCapacity];
             _recycledItemsCount = 0;
-            var isAutoReset = typeof (IEcsAutoReset<T>).IsAssignableFrom (_type);
+            SetAuto();
+        }
+        
+        private void SetAuto() { // autoreset init.
+            var isAutoReset = typeof(IEcsAutoReset<T>).IsAssignableFrom(_type);
 #if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
-            if (!isAutoReset && _type.GetInterface ("IEcsAutoReset`1") != null) {
-                throw new Exception ($"IEcsAutoReset should have <{typeof (T).Name}> constraint for component \"{typeof (T).Name}\".");
+            if (!isAutoReset && _type.GetInterface("IEcsAutoReset`1") != null) {
+                throw new Exception($"IEcsAutoReset should have <{typeof(T).Name}> constraint for component \"{typeof(T).Name}\".");
             }
 #endif
             if (isAutoReset) {
-                var autoResetMethod = typeof (T).GetMethod (nameof (IEcsAutoReset<T>.AutoReset));
+                var autoResetMethod = typeof(T).GetMethod(nameof(IEcsAutoReset<T>.AutoReset));
 #if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
                 if (autoResetMethod == null) {
-                    throw new Exception (
-                        $"IEcsAutoReset<{typeof (T).Name}> explicit implementation not supported, use implicit instead.");
+                    throw new Exception(
+                        $"IEcsAutoReset<{typeof(T).Name}> explicit implementation not supported, use implicit instead.");
                 }
 #endif
-                _autoReset = (AutoResetHandler) Delegate.CreateDelegate (
-                    typeof (AutoResetHandler),
+                _autoResetHandler = (AutoResetHandler)Delegate.CreateDelegate(
+                    typeof(AutoResetHandler),
 #if ENABLE_IL2CPP && !UNITY_EDITOR
-                    _autoresetFakeInstance,
+                    _fakeInstance,
 #else
                     null,
 #endif
                     autoResetMethod);
             }
+            // autocopy init.
+            var isAutoCopy = typeof(IEcsAutoCopy<T>).IsAssignableFrom(_type);
+#if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
+            if (!isAutoCopy && _type.GetInterface("IEcsCopy`1") != null) {
+                throw new Exception($"IEcsCopy should have <{typeof(T).Name}> constraint for component \"{typeof(T).Name}\".");
+            }
+#endif
+            if (isAutoCopy) {
+                var copyMethod = typeof(T).GetMethod(nameof(IEcsAutoCopy<T>.AutoCopy));
+#if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
+                if (copyMethod == null) {
+                    throw new Exception(
+                        $"IEcsCopy<{typeof(T).Name}> explicit implementation not supported, use implicit instead.");
+                }
+#endif
+                _autoCopyHandler = (AutoCopyHandler)Delegate.CreateDelegate(
+                    typeof(AutoCopyHandler),
+#if ENABLE_IL2CPP && !UNITY_EDITOR
+                    _fakeInstance,
+#else
+                    null,
+#endif
+                    copyMethod);
+            }
         }
+        
 
 #if UNITY_2020_3_OR_NEWER
         [UnityEngine.Scripting.Preserve]
@@ -112,7 +148,7 @@ namespace Leopotam.EcsLite {
 
         void IEcsPool.SetRaw (int entity, object dataRaw) {
 #if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
-            if (dataRaw == null || dataRaw.GetType () != _type) { throw new Exception ("Invalid component data, valid \"{typeof (T).Name}\" instance required."); }
+            if (dataRaw == null || dataRaw.GetType () != _type) { throw new Exception ($"Invalid component data, valid \"{typeof (T).Name}\" instance required."); }
             if (_sparseItems[entity] <= 0) { throw new Exception ($"Component \"{typeof (T).Name}\" not attached to entity."); }
 #endif
             _denseItems[_sparseItems[entity]] = (T) dataRaw;
@@ -120,7 +156,7 @@ namespace Leopotam.EcsLite {
 
         void IEcsPool.AddRaw (int entity, object dataRaw) {
 #if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
-            if (dataRaw == null || dataRaw.GetType () != _type) { throw new Exception ("Invalid component data, valid \"{typeof (T).Name}\" instance required."); }
+            if (dataRaw == null || dataRaw.GetType () != _type) { throw new Exception ($"Invalid component data, valid \"{typeof (T).Name}\" instance required."); }
 #endif
             ref var data = ref Add (entity);
             data = (T) dataRaw;
@@ -160,11 +196,11 @@ namespace Leopotam.EcsLite {
                     Array.Resize (ref _denseItems, _denseItemsCount << 1);
                 }
                 _denseItemsCount++;
-                _autoReset?.Invoke (ref _denseItems[idx]);
+                _autoResetHandler?.Invoke (ref _denseItems[idx]);
             }
             _sparseItems[entity] = idx;
             _world.OnEntityChangeInternal (entity, _id, true);
-            _world.Entities[entity].ComponentsCount++;
+            _world.AddComponentToRawEntityInternal (entity, _id);
 #if DEBUG || LEOECSLITE_WORLD_EVENTS
             _world.RaiseEntityChangeEvent (entity);
 #endif
@@ -199,23 +235,74 @@ namespace Leopotam.EcsLite {
                     Array.Resize (ref _recycledItems, _recycledItemsCount << 1);
                 }
                 _recycledItems[_recycledItemsCount++] = sparseData;
-                if (_autoReset != null) {
-                    _autoReset.Invoke (ref _denseItems[sparseData]);
+                if (_autoResetHandler != null) {
+                    _autoResetHandler.Invoke (ref _denseItems[sparseData]);
                 } else {
                     _denseItems[sparseData] = default;
                 }
                 sparseData = 0;
-                ref var entityData = ref _world.Entities[entity];
-                entityData.ComponentsCount--;
+                var componentsCount = _world.RemoveComponentFromRawEntityInternal (entity, _id);
 #if DEBUG || LEOECSLITE_WORLD_EVENTS
                 _world.RaiseEntityChangeEvent (entity);
 #endif
-                if (entityData.ComponentsCount == 0) {
+                if (componentsCount == 0) {
                     _world.DelEntity (entity);
                 }
             }
         }
 
+        public void Copy (int srcEntity, int dstEntity) {
+#if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
+            if (!_world.IsEntityAliveInternal (srcEntity)) { throw new Exception ("Cant touch destroyed src-entity."); }
+            if (!_world.IsEntityAliveInternal (dstEntity)) { throw new Exception ("Cant touch destroyed dest-entity."); }
+#endif
+            if (Has (srcEntity)) {
+                ref var srcData = ref Get (srcEntity);
+                if (!Has (dstEntity)) {
+                    Add (dstEntity);
+                }
+                ref var dstData = ref Get (dstEntity);
+                if (_autoCopyHandler != null) {
+                    _autoCopyHandler.Invoke (ref srcData, ref dstData);
+                } else {
+                    dstData = srcData;
+                }
+            }
+        }
+        
+        private EcsPool(EcsWorld world, short id) {
+            _type = typeof(T);
+            _world = world;
+            _id = id;
+            SetAuto();
+        }
+        
+        public IEcsPool DeepCopy(EcsWorld world) {
+            EcsPool<T> copy = new EcsPool<T>(world, _id);
+
+            // Копирование значений примитивных типов
+            copy._denseItemsCount = _denseItemsCount;
+            copy._recycledItemsCount = _recycledItemsCount;
+
+            // Копирование массива _denseItems
+            copy._denseItems = new T[_denseItems.Length];
+            for (int i = 0; i < _denseItems.Length; i++) {
+                // Предполагается, что T также имеет метод DeepCopy.
+                copy._denseItems[i] = _denseItems[i];
+            }
+
+            // Копирование массива _sparseItems
+            copy._sparseItems = new int[_sparseItems.Length];
+            Array.Copy(_sparseItems, copy._sparseItems, _sparseItems.Length);
+
+            // Копирование массива _recycledItems
+            copy._recycledItems = new int[_recycledItems.Length];
+            Array.Copy(_recycledItems, copy._recycledItems, _recycledItems.Length);
+            
+            return copy;
+        }
         delegate void AutoResetHandler (ref T component);
+
+        delegate void AutoCopyHandler (ref T srcComponent, ref T dstComponent);
     }
 }

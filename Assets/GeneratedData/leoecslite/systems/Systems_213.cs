@@ -9,64 +9,29 @@ namespace EcsGenerator.LeoEcsLite{
 class System213 : IEcsInitSystem, IEcsRunSystem{
  EcsWorld _world = null;
  EcsFilter _filter;
-EcsPool<Component471> _p1;
-EcsPool<Component389> _p2;
-EcsPool<Component252> _p3;
-EcsPool<Component470> _p4;
-EcsPool<Component39> _pl0;
-EcsPool<Component383> _pl1;
-EcsPool<Component167> _pl2;
-EcsPool<Component353> _pl3;
- public void Init (EcsSystems systems) {
+EcsPool<Component461> _p1;
+EcsPool<Component155> _p2;
+EcsPool<Component22> _p3;
+EcsPool<Component434> _p4;
+EcsPool<Component214> _pl0;
+ public void Init (IEcsSystems systems) {
   _world = systems.GetWorld ();
-  _filter = _world.Filter<Component471>().Inc<Component389>().Inc<Component252>().Inc<Component470>().End();
-   _p1 = _world.GetPool<Component471>();
-   _p2 = _world.GetPool<Component389>();
-   _p3 = _world.GetPool<Component252>();
-   _p4 = _world.GetPool<Component470>();
-   _pl0 = _world.GetPool<Component39>();
-   _pl1 = _world.GetPool<Component383>();
-   _pl2 = _world.GetPool<Component167>();
-   _pl3 = _world.GetPool<Component353>();
+  _filter = _world.Filter<Component461>().Inc<Component155>().Inc<Component22>().Inc<Component434>().End();
+   _p1 = _world.GetPool<Component461>();
+   _p2 = _world.GetPool<Component155>();
+   _p3 = _world.GetPool<Component22>();
+   _p4 = _world.GetPool<Component434>();
+   _pl0 = _world.GetPool<Component214>();
  }
- public void Run (EcsSystems systems) {
+ public void Run (IEcsSystems systems) {
   foreach (int entity in _filter) {
-  var q = 0;
-   if (_pl0.Has(entity))
+   if (_p1.Has(entity))
    {
-    q+=1;
-    var component1 = _pl0.Get(entity);
+    _p1.Del(entity);
    }
    else
    {
-    q-=1;
-   }
-   if (_pl1.Has(entity))
-   {
-    q+=1;
-    var component1 = _pl1.Get(entity);
-   }
-   else
-   {
-    q-=1;
-   }
-   if (_pl2.Has(entity))
-   {
-    q+=1;
-    var component1 = _pl2.Get(entity);
-   }
-   else
-   {
-    q-=1;
-   }
-   if (_pl3.Has(entity))
-   {
-    q+=1;
-    var component1 = _pl3.Get(entity);
-   }
-   else
-   {
-    q-=1;
+    _p1.Add(entity);
    }
   }
  }

@@ -8,7 +8,7 @@ namespace EcsGenerator.LeoEcs{
 
 class System54 : IEcsRunSystem{
  EcsWorld _world = null;
- EcsFilter<Component260,Component423,Component328,Component1> _filter = null;
+ EcsFilter<Component468,Component48,Component253> _filter = null;
  public void Run () {
   foreach (var i in _filter) {
    ref var component1 = ref _filter.Get1 (i);

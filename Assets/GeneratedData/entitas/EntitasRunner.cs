@@ -10,6 +10,10 @@ class EntitasRunner : MonoBehaviour, IEcsRunner {
 GameContext _context;
 Systems _systems;
 
+    public void CopyWorld(int i)
+        {
+         
+        }
 public void Init() {
     _context = Contexts.sharedInstance.game;
     _systems = new Feature("world")

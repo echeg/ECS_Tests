@@ -8,18 +8,11 @@ namespace EcsGenerator.LeoEcs{
 
 class System129 : IEcsRunSystem{
  EcsWorld _world = null;
- EcsFilter<Component137> _filter = null;
+ EcsFilter<Component427> _filter = null;
  public void Run () {
   foreach (var i in _filter) {
-   ref var entity = ref _filter.GetEntity (i);
-   if (entity.Has<Component429>())
-   {
-    entity.Del<Component429>();
-   }
-   else
-   {
-    entity.Replace(new Component429());
-   }
+   ref var component1 = ref _filter.Get1 (i);
+   component1.Field0 += 1;
   }
  }
 }

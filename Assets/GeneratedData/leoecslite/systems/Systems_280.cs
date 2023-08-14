@@ -9,58 +9,25 @@ namespace EcsGenerator.LeoEcsLite{
 class System280 : IEcsInitSystem, IEcsRunSystem{
  EcsWorld _world = null;
  EcsFilter _filter;
-EcsPool<Component278> _p1;
-EcsPool<Component464> _pl0;
-EcsPool<Component211> _pl1;
-EcsPool<Component416> _pl2;
-EcsPool<Component270> _pl3;
- public void Init (EcsSystems systems) {
+EcsPool<Component45> _p1;
+EcsPool<Component498> _p2;
+EcsPool<Component62> _pl0;
+ public void Init (IEcsSystems systems) {
   _world = systems.GetWorld ();
-  _filter = _world.Filter<Component278>().End();
-   _p1 = _world.GetPool<Component278>();
-   _pl0 = _world.GetPool<Component464>();
-   _pl1 = _world.GetPool<Component211>();
-   _pl2 = _world.GetPool<Component416>();
-   _pl3 = _world.GetPool<Component270>();
+  _filter = _world.Filter<Component45>().Inc<Component498>().End();
+   _p1 = _world.GetPool<Component45>();
+   _p2 = _world.GetPool<Component498>();
+   _pl0 = _world.GetPool<Component62>();
  }
- public void Run (EcsSystems systems) {
+ public void Run (IEcsSystems systems) {
   foreach (int entity in _filter) {
-  var q = 0;
-   if (_pl0.Has(entity))
+   if (_p1.Has(entity))
    {
-    q+=1;
-    var component1 = _pl0.Get(entity);
+    _p1.Del(entity);
    }
    else
    {
-    q-=1;
-   }
-   if (_pl1.Has(entity))
-   {
-    q+=1;
-    var component1 = _pl1.Get(entity);
-   }
-   else
-   {
-    q-=1;
-   }
-   if (_pl2.Has(entity))
-   {
-    q+=1;
-    var component1 = _pl2.Get(entity);
-   }
-   else
-   {
-    q-=1;
-   }
-   if (_pl3.Has(entity))
-   {
-    q+=1;
-    var component1 = _pl3.Get(entity);
-   }
-   else
-   {
-    q-=1;
+    _p1.Add(entity);
    }
   }
  }

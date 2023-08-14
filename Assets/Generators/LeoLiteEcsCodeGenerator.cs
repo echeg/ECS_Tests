@@ -19,8 +19,8 @@ namespace EcsGenerator.LeoEcsLite
 
             fileContent += "public void Init() {\n";
             fileContent += "    _world = new EcsWorld();\n";
-            fileContent += "    _systems = new EcsSystems(_world)\n";
-            fileContent += " .Add(new TickCounterSystem());\n";
+            fileContent += "    _systems = new EcsSystems(_world);\n";
+            fileContent += " _systems.Add(new TickCounterSystem());\n";
             fileContent += GenerateListSystems();
             fileContent += "   _systems.Init ();\n";
             fileContent += "}\n\n";
@@ -44,7 +44,7 @@ namespace EcsGenerator.LeoEcsLite
         private string GenInfo()
         {
             var output = "public void GenInfo(){\n";
-            output += " Debug.Log(\"e \" + _world.GetAllocatedEntitiesCount());\n";
+            output += " Debug.Log(\"e \" + _world.GetEntitiesCount());\n";
             output += "}\n";
             return output;
         }
@@ -143,7 +143,7 @@ namespace EcsGenerator.LeoEcsLite
                 output += $"EcsPool<TicksCooldownComponent> _pt;\n";
             }
             
-            output += " public void Init (EcsSystems systems) {\n";
+            output += " public void Init (IEcsSystems systems) {\n";
             output += "  _world = systems.GetWorld ();\n";
             
             output += "  _filter = _world.Filter";
@@ -183,7 +183,7 @@ namespace EcsGenerator.LeoEcsLite
 
             output += " }\n";
 
-            output += " public void Run (EcsSystems systems) {\n";
+            output += " public void Run (IEcsSystems systems) {\n";
             if (s.SystemType == TypeSystem.OnlyCalculate || s.SystemType == TypeSystem.ComponentAddAndRemove)
             {
                 //output += "  var entities = _filter.GetRawEntities();\n";
@@ -277,7 +277,7 @@ namespace EcsGenerator.LeoEcsLite
         {
             var output = "";
             output += "   var e = _world.NewEntity();\n";
-            output += "   ref var c1 = ref _pl0.Add(e);\n";
+            output += "   ref var c1 = ref _pl1.Add(e);\n";
             output += $"   ref var tick = ref _pt.Add(e);\n";
             output += $"   tick.Ticks=10;\n";
             
@@ -300,13 +300,13 @@ namespace EcsGenerator.LeoEcsLite
         private EcsFilter _filter;
         private EcsPool<TicksCooldownComponent> _p1;
             
-        public void Init (EcsSystems systems) {
+        public void Init (IEcsSystems systems) {
             _world = systems.GetWorld ();
             _filter = _world.Filter<TicksCooldownComponent>().End();
             _p1 = _world.GetPool<TicksCooldownComponent>();
         }
             
-        public void Run(EcsSystems systems)
+        public void Run(IEcsSystems systems)
         {
             var entities = _filter.GetRawEntities();
             foreach (var entity in _filter) {

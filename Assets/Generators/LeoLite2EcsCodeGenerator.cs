@@ -259,13 +259,13 @@ namespace EcsGenerator.LeoEcsLite2
         private EcsFilter _filter;
         private EcsPool<TicksCooldownComponent> _p1;
             
-        public void Init (EcsSystems systems) {
+        public void Init (IEcsSystems systems) {
             _world = systems.GetWorld ();
             _filter = _world.Filter<TicksCooldownComponent>().End();
             _p1 = _world.GetPool<TicksCooldownComponent>();
         }
             
-        public void Run(EcsSystems systems)
+        public void Run(IEcsSystems systems)
         {
             var entities = _filter.GetRawEntities();
             foreach (var entity in _filter) {

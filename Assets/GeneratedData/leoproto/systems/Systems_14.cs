@@ -14,12 +14,12 @@ class System14 : IProtoInitSystem, IProtoRunSystem{
  public void Init (IProtoSystems systems) {
   _world = systems.World ();
   _aspect = (Aspect1) _world.Aspect (typeof (Aspect1));
- _it = new ProtoIt (new [] {typeof(Component272),typeof(Component169),typeof(Component359) } );
+ _it = new ProtoIt (new [] {typeof(Component154),typeof(Component163) } );
   _it.Init (_world);
  }
  public void Run () {
   for (_it.Begin (); _it.Next ();) {
-   ref var component1 = ref _aspect.Component272Pool.Get(_it.Entity());
+   ref var component1 = ref _aspect.Component154Pool.Get(_it.Entity());
    component1.Field0 += 1;
   }
  }

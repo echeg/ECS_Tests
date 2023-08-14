@@ -14,47 +14,18 @@ class System233 : IProtoInitSystem, IProtoRunSystem{
  public void Init (IProtoSystems systems) {
   _world = systems.World ();
   _aspect = (Aspect1) _world.Aspect (typeof (Aspect1));
- _it = new ProtoIt (new [] {typeof(Component223),typeof(Component140) } );
+ _it = new ProtoIt (new [] {typeof(Component352),typeof(Component432),typeof(Component276) } );
   _it.Init (_world);
  }
  public void Run () {
   for (_it.Begin (); _it.Next ();) {
-  var q = 0;
-   if (_aspect.Component381Pool.Has(_it.Entity()))
+   if (_aspect.Component411Pool.Has(_it.Entity()))
    {
-    q+=1;
-    var component1 = _aspect.Component381Pool.Get(_it.Entity());
+    _aspect.Component411Pool.Del(_it.Entity());
    }
    else
    {
-    q-=1;
-   }
-   if (_aspect.Component47Pool.Has(_it.Entity()))
-   {
-    q+=1;
-    var component1 = _aspect.Component47Pool.Get(_it.Entity());
-   }
-   else
-   {
-    q-=1;
-   }
-   if (_aspect.Component271Pool.Has(_it.Entity()))
-   {
-    q+=1;
-    var component1 = _aspect.Component271Pool.Get(_it.Entity());
-   }
-   else
-   {
-    q-=1;
-   }
-   if (_aspect.Component186Pool.Has(_it.Entity()))
-   {
-    q+=1;
-    var component1 = _aspect.Component186Pool.Get(_it.Entity());
-   }
-   else
-   {
-    q-=1;
+    _aspect.Component411Pool.Add(_it.Entity());
    }
   }
  }

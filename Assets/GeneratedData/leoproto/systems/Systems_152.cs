@@ -14,19 +14,11 @@ class System152 : IProtoInitSystem, IProtoRunSystem{
  public void Init (IProtoSystems systems) {
   _world = systems.World ();
   _aspect = (Aspect1) _world.Aspect (typeof (Aspect1));
- _it = new ProtoIt (new [] {typeof(Component384),typeof(Component343),typeof(Component90) } );
+ _it = new ProtoIt (new [] {typeof(Component285) } );
   _it.Init (_world);
  }
  public void Run () {
   for (_it.Begin (); _it.Next ();) {
-   if (_aspect.Component298Pool.Has(_it.Entity()))
-   {
-    _aspect.Component298Pool.Del(_it.Entity());
-   }
-   else
-   {
-    _aspect.Component298Pool.Add(_it.Entity());
-   }
   }
  }
 }
