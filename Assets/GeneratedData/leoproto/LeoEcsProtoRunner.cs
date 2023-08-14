@@ -12626,7 +12626,9 @@ public void GenInfo(){
  Debug.Log("e " + _world.Entities().Len());
 }
 }
-public class Aspect1 : IProtoAspect  {
+public class Aspect1 : ProtoAspectInject  {
+
+    
 public ProtoPool<Component0> Component0Pool;
 public ProtoPool<Component1> Component1Pool;
 public ProtoPool<Component2> Component2Pool;

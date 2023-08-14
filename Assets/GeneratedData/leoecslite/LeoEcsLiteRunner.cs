@@ -532,6 +532,11 @@ _systems.Run();
 }
 
 public void GenStartEntities() {
+    GenStartEntities(_world);
+}
+
+public static void GenStartEntities(EcsWorld _world) {
+
 var entity0 = _world.NewEntity();
 _world.GetPool<Component271>().Add(entity0);
 _world.GetPool<Component279>().Add(entity0);
