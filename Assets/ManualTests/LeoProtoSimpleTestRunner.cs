@@ -1,4 +1,5 @@
-﻿using EcsGenerator;
+﻿#if MANUAL_TEST
+using EcsGenerator;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using SimpleTest;
@@ -12121,3 +12122,4 @@ namespace EcsGenerator.LeoProto{
         }
     }
 }
+#endif

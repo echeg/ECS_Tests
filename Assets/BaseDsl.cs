@@ -34,8 +34,8 @@ namespace EcsGenerator
         public int Id;
 
         public TypeSystem SystemType;
-        public List<DslComponent> FiltersComponents;
-        public List<DslComponent> LogicComponents;
+        public List<DslComponent> FiltersComponents = new List<DslComponent>();
+        public List<DslComponent> LogicComponents = new List<DslComponent>();
     }
 
     [System.Serializable]

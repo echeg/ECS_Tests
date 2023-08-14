@@ -1,3 +1,4 @@
+#if MANUAL_TEST
 using EcsGenerator;
 using EcsGenerator.LeoEcsLite;
 using Leopotam.EcsLite;
@@ -27,3 +28,4 @@ namespace SimpleTest {
         }
     }
 }
+#endif

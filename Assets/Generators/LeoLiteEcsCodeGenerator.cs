@@ -242,13 +242,13 @@ namespace EcsGenerator.LeoEcsLite
             var output = "";
             
             //output += "   var entity = entities[i];\n";
-            output += "   if (_p1.Has(entity))\n";
+            output += "   if (_pl0.Has(entity))\n";
             output += "   {\n";
-            output += $"    _p1.Del(entity);\n";
+            output += $"    _pl0.Del(entity);\n";
             output += "   }\n";
             output += "   else\n";
             output += "   {\n";
-            output += $"    _p1.Add(entity);\n";
+            output += $"    _pl0.Add(entity);\n";
             output += "   }\n";
 
             return output;
@@ -277,7 +277,7 @@ namespace EcsGenerator.LeoEcsLite
         {
             var output = "";
             output += "   var e = _world.NewEntity();\n";
-            output += "   ref var c1 = ref _pl1.Add(e);\n";
+            output += "   ref var c1 = ref _pl0.Add(e);\n";
             output += $"   ref var tick = ref _pt.Add(e);\n";
             output += $"   tick.Ticks=10;\n";
             
